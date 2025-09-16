@@ -1,0 +1,2968 @@
+[
+    {
+        "LOCUS": "CP016816.2",
+        "Assembly": "",
+        "Source": "synthetic bacterium JCVI-Syn3A",
+        "Type": "chromosome",
+        "Protein_products": [
+            [
+                "CDS",
+                "dnaA",
+                "Chromosomal replication initiator protein",
+                "[0:1353](+)"
+            ],
+            [
+                "CDS",
+                "dnaN",
+                "DNA polymerase III subunit beta",
+                "[1510:2638](+)"
+            ],
+            [
+                "CDS",
+                "rnmV",
+                "Ribonuclease M5",
+                "[2674:3217](+)"
+            ],
+            [
+                "CDS",
+                "ksgA",
+                "16S rRNA (adenine(1518)-N(6)/adenine(1519)-N(6))- dimethyltransferase",
+                "[3206:4007](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized protein",
+                "[4063:5155](+)"
+            ],
+            [
+                "CDS",
+                "gyrB",
+                "DNA gyrase subunit B",
+                "[5514:7419](+)"
+            ],
+            [
+                "CDS",
+                "gyrA",
+                "DNA gyrase subunit A",
+                "[7434:9939](+)"
+            ],
+            [
+                "CDS",
+                "rnsD; uptD",
+                "Nucleoside ABC transporter permease",
+                "[9990:10968](-)"
+            ],
+            [
+                "CDS",
+                "rnsC; uptD",
+                "Nucleoside ABC transporter permease",
+                "[10967:13535](-)"
+            ],
+            [
+                "CDS",
+                "rnsA; uptA",
+                "Nucleoside ABC transporter ATP-binding protein",
+                "[13524:15141](-)"
+            ],
+            [
+                "CDS",
+                "rnsB; uptB",
+                "Nucleoside ABC transporter substrate-binding protein",
+                "[15152:16799](-)"
+            ],
+            [
+                "CDS",
+                "metRS",
+                "Methionine--tRNA ligase",
+                "[16985:18515](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "Imidazoleglycerol-phosphate dehydratase",
+                "[18715:19378](-)"
+            ],
+            [
+                "CDS",
+                "tetM",
+                "Tetracycline resistance ribosomal protection protein",
+                "[20415:22335](+)"
+            ],
+            [
+                "CDS",
+                "rpsR",
+                "30S ribosomal protein S18",
+                "[22768:22996](-)"
+            ],
+            [
+                "CDS",
+                "priB",
+                "Single-stranded DNA-binding protein",
+                "[23015:23456](-)"
+            ],
+            [
+                "CDS",
+                "rpsF",
+                "30S ribosomal protein S6",
+                "[23467:23881](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized FMN-dependent NADH-azoreductase",
+                "[24272:24872](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized ABC transporter ATP-binding protein",
+                "[24908:25943](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized protein",
+                "[26203:29362](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized efflux ABC transporter permease",
+                "[29508:34896](+)"
+            ],
+            [
+                "CDS",
+                "ftsH",
+                "Membrane anchored AAA+ protease",
+                "[35061:37008](-)"
+            ],
+            [
+                "CDS",
+                "tilS",
+                "tRNA lysidine(34) synthetase",
+                "[37239:38445](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized transcriptional regulator",
+                "[38447:39275](-)"
+            ],
+            [
+                "CDS",
+                "yabD",
+                "Uncharacterized methyltransferase",
+                "[39326:40049](-)"
+            ],
+            [
+                "CDS",
+                "holA",
+                "DNA polymerase III subunit delta",
+                "[40048:40789](-)"
+            ],
+            [
+                "CDS",
+                "tmk",
+                "dTMP kinase",
+                "[40766:41408](-)"
+            ],
+            [
+                "CDS",
+                "recR",
+                "Recombination protein",
+                "[41410:42001](-)"
+            ],
+            [
+                "CDS",
+                "dnaX",
+                "DNA polymerase III subunit gamma and tau",
+                "[42002:44009](-)"
+            ],
+            [
+                "ncRNA",
+                "ffs",
+                "Signal recognition particle sRNA small type",
+                "[44177:44273](-)"
+            ],
+            [
+                "CDS",
+                "ahpC",
+                "Uncharacterized peroxiredoxin",
+                "[45292:45742](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized protein",
+                "[46273:47098](+)"
+            ],
+            [
+                "CDS",
+                "serRS",
+                "Serine--tRNA ligase",
+                "[47180:48449](+)"
+            ],
+            [
+                "CDS",
+                "dusB",
+                "Uncharacterized tRNA dihydrouridine synthase",
+                "[48558:49533](+)"
+            ],
+            [
+                "CDS",
+                "lysRS",
+                "Lysine--tRNA ligase",
+                "[49535:51038](+)"
+            ],
+            [
+                "CDS",
+                "trxA",
+                "Thioredoxin",
+                "[51127:51436](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "Low specificity hydrolase",
+                "[51446:52289](-)"
+            ],
+            [
+                "rRNA",
+                "rrfA",
+                "5S ribosomal RNA",
+                "[52409:52518](-)"
+            ],
+            [
+                "rRNA",
+                "rrlA",
+                "23S ribosomal RNA",
+                "[52579:55493](-)"
+            ],
+            [
+                "rRNA",
+                "rrsA",
+                "16S ribosomal RNA",
+                "[55712:57247](-)"
+            ],
+            [
+                "tRNA",
+                "tRNA-Leu",
+                "tRNA-Leu",
+                "[57524:57608](-)"
+            ],
+            [
+                "tRNA",
+                "tRNA-Lys",
+                "tRNA-Lys",
+                "[57610:57686](-)"
+            ],
+            [
+                "CDS",
+                "asnRS",
+                "Asparagine--tRNA ligase",
+                "[58155:59520](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized hydrolase",
+                "[59528:60368](-)"
+            ],
+            [
+                "CDS",
+                "tsaD",
+                "tRNA (adenosine(37)-N6)-threonylcarbamoyltransferase complex transferase subunit D",
+                "[60403:61360](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized protein",
+                "[61454:61676](-)"
+            ],
+            [
+                "CDS",
+                "mnmE; trmE",
+                "tRNA uridine(34) 5-carboxymethylaminomethyl synthesis GTPase",
+                "[61875:63234](+)"
+            ],
+            [
+                "CDS",
+                "rpsT",
+                "30S ribosomal protein S20",
+                "[63284:63530](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized protein",
+                "[63663:64380](-)"
+            ],
+            [
+                "CDS",
+                "secA",
+                "Preprotein translocase subunit A",
+                "[64494:67329](-)"
+            ],
+            [
+                "CDS",
+                "yycJ",
+                "Uncharacterized 5'-3' exonuclease",
+                "[67493:68405](+)"
+            ],
+            [
+                "CDS",
+                "xseB",
+                "Exodeoxyribonuclease VII small subunit",
+                "[68808:69024](-)"
+            ],
+            [
+                "CDS",
+                "xseA",
+                "Exodeoxyribonuclease VII large subunit",
+                "[69013:70423](-)"
+            ],
+            [
+                "CDS",
+                "nusB",
+                "Transcription antitermination factor",
+                "[70424:70823](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized lipoprotein",
+                "[70834:71947](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "Deoxyribonuclease IV",
+                "[71972:72842](-)"
+            ],
+            [
+                "CDS",
+                "bcsA",
+                "Glycolipid synthase A",
+                "[73087:74437](+)"
+            ],
+            [
+                "CDS",
+                "bcsB; cps",
+                "Glycolipid synthase B",
+                "[74510:75431](-)"
+            ],
+            [
+                "CDS",
+                "galU; gtaB",
+                "UTP--glucose-1-phosphate uridylyltransferase",
+                "[75878:76751](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized protein",
+                "[76935:77376](-)"
+            ],
+            [
+                "CDS",
+                "plsY",
+                "Acyl-phosphate glycerol 3-phosphate acyltransferase",
+                "[77445:78207](+)"
+            ],
+            [
+                "CDS",
+                "gluRS",
+                "Glutamate--tRNA ligase",
+                "[78402:79854](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized phosphohydrolase",
+                "[79856:81071](+)"
+            ],
+            [
+                "CDS",
+                "rpoE",
+                "DNA-directed RNA polymerase subunit delta",
+                "[81096:81525](+)"
+            ],
+            [
+                "CDS",
+                "pyrG",
+                "CTP synthase",
+                "[81616:83215](+)"
+            ],
+            [
+                "CDS",
+                "fbaA",
+                "Fructose-1,6-bisphosphate aldolase",
+                "[83503:84397](+)"
+            ],
+            [
+                "CDS",
+                "ietA",
+                "Toxin-antitoxin AAA ATPase",
+                "[84545:85607](+)"
+            ],
+            [
+                "CDS",
+                "ietS",
+                "Toxin-antitoxin serine protease",
+                "[85599:87873](+)"
+            ],
+            [
+                "CDS",
+                "rpmE",
+                "50S ribosomal protein L31",
+                "[88732:89011](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized protein",
+                "[89083:90982](+)"
+            ],
+            [
+                "CDS",
+                "ytqI; orn",
+                "NanoRNAse",
+                "[90991:91942](+)"
+            ],
+            [
+                "CDS",
+                "tdk",
+                "Thymidine kinase",
+                "[91943:92573](+)"
+            ],
+            [
+                "CDS",
+                "prfA",
+                "Peptide chain release factor 1",
+                "[92575:93670](+)"
+            ],
+            [
+                "CDS",
+                "prmC",
+                "Protein-(glutamine-N5) methyltransferase, release factor-specific",
+                "[93662:94511](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized protein",
+                "[94519:95992](+)"
+            ],
+            [
+                "CDS",
+                "tsaC",
+                "tRNA (adenosine(37)-N6)-threonylcarbamoyltransferase complex transferase subunit",
+                "[96000:96501](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized acetyltransferase",
+                "[96615:97530](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized protein",
+                "[97758:98466](+)"
+            ],
+            [
+                "CDS",
+                "clsA",
+                "Cardiolipin synthase",
+                "[98465:99995](+)"
+            ],
+            [
+                "CDS",
+                "rpsL",
+                "30S ribosomal protein S12",
+                "[100118:100538](+)"
+            ],
+            [
+                "CDS",
+                "rpsG",
+                "30S ribosomal protein S7",
+                "[100624:101092](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "Translation elongation factor G",
+                "[101116:103186](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "Translation elongation factor Tu",
+                "[103317:104505](+)"
+            ],
+            [
+                "tmRNA",
+                "ssrA",
+                "Transfer-messenger RNA",
+                "[104781:105192](+)"
+            ],
+            [
+                "CDS",
+                "alaRS",
+                "Alanine--tRNA ligase",
+                "[105430:108121](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized protein",
+                "[108194:108689](-)"
+            ],
+            [
+                "CDS",
+                "amiC",
+                "Oligopeptide ABC transporter permease",
+                "[108906:110151](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "Oligopeptide ABC transporter permease",
+                "[110166:111177](+)"
+            ],
+            [
+                "CDS",
+                "amiE",
+                "Oligopeptide ABC transporter ATP-binding protein",
+                "[111190:112891](+)"
+            ],
+            [
+                "CDS",
+                "amiF",
+                "Oligopeptide ABC transporter ATP-binding protein",
+                "[112892:114761](+)"
+            ],
+            [
+                "CDS",
+                "amiA",
+                "Oligopeptide ABC transporter substrate-binding protein",
+                "[114777:117879](+)"
+            ],
+            [
+                "CDS",
+                "potC",
+                "Spermidine/putrescine ABC transporter permease",
+                "[118737:121848](-)"
+            ],
+            [
+                "CDS",
+                "potB",
+                "Spermidine/putrescine ABC transporter permease",
+                "[121832:122825](-)"
+            ],
+            [
+                "CDS",
+                "potA",
+                "Spermidine/putrescine ABC transporter ATP-binding protein",
+                "[122824:123880](-)"
+            ],
+            [
+                "CDS",
+                "rplT",
+                "50S ribosomal protein L20",
+                "[124253:124613](-)"
+            ],
+            [
+                "CDS",
+                "rpmI",
+                "50S ribosomal protein L35",
+                "[124631:124823](-)"
+            ],
+            [
+                "CDS",
+                "infC",
+                "Translation initiation factor IF-3",
+                "[124848:125394](-)"
+            ],
+            [
+                "CDS",
+                "def",
+                "Peptide deformylase",
+                "[125582:126185](-)"
+            ],
+            [
+                "CDS",
+                "rsmD",
+                "16S rRNA (guanine(966)-N(2))-methyltransferase",
+                "[126258:126816](+)"
+            ],
+            [
+                "CDS",
+                "gmk",
+                "Guanylate kinase",
+                "[126818:127712](+)"
+            ],
+            [
+                "CDS",
+                "eno",
+                "Phosphopyruvate hydratase",
+                "[127919:129275](+)"
+            ],
+            [
+                "CDS",
+                "pgpA",
+                "Phosphatidylglycerophosphatase",
+                "[129341:130163](+)"
+            ],
+            [
+                "CDS",
+                "yrrK; yqgF",
+                "Putative pre-16S rRNA nuclease",
+                "[130164:130596](+)"
+            ],
+            [
+                "CDS",
+                "hptA",
+                "Hypoxanthine phosphoribosyltransferase",
+                "[130601:131174](+)"
+            ],
+            [
+                "CDS",
+                "glpK",
+                "Glycerol kinase",
+                "[131273:132791](-)"
+            ],
+            [
+                "CDS",
+                "pfkA",
+                "6-Phosphofructokinase",
+                "[133141:134122](+)"
+            ],
+            [
+                "CDS",
+                "pyk",
+                "Pyruvate kinase",
+                "[134192:135629](+)"
+            ],
+            [
+                "CDS",
+                "thrRS",
+                "Threonine--tRNA ligase",
+                "[135893:137813](+)"
+            ],
+            [
+                "CDS",
+                "pdhC",
+                "Branched-chain alpha-keto acid dehydrogenase subunit E2",
+                "[138323:139649](+)"
+            ],
+            [
+                "CDS",
+                "lpdA",
+                "Dihydrolipoyl dehydrogenase",
+                "[139667:141557](+)"
+            ],
+            [
+                "CDS",
+                "pta",
+                "Phosphate acetyltransferase",
+                "[141578:142547](+)"
+            ],
+            [
+                "CDS",
+                "ackA",
+                "Acetate kinase",
+                "[142559:143741](+)"
+            ],
+            [
+                "CDS",
+                "ptsI",
+                "Phosphoenolpyruvate--protein phosphotransferase",
+                "[143902:145624](+)"
+            ],
+            [
+                "CDS",
+                "crr",
+                "PTS glucose transporter subunit IIA",
+                "[145705:146170](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized protein",
+                "[146278:146461](+)"
+            ],
+            [
+                "CDS",
+                "rpsD",
+                "30S ribosomal protein S4",
+                "[146577:147204](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized protein",
+                "[147458:149246](+)"
+            ],
+            [
+                "CDS",
+                "thiI",
+                "tRNA 4-thiouridine(8) synthase",
+                "[149253:150441](+)"
+            ],
+            [
+                "CDS",
+                "ysxC; yihA",
+                "Ribosome biogenesis GTP-binding protein",
+                "[150613:151204](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized protein",
+                "[151197:151758](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized protein",
+                "[151759:152338](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized protein",
+                "[152340:153030](-)"
+            ],
+            [
+                "CDS",
+                "greA",
+                "Transcription elongation factor",
+                "[153155:153629](-)"
+            ],
+            [
+                "CDS",
+                "uvrC",
+                "Excinuclease ABC subunit C",
+                "[153751:155506](-)"
+            ],
+            [
+                "CDS",
+                "rnjB",
+                "RNase J family beta-CASP ribonuclease",
+                "[155627:157379](-)"
+            ],
+            [
+                "CDS",
+                "nadK",
+                "NAD(+) kinase",
+                "[157515:158313](-)"
+            ],
+            [
+                "CDS",
+                "valRS",
+                "Valine--tRNA ligase",
+                "[158423:161042](-)"
+            ],
+            [
+                "CDS",
+                "rpe",
+                "Ribulose-phosphate 3-epimerase",
+                "[161213:161891](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "Ribosome small subunit-dependent GTPase A",
+                "[161892:162795](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized serine/threonine protein kinase",
+                "[162804:163920](-)"
+            ],
+            [
+                "CDS",
+                "tsaE; yjeE",
+                "tRNA (N6-adenosine(37)-N6)-threonylcarbamoyltransferase complex ATPase",
+                "[164054:164471](+)"
+            ],
+            [
+                "CDS",
+                "tsaB; yeaZ",
+                "tRNA N6-adenosine(37)-N6-threonylcarbamoyltransferase complex dimerization subunit",
+                "[164472:165036](+)"
+            ],
+            [
+                "tRNA",
+                "tRNA-Ser",
+                "tRNA-Ser",
+                "[165577:165667](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized protein",
+                "[165786:166467](+)"
+            ],
+            [
+                "CDS",
+                "proRS",
+                "Proline--tRNA ligase",
+                "[166447:167872](+)"
+            ],
+            [
+                "CDS",
+                "rnhA",
+                "Double-stranded RNA binding RNase HI",
+                "[167884:168502](+)"
+            ],
+            [
+                "CDS",
+                "lepA; EF4",
+                "Elongation factor 4",
+                "[168526:170329](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized protein",
+                "[170354:171161](+)"
+            ],
+            [
+                "CDS",
+                "aspRS",
+                "Aspartate--tRNA ligase",
+                "[171177:172902](-)"
+            ],
+            [
+                "CDS",
+                "hisRS",
+                "Histidine--tRNA ligase",
+                "[172910:174155](-)"
+            ],
+            [
+                "CDS",
+                "rbfA",
+                "Ribosome-binding factor A",
+                "[174339:174693](+)"
+            ],
+            [
+                "CDS",
+                "truB",
+                "tRNA pseudouridine(55) synthase",
+                "[174742:175621](+)"
+            ],
+            [
+                "CDS",
+                "ribF",
+                "FAD synthetase",
+                "[175607:176162](+)"
+            ],
+            [
+                "CDS",
+                "rpsO",
+                "30S ribosomal protein S15",
+                "[176396:176663](+)"
+            ],
+            [
+                "tRNA",
+                "tRNA-Gly",
+                "tRNA-Gly",
+                "[176722:176796](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized protein",
+                "[176893:177538](+)"
+            ],
+            [
+                "CDS",
+                "infB",
+                "Translation initiation factor IF-2",
+                "[177556:179419](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized L7Ae family protein",
+                "[179440:179740](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized protein",
+                "[179726:180008](-)"
+            ],
+            [
+                "CDS",
+                "nusA",
+                "Transcription termination/antitermination protein NusA",
+                "[179988:181743](-)"
+            ],
+            [
+                "CDS",
+                "rimP",
+                "Ribosome assembly cofactor",
+                "[181751:182246](-)"
+            ],
+            [
+                "CDS",
+                "fre",
+                "Flavin reductase",
+                "[182358:183009](-)"
+            ],
+            [
+                "CDS",
+                "polC",
+                "PolC-type DNA polymerase III",
+                "[183021:187470](-)"
+            ],
+            [
+                "CDS",
+                "cdsA",
+                "Phosphatidate cytidylyltransferase",
+                "[187478:188507](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized metallopeptidase",
+                "[188705:189782](-)"
+            ],
+            [
+                "CDS",
+                "trpRS",
+                "Tryptophan--tRNA ligase",
+                "[190226:191237](+)"
+            ],
+            [
+                "CDS",
+                "ecfS",
+                "Uncharacterized ECF transporter S component",
+                "[191372:192107](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized protein",
+                "[192228:192381](+)"
+            ],
+            [
+                "CDS",
+                "tkt",
+                "Transketolase",
+                "[192439:194410](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized protein",
+                "[194425:194671](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized protein",
+                "[196093:197593](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized protein",
+                "[197610:198372](+)"
+            ],
+            [
+                "CDS",
+                "scpA",
+                "Chromosome segregation protein A",
+                "[198381:199218](+)"
+            ],
+            [
+                "CDS",
+                "scpB",
+                "Chromosome segregation protein B",
+                "[199201:199831](+)"
+            ],
+            [
+                "CDS",
+                "rluB",
+                "Uncharacterized pseudouridine synthase",
+                "[199898:200657](+)"
+            ],
+            [
+                "CDS",
+                "dgk",
+                "Deoxyguanosine kinase",
+                "[200666:201284](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized protein",
+                "[201394:202222](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized lipoprotein",
+                "[202896:203616](+)"
+            ],
+            [
+                "CDS",
+                "ppa",
+                "Inorganic diphosphatase",
+                "[204073:204634](-)"
+            ],
+            [
+                "CDS",
+                "ecfS",
+                "Uncharacterized ECF transporter S component",
+                "[204772:205663](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized protein",
+                "[205728:206424](+)"
+            ],
+            [
+                "CDS",
+                "cmk",
+                "Cytidylate kinase",
+                "[206432:207095](+)"
+            ],
+            [
+                "CDS",
+                "engA",
+                "Ribosome biogenesis GTPase",
+                "[207101:208409](+)"
+            ],
+            [
+                "CDS",
+                "hupA",
+                "DNA-binding protein",
+                "[208463:208736](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized protein",
+                "[208790:209339](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized protein",
+                "[209402:209780](+)"
+            ],
+            [
+                "ncRNA",
+                "rnpB",
+                "RNase P RNA component class B",
+                "[210197:210537](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "Ribonuclease Y",
+                "[210711:212241](+)"
+            ],
+            [
+                "CDS",
+                "ffh",
+                "Signal recognition particle protein",
+                "[212274:213618](+)"
+            ],
+            [
+                "CDS",
+                "rlmH",
+                "23S rRNA (pseudouridine(1915)-N3)-methyltransferase",
+                "[213621:214089](+)"
+            ],
+            [
+                "CDS",
+                "rpsP",
+                "30S ribosomal protein S16",
+                "[214179:214458](+)"
+            ],
+            [
+                "CDS",
+                "rimM",
+                "16S rRNA processing protein",
+                "[214489:214984](+)"
+            ],
+            [
+                "CDS",
+                "trmD",
+                "tRNA (guanosine(37)-N1)-methyltransferase",
+                "[214985:215708](+)"
+            ],
+            [
+                "CDS",
+                "rplS",
+                "50S ribosomal protein L19",
+                "[215709:216093](+)"
+            ],
+            [
+                "CDS",
+                "ylqF; rbgA",
+                "L16-binding dependent 50S subunit-maturation GTPase",
+                "[216191:217142](+)"
+            ],
+            [
+                "CDS",
+                "ywjA",
+                "Flippase A",
+                "[217522:219394](+)"
+            ],
+            [
+                "CDS",
+                "ywjA",
+                "Flippase B",
+                "[219409:221263](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized protein",
+                "[221296:222904](+)"
+            ],
+            [
+                "tRNA",
+                "tRNA-Arg",
+                "tRNA-Arg",
+                "[222959:223036](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized protein",
+                "[223089:223830](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized protein",
+                "[223801:224146](+)"
+            ],
+            [
+                "CDS",
+                "obgE",
+                "Ribosome GTPase",
+                "[224216:225518](+)"
+            ],
+            [
+                "CDS",
+                "nadE",
+                "NAD(+) synthase",
+                "[225519:226257](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized protein",
+                "[226273:226552](+)"
+            ],
+            [
+                "CDS",
+                "nadD",
+                "Nicotinate (nicotinamide) nucleotide adenylyltransferase",
+                "[226569:227667](+)"
+            ],
+            [
+                "CDS",
+                "mtnN",
+                "5'-Methylthioadenosine nucleosidase",
+                "[227671:228331](+)"
+            ],
+            [
+                "CDS",
+                "dnk",
+                "Deoxynucleoside kinase",
+                "[228340:228979](+)"
+            ],
+            [
+                "CDS",
+                "mnmA",
+                "tRNA 2-thiouridine(34) synthase",
+                "[229207:230335](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized protein",
+                "[230381:230999](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized protein",
+                "[231074:233219](+)"
+            ],
+            [
+                "CDS",
+                "fmt",
+                "Methionyl-tRNA formyltransferase",
+                "[233208:234162](+)"
+            ],
+            [
+                "CDS",
+                "efp",
+                "Elongation factor P",
+                "[234248:234803](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized protein",
+                "[234820:235123](+)"
+            ],
+            [
+                "CDS",
+                "lon",
+                "Endopeptidase La",
+                "[235261:237622](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized lipoprotein",
+                "[237759:240222](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized efflux ABC transporter permease",
+                "[240371:245633](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized protease",
+                "[245680:246232](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized peptidase",
+                "[246266:248114](+)"
+            ],
+            [
+                "CDS",
+                "ybeY",
+                "rRNA maturation RNase",
+                "[248118:248613](+)"
+            ],
+            [
+                "CDS",
+                "era",
+                "Ribosome GTPase",
+                "[248616:249522](+)"
+            ],
+            [
+                "CDS",
+                "recO",
+                "DNA repair protein",
+                "[249521:250271](+)"
+            ],
+            [
+                "CDS",
+                "glyRS",
+                "Glycine--tRNA ligase",
+                "[250334:251705](+)"
+            ],
+            [
+                "CDS",
+                "dnaG",
+                "DNA primase",
+                "[251739:253578](+)"
+            ],
+            [
+                "CDS",
+                "rpoD",
+                "RNA polymerase subunit sigma",
+                "[253580:255101](+)"
+            ],
+            [
+                "CDS",
+                "trmK; yqfN",
+                "Uncharacterized methyltransferase",
+                "[255100:255778](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized protein",
+                "[255764:256541](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized helicase",
+                "[256549:257911](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized protein",
+                "[257950:259465](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized protein",
+                "[259580:263735](+)"
+            ],
+            [
+                "CDS",
+                "apt",
+                "Adenine phosphoribosyltransferase",
+                "[263746:264259](+)"
+            ],
+            [
+                "CDS",
+                "relA",
+                "Guanosine-3',5'-bis(diphosphate) 3'-pyrophosphohydrolase",
+                "[264341:266606](+)"
+            ],
+            [
+                "CDS",
+                "smc",
+                "Chromosome segregation protein",
+                "[266642:269609](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized protein",
+                "[269914:270304](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "Ribonuclease III",
+                "[270448:271147](-)"
+            ],
+            [
+                "CDS",
+                "plsX",
+                "Phosphate acyltransferase",
+                "[271136:272141](-)"
+            ],
+            [
+                "CDS",
+                "fakA",
+                "Fatty acid kinase subunit A",
+                "[272173:273817](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized protein",
+                "[273841:274153](-)"
+            ],
+            [
+                "CDS",
+                "rpmB",
+                "50S ribosomal protein L28",
+                "[274321:274519](+)"
+            ],
+            [
+                "tRNA",
+                "tRNA-Leu",
+                "tRNA-Leu",
+                "[274582:274667](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized protein",
+                "[274749:275193](+)"
+            ],
+            [
+                "CDS",
+                "pstS",
+                "Phosphate ABC transporter substrate-binding protein",
+                "[275281:276412](+)"
+            ],
+            [
+                "CDS",
+                "pstA",
+                "Phosphate ABC transporter permease",
+                "[276463:278554](+)"
+            ],
+            [
+                "CDS",
+                "pstB",
+                "Phosphate ABC transporter ATP-binding protein",
+                "[278546:279356](+)"
+            ],
+            [
+                "CDS",
+                "phoU",
+                "Phosphate transport system regulatory protein",
+                "[279364:280039](+)"
+            ],
+            [
+                "CDS",
+                "ftsY",
+                "Signal recognition particle-docking protein",
+                "[280105:281335](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized DNA-binding protein",
+                "[281318:281660](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized metallophosphoesterase",
+                "[281647:282421](+)"
+            ],
+            [
+                "CDS",
+                "metK",
+                "Methionine adenosyltransferase",
+                "[282630:283794](+)"
+            ],
+            [
+                "CDS",
+                "cutC",
+                "Uncharacterized protein",
+                "[283784:284468](+)"
+            ],
+            [
+                "CDS",
+                "rlmFO",
+                "23S rRNA (uridine(1939)-m5)-methyltransferase",
+                "[284460:285777](+)"
+            ],
+            [
+                "CDS",
+                "manA",
+                "Mannose-6-phosphate isomerase",
+                "[285802:286732](+)"
+            ],
+            [
+                "CDS",
+                "yhaM",
+                "Putative 3'-5' exoribonuclease",
+                "[286804:287785](+)"
+            ],
+            [
+                "CDS",
+                "hinT",
+                "Uncharacterized protein",
+                "[287815:288214](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized lipoprotein",
+                "[288216:290373](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized lipoprotein",
+                "[290372:293309](-)"
+            ],
+            [
+                "CDS",
+                "iscS",
+                "Cysteine desulfurase",
+                "[293511:294750](+)"
+            ],
+            [
+                "CDS",
+                "iscU",
+                "Iron-sulfur cluster assembly scaffold protein",
+                "[294752:295190](+)"
+            ],
+            [
+                "CDS",
+                "yggN",
+                "5-Formyltetrahydrofolate cyclo-ligase",
+                "[295182:295746](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized peptidase",
+                "[295766:297662](+)"
+            ],
+            [
+                "CDS",
+                "pgi",
+                "Glucose-6-phosphate isomerase",
+                "[297881:299165](+)"
+            ],
+            [
+                "CDS",
+                "dut",
+                "dUTP diphosphatase",
+                "[299197:299701](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized rRNA methyltransferase",
+                "[299717:300485](+)"
+            ],
+            [
+                "CDS",
+                "gapdh",
+                "Glyceraldehyde-3-phosphate dehydrogenase",
+                "[300655:302071](+)"
+            ],
+            [
+                "CDS",
+                "parE",
+                "DNA topoisomerase IV subunit B",
+                "[302257:304189](+)"
+            ],
+            [
+                "CDS",
+                "parC",
+                "DNA topoisomerase IV subunit A",
+                "[304190:306887](+)"
+            ],
+            [
+                "CDS",
+                "ldh",
+                "L-lactate dehydrogenase",
+                "[307122:308079](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized protein",
+                "[308181:308766](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized peptidase",
+                "[308770:310417](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized lipoprotein",
+                "[310639:311077](-)"
+            ],
+            [
+                "CDS",
+                "rpsU",
+                "30S ribosomal protein S21",
+                "[311390:311555](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized peptidase",
+                "[311815:313171](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized peptidase",
+                "[313334:314684](-)"
+            ],
+            [
+                "CDS",
+                "nanE",
+                "N-acetylmannosamine-6-phosphate 2-epimerase",
+                "[314839:315520](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized kinase",
+                "[315578:316454](-)"
+            ],
+            [
+                "CDS",
+                "rpmA",
+                "50S ribosomal protein L27",
+                "[316628:316910](-)"
+            ],
+            [
+                "CDS",
+                "prp;ysxB",
+                "Maturation protease for ribosomal protein L27",
+                "[316911:317226](-)"
+            ],
+            [
+                "CDS",
+                "rplU",
+                "50S ribosomal protein L21",
+                "[317228:317531](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized protein",
+                "[317676:318078](-)"
+            ],
+            [
+                "CDS",
+                "rsmI",
+                "16S rRNA (cytidine(1402)-2'-O)-methyltransferase",
+                "[318100:318988](-)"
+            ],
+            [
+                "CDS",
+                "rpmG",
+                "50S ribosomal protein L33",
+                "[319047:319191](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized lipoprotein",
+                "[319363:320437](+)"
+            ],
+            [
+                "tRNA",
+                "tRNA-Leu",
+                "tRNA-Leu",
+                "[320529:320618](-)"
+            ],
+            [
+                "tRNA",
+                "tRNA-Lys",
+                "tRNA-Lys",
+                "[320628:320704](-)"
+            ],
+            [
+                "tRNA",
+                "tRNA-Gln",
+                "tRNA-Gln",
+                "[320708:320783](-)"
+            ],
+            [
+                "tRNA",
+                "tRNA-Tyr",
+                "tRNA-Tyr",
+                "[320789:320873](-)"
+            ],
+            [
+                "tRNA",
+                "tRNA-Thr",
+                "tRNA-Thr",
+                "[320879:320955](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized protein",
+                "[321081:321705](-)"
+            ],
+            [
+                "CDS",
+                "plsC",
+                "Acyl-phosphate glycerol 3-phosphate acyltransferase",
+                "[321753:322701](-)"
+            ],
+            [
+                "CDS",
+                "acpS",
+                "ACP synthase",
+                "[322857:323190](-)"
+            ],
+            [
+                "CDS",
+                "dctD",
+                "Cytidine deaminase",
+                "[323249:323732](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized protein",
+                "[323734:325036](-)"
+            ],
+            [
+                "CDS",
+                "rluD",
+                "Uncharacterized RNA pseudouridine synthase",
+                "[325028:325961](-)"
+            ],
+            [
+                "CDS",
+                "lspA",
+                "Lipoprotein signal peptidase",
+                "[325941:326550](-)"
+            ],
+            [
+                "CDS",
+                "ileRS",
+                "Isoleucine--tRNA ligase",
+                "[326540:329288](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized hydrolase",
+                "[329980:330970](-)"
+            ],
+            [
+                "CDS",
+                "sepF",
+                "Cell division protein",
+                "[330982:331399](-)"
+            ],
+            [
+                "CDS",
+                "ftsZ",
+                "Cell division protein",
+                "[331410:332568](-)"
+            ],
+            [
+                "CDS",
+                "ftsA",
+                "Cell division protein",
+                "[332682:333843](-)"
+            ],
+            [
+                "CDS",
+                "rsmH; mraW",
+                "16S rRNA (cytosine(1402)-N(4))-methyltransferase",
+                "[333851:334778](-)"
+            ],
+            [
+                "CDS",
+                "mraZ",
+                "Cell division/cell wall cluster transcriptional repressor",
+                "[334786:335188](-)"
+            ],
+            [
+                "CDS",
+                "rpmF",
+                "50S ribosomal protein L32",
+                "[335294:335474](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized protein",
+                "[335488:336007](-)"
+            ],
+            [
+                "CDS",
+                "pheRS",
+                "Phenylalanine--tRNA ligase subunit beta",
+                "[336006:338391](-)"
+            ],
+            [
+                "CDS",
+                "pheS",
+                "Phenylalanine--tRNA ligase subunit alpha",
+                "[338399:339452](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized protein",
+                "[339481:340090](-)"
+            ],
+            [
+                "rRNA",
+                "rrfB",
+                "5S ribosomal RNA",
+                "[340213:340322](-)"
+            ],
+            [
+                "rRNA",
+                "rrlB",
+                "23S ribosomal RNA",
+                "[340383:343297](-)"
+            ],
+            [
+                "rRNA",
+                "rrsB",
+                "16S ribosomal RNA",
+                "[343516:345051](-)"
+            ],
+            [
+                "CDS",
+                "argRS",
+                "Arginine--tRNA ligase",
+                "[345257:346922](-)"
+            ],
+            [
+                "CDS",
+                "frr",
+                "Ribosome recycling factor",
+                "[346923:347472](-)"
+            ],
+            [
+                "CDS",
+                "pyrH",
+                "UMP kinase",
+                "[347482:348196](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized protein",
+                "[348329:348935](-)"
+            ],
+            [
+                "CDS",
+                "tsf",
+                "Translation elongation factor Ts",
+                "[348934:349822](-)"
+            ],
+            [
+                "CDS",
+                "rpsB",
+                "30S ribosomal protein S2",
+                "[349833:350712](-)"
+            ],
+            [
+                "CDS",
+                "dnaJ",
+                "Molecular chaperone",
+                "[350919:352038](-)"
+            ],
+            [
+                "CDS",
+                "dnaK",
+                "Molecular chaperone",
+                "[352101:353877](-)"
+            ],
+            [
+                "CDS",
+                "grpE",
+                "Nucleotide exchange factor",
+                "[353935:354538](-)"
+            ],
+            [
+                "CDS",
+                "hrcA",
+                "Heat-inducible transcription repressor",
+                "[354539:355562](-)"
+            ],
+            [
+                "CDS",
+                "clpB",
+                "ATP-dependent Clp protease subunit B",
+                "[355566:357708](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "tRNA (cytidine(34)-2'-O)-methyltransferase",
+                "[358735:359281](-)"
+            ],
+            [
+                "CDS",
+                "rgdB",
+                "Non-canonical purine NTP pyrophosphatase",
+                "[359293:359896](-)"
+            ],
+            [
+                "CDS",
+                "met14p",
+                "Adenylyl-sulfate kinase",
+                "[360402:361011](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized protein",
+                "[361574:362774](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized protein",
+                "[363270:363549](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized protein",
+                "[363817:363958](-)"
+            ],
+            [
+                "CDS",
+                "rnjA",
+                "Ribonuclease J",
+                "[364771:366604](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized protein",
+                "[366678:367623](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized protein",
+                "[369519:370188](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized protein",
+                "[370370:370679](+)"
+            ],
+            [
+                "CDS",
+                "pgk",
+                "Phosphoglycerate kinase",
+                "[370945:372160](-)"
+            ],
+            [
+                "CDS",
+                "gapDH",
+                "Type I glyceraldehyde-3-phosphate dehydrogenase",
+                "[372271:373288](-)"
+            ],
+            [
+                "CDS",
+                "dnaI",
+                "Primosomal protein",
+                "[373388:374327](-)"
+            ],
+            [
+                "CDS",
+                "dnaB",
+                "Chromosome replication initiation protein",
+                "[374336:375521](-)"
+            ],
+            [
+                "CDS",
+                "mutM",
+                "DNA-formamidopyrimidine glycosylase",
+                "[375677:376502](-)"
+            ],
+            [
+                "CDS",
+                "polA",
+                "DNA polymerase I",
+                "[376512:379248](-)"
+            ],
+            [
+                "CDS",
+                "dnaE",
+                "DNA polymerase III subunit alpha",
+                "[379256:382220](-)"
+            ],
+            [
+                "CDS",
+                "tyrRS",
+                "Tyrosine--tRNA ligase",
+                "[382414:383659](-)"
+            ],
+            [
+                "CDS",
+                "pncB",
+                "Nicotinate phosphoribosyltransferase",
+                "[383667:384729](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized protein",
+                "[384706:385315](-)"
+            ],
+            [
+                "CDS",
+                "fakB",
+                "Fatty acid binding protein",
+                "[385389:386229](+)"
+            ],
+            [
+                "CDS",
+                "fakB",
+                "Fatty acid binding protein",
+                "[386239:387091](+)"
+            ],
+            [
+                "tRNA",
+                "tRNA-Trp",
+                "tRNA-Trp",
+                "[387126:387201](-)"
+            ],
+            [
+                "tRNA",
+                "tRNA-Trp",
+                "tRNA-Trp",
+                "[387238:387314](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized transcriptional regulator",
+                "[387389:387854](-)"
+            ],
+            [
+                "CDS",
+                "acpA",
+                "Acyl carrier protein",
+                "[387854:388076](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized lipoprotein",
+                "[388099:388462](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized protein",
+                "[388448:389519](-)"
+            ],
+            [
+                "tRNA",
+                "tRNA-His",
+                "tRNA-His",
+                "[389619:389695](-)"
+            ],
+            [
+                "CDS",
+                "leuRS",
+                "Leucine--tRNA ligase",
+                "[389881:392296](-)"
+            ],
+            [
+                "tRNA",
+                "tRNA-Ile",
+                "tRNA-Ile",
+                "[392433:392510](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized lipoprotein",
+                "[392582:395372](-)"
+            ],
+            [
+                "CDS",
+                "rpsI",
+                "30S ribosomal protein S9",
+                "[395530:395929](-)"
+            ],
+            [
+                "CDS",
+                "rplM",
+                "50S ribosomal protein L13",
+                "[395928:396384](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized efflux ABC transporter permease",
+                "[396513:400659](-)"
+            ],
+            [
+                "CDS",
+                "truA",
+                "tRNA pseudouridine(38-40) synthase",
+                "[400753:401509](-)"
+            ],
+            [
+                "CDS",
+                "ecfT",
+                "ECF transporter T component",
+                "[401511:402522](-)"
+            ],
+            [
+                "CDS",
+                "ecfA",
+                "ECF transporter ATPase",
+                "[402535:403447](-)"
+            ],
+            [
+                "CDS",
+                "ecfA",
+                "ECF transporter ATPase",
+                "[403434:404661](-)"
+            ],
+            [
+                "CDS",
+                "rplQ",
+                "50S ribosomal protein L17",
+                "[404768:405128](-)"
+            ],
+            [
+                "CDS",
+                "rpoA",
+                "DNA-directed RNA polymerase subunit alpha",
+                "[405147:406101](-)"
+            ],
+            [
+                "CDS",
+                "rpsK",
+                "30S ribosomal protein S11",
+                "[406104:406494](-)"
+            ],
+            [
+                "CDS",
+                "rpsM",
+                "30S ribosomal protein S13",
+                "[406519:406885](-)"
+            ],
+            [
+                "CDS",
+                "rpmJ",
+                "50S ribosomal protein L36",
+                "[406921:407035](-)"
+            ],
+            [
+                "CDS",
+                "infA",
+                "Translation initiation factor IF-1",
+                "[407103:407328](-)"
+            ],
+            [
+                "CDS",
+                "map",
+                "Type I methionyl aminopeptidase",
+                "[407339:408095](-)"
+            ],
+            [
+                "CDS",
+                "adk",
+                "Adenylate kinase",
+                "[408094:408736](-)"
+            ],
+            [
+                "CDS",
+                "secY",
+                "Preprotein translocase subunit",
+                "[408863:410312](-)"
+            ],
+            [
+                "CDS",
+                "rplO",
+                "50S ribosomal protein L15",
+                "[410311:410749](-)"
+            ],
+            [
+                "CDS",
+                "rpsE",
+                "30S ribosomal protein S5",
+                "[410767:411532](-)"
+            ],
+            [
+                "CDS",
+                "rplR",
+                "50S ribosomal protein L18",
+                "[411550:411901](-)"
+            ],
+            [
+                "CDS",
+                "rplF",
+                "50S ribosomal protein L6",
+                "[411926:412469](-)"
+            ],
+            [
+                "CDS",
+                "rpsH",
+                "30S ribosomal protein S8",
+                "[412482:412872](-)"
+            ],
+            [
+                "CDS",
+                "rpsN",
+                "30S ribosomal protein S14",
+                "[412891:413077](-)"
+            ],
+            [
+                "CDS",
+                "rplE",
+                "50S ribosomal protein L5",
+                "[413095:413638](-)"
+            ],
+            [
+                "CDS",
+                "rplX",
+                "50S ribosomal protein L24",
+                "[413656:413983](-)"
+            ],
+            [
+                "CDS",
+                "rplN",
+                "50S ribosomal protein L14",
+                "[413996:414365](-)"
+            ],
+            [
+                "CDS",
+                "rpsQ",
+                "30S ribosomal protein S17",
+                "[414380:414641](-)"
+            ],
+            [
+                "CDS",
+                "rpmC",
+                "50S ribosomal protein L29",
+                "[414637:415054](-)"
+            ],
+            [
+                "CDS",
+                "rplP",
+                "50S ribosomal protein L16",
+                "[415053:415467](-)"
+            ],
+            [
+                "CDS",
+                "rpsC",
+                "30S ribosomal protein S3",
+                "[415469:416171](-)"
+            ],
+            [
+                "CDS",
+                "rplV",
+                "50S ribosomal protein L22",
+                "[416188:416524](-)"
+            ],
+            [
+                "CDS",
+                "rpsS",
+                "30S ribosomal protein S19",
+                "[416547:416814](-)"
+            ],
+            [
+                "CDS",
+                "rplB",
+                "50S ribosomal protein L2",
+                "[416835:417684](-)"
+            ],
+            [
+                "CDS",
+                "rplW",
+                "50S ribosomal protein L23",
+                "[417738:418023](-)"
+            ],
+            [
+                "CDS",
+                "rplD",
+                "50S ribosomal protein L4",
+                "[418022:418649](-)"
+            ],
+            [
+                "CDS",
+                "rplC",
+                "50S ribosomal protein L3",
+                "[418661:419333](-)"
+            ],
+            [
+                "CDS",
+                "rpsJ",
+                "30S ribosomal protein S10",
+                "[419408:419717](-)"
+            ],
+            [
+                "tRNA",
+                "tRNA-Thr",
+                "tRNA-Thr",
+                "[420559:420635](-)"
+            ],
+            [
+                "tRNA",
+                "tRNA-Val",
+                "tRNA-Val",
+                "[420647:420723](-)"
+            ],
+            [
+                "tRNA",
+                "tRNA-Glu",
+                "tRNA-Glu",
+                "[420730:420806](-)"
+            ],
+            [
+                "tRNA",
+                "tRNA-Asn",
+                "tRNA-Asn",
+                "[420813:420889](-)"
+            ],
+            [
+                "CDS",
+                "folD",
+                "Bifunctional 5,10-methylene-tetrahydrofolate dehydrogenase/5,10-methylene-tetrahydrofolate cyclohydrolase",
+                "[420990:421857](-)"
+            ],
+            [
+                "CDS",
+                "natA",
+                "Sodium transporter",
+                "[421865:423467](-)"
+            ],
+            [
+                "CDS",
+                "trkA",
+                "Potassium transporter",
+                "[423545:424274](+)"
+            ],
+            [
+                "CDS",
+                "gatB",
+                "Glutamyl-tRNA amidotransferase subunit B",
+                "[424300:425740](-)"
+            ],
+            [
+                "CDS",
+                "gatA",
+                "Glutamyl-tRNA amidotransferase subunit A",
+                "[425741:427199](-)"
+            ],
+            [
+                "CDS",
+                "gatC",
+                "Glutamyl-tRNA amidotransferase subunit C",
+                "[427198:427495](-)"
+            ],
+            [
+                "CDS",
+                "ligA",
+                "DNA ligase (NAD(+))",
+                "[427496:429503](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized protein",
+                "[429506:431528](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized pseudouridine synthase",
+                "[431530:432439](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized protease",
+                "[432441:433410](-)"
+            ],
+            [
+                "CDS",
+                "ptsH",
+                "Phosphocarrier protein",
+                "[433465:433735](-)"
+            ],
+            [
+                "CDS",
+                "pcrA",
+                "ATP-dependent DNA helicase",
+                "[433799:435968](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized transporter",
+                "[435984:436740](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized glycosyl transferase",
+                "[436739:437696](-)"
+            ],
+            [
+                "CDS",
+                "thiB",
+                "Thiamine ABC transporter permease",
+                "[438117:439866](-)"
+            ],
+            [
+                "CDS",
+                "thiQ",
+                "Thiamine ABC transporter ATP-binding protein",
+                "[439829:440579](-)"
+            ],
+            [
+                "CDS",
+                "thiB",
+                "Thiamine ABC transporter substrate-binding protein",
+                "[440592:442056](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized hydrolase",
+                "[442278:443142](-)"
+            ],
+            [
+                "tRNA",
+                "tRNA-Arg",
+                "tRNA-Arg",
+                "[443478:443555](+)"
+            ],
+            [
+                "tRNA",
+                "tRNA-Pro",
+                "tRNA-Pro",
+                "[443602:443679](+)"
+            ],
+            [
+                "tRNA",
+                "tRNA-Ala",
+                "tRNA-Ala",
+                "[443689:443765](+)"
+            ],
+            [
+                "tRNA",
+                "tRNA-Met",
+                "tRNA-Met",
+                "[443769:443846](+)"
+            ],
+            [
+                "tRNA",
+                "tRNA-Met",
+                "tRNA-Met",
+                "[443857:443934](+)"
+            ],
+            [
+                "tRNA",
+                "tRNA-Ser",
+                "tRNA-Ser",
+                "[443976:444069](+)"
+            ],
+            [
+                "tRNA",
+                "tRNA-Met",
+                "tRNA-Met",
+                "[444091:444167](+)"
+            ],
+            [
+                "tRNA",
+                "tRNA-Asp",
+                "tRNA-Asp",
+                "[444169:444246](+)"
+            ],
+            [
+                "tRNA",
+                "tRNA-Phe",
+                "tRNA-Phe",
+                "[444254:444330](+)"
+            ],
+            [
+                "CDS",
+                "nagB",
+                "Glucosamine-6-phosphate deaminase",
+                "[444437:445172](+)"
+            ],
+            [
+                "CDS",
+                "tpiA",
+                "Triose-phosphate isomerase",
+                "[445269:446016](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized hydrolase",
+                "[446008:446845](+)"
+            ],
+            [
+                "CDS",
+                "pgm",
+                "Phosphoglycerate mutase (2,3-diphosphoglycerate-independent)",
+                "[446847:448443](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized protein",
+                "[448542:449142](+)"
+            ],
+            [
+                "CDS",
+                "deoC",
+                "Deoxyribose-phosphate aldolase",
+                "[449194:449863](-)"
+            ],
+            [
+                "CDS",
+                "deoB",
+                "Phosphopentomutase",
+                "[449874:451551](-)"
+            ],
+            [
+                "CDS",
+                "punA",
+                "Purine-nucleoside phosphorylase",
+                "[451914:452568](+)"
+            ],
+            [
+                "CDS",
+                "nrdE",
+                "Ribonucleotide-diphosphate reductase subunit alpha",
+                "[452720:454883](-)"
+            ],
+            [
+                "CDS",
+                "nrdI",
+                "Ribonucleotide reductase assembly protein",
+                "[454869:455343](-)"
+            ],
+            [
+                "CDS",
+                "nrdF",
+                "Ribonucleoside-diphosphate reductase subunit beta",
+                "[455351:456371](-)"
+            ],
+            [
+                "CDS",
+                "secG",
+                "Preprotein translocase subunit",
+                "[456669:456954](+)"
+            ],
+            [
+                "CDS",
+                "rnr",
+                "Ribonuclease R",
+                "[456989:459104](+)"
+            ],
+            [
+                "CDS",
+                "smpB",
+                "SsrA-binding protein",
+                "[459113:459560](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized protein",
+                "[459559:460045](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized protein",
+                "[460164:460416](+)"
+            ],
+            [
+                "CDS",
+                "ptsG",
+                "PTS sugar transporter",
+                "[460466:462704](+)"
+            ],
+            [
+                "CDS",
+                "mgtA",
+                "Magnesium-translocating P-type ATPase",
+                "[463041:465870](-)"
+            ],
+            [
+                "CDS",
+                "atpC",
+                "F0F1 ATP synthase subunit delta/epsilon",
+                "[466287:466587](-)"
+            ],
+            [
+                "CDS",
+                "atpD",
+                "F0F1 ATP synthase subunit beta",
+                "[466586:468014](-)"
+            ],
+            [
+                "CDS",
+                "atpG",
+                "F0F1 ATP synthase subunit gamma",
+                "[468022:468865](-)"
+            ],
+            [
+                "CDS",
+                "atpA",
+                "F0F1 ATP synthase subunit alpha",
+                "[468866:470444](-)"
+            ],
+            [
+                "CDS",
+                "atpD",
+                "F0F1 ATP synthase subunit delta",
+                "[470455:471001](-)"
+            ],
+            [
+                "CDS",
+                "atpF",
+                "F0F1 ATP synthase subunit B",
+                "[471002:471548](-)"
+            ],
+            [
+                "CDS",
+                "atpE",
+                "F0F1 ATP synthase subunit C",
+                "[471576:471882](-)"
+            ],
+            [
+                "CDS",
+                "atpB",
+                "F0F1 ATP synthase subunit A",
+                "[471911:472775](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized protein",
+                "[472774:473173](-)"
+            ],
+            [
+                "CDS",
+                "upp",
+                "Uracil phosphoribosyltransferase",
+                "[473312:473936](-)"
+            ],
+            [
+                "CDS",
+                "glyA",
+                "Serine hydroxymethyltransferase",
+                "[474035:475277](-)"
+            ],
+            [
+                "CDS",
+                "rpiB",
+                "Ribose 5-phosphate isomerase B",
+                "[475260:475704](-)"
+            ],
+            [
+                "CDS",
+                "rpoC",
+                "DNA-directed RNA polymerase subunit beta'",
+                "[475871:479639](-)"
+            ],
+            [
+                "CDS",
+                "rpoB",
+                "DNA-directed RNA polymerase subunit beta",
+                "[479650:483526](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized protein",
+                "[483515:484691](-)"
+            ],
+            [
+                "CDS",
+                "rplG",
+                "50S ribosomal protein L7/L12",
+                "[484861:485230](-)"
+            ],
+            [
+                "CDS",
+                "rplJ",
+                "50S ribosomal protein L10",
+                "[485298:485796](-)"
+            ],
+            [
+                "CDS",
+                "rplA",
+                "50S ribosomal protein L1",
+                "[486022:486703](-)"
+            ],
+            [
+                "CDS",
+                "rplK",
+                "50S ribosomal protein L11",
+                "[486702:487131](-)"
+            ],
+            [
+                "CDS",
+                "galE",
+                "UDP-glucose 4-epimerase GalE",
+                "[487641:488640](+)"
+            ],
+            [
+                "CDS",
+                "glf",
+                "UDP-galactopyranose mutase",
+                "[488653:489841](+)"
+            ],
+            [
+                "CDS",
+                "whiA",
+                "Uncharacterized DNA-binding protein",
+                "[490470:491400](-)"
+            ],
+            [
+                "CDS",
+                "lgt",
+                "Diacylglyceryl transferase",
+                "[491412:492843](-)"
+            ],
+            [
+                "CDS",
+                "trx",
+                "Thioredoxin-disulfide reductase",
+                "[492851:493784](-)"
+            ],
+            [
+                "CDS",
+                "lgt",
+                "Diacylglyceryl transferase",
+                "[493767:495348](-)"
+            ],
+            [
+                "CDS",
+                "hpr; ptsH",
+                "HPr(Ser) kinase/phosphatase",
+                "[495358:496300](-)"
+            ],
+            [
+                "CDS",
+                "ecfS",
+                "Uncharacterized ECF transporter S component",
+                "[496383:497058](-)"
+            ],
+            [
+                "CDS",
+                "folC",
+                "Dihydrofolate synthase",
+                "[497074:498190](-)"
+            ],
+            [
+                "CDS",
+                "uvrA",
+                "Excinuclease ABC subunit A",
+                "[498182:501023](-)"
+            ],
+            [
+                "CDS",
+                "uvrB",
+                "Excinuclease ABC subunit B",
+                "[501031:503029](-)"
+            ],
+            [
+                "CDS",
+                "yqeN",
+                "DNA polymerase III subunit delta",
+                "[503313:504264](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized protein",
+                "[504266:505733](+)"
+            ],
+            [
+                "tRNA",
+                "tRNA-Cys",
+                "tRNA-Cys",
+                "[505898:505973](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized protein",
+                "[506110:506371](+)"
+            ],
+            [
+                "CDS",
+                "prs",
+                "Phosphoribosylpyrophosphate synthetase",
+                "[506550:507585](+)"
+            ],
+            [
+                "CDS",
+                "pth",
+                "Aminoacyl-tRNA hydrolase",
+                "[508010:508571](+)"
+            ],
+            [
+                "CDS",
+                "rplI",
+                "50S ribosomal protein L9",
+                "[508691:509135](+)"
+            ],
+            [
+                "CDS",
+                "dnaC",
+                "Replicative DNA helicase",
+                "[509137:510454](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized lipoprotein",
+                "[510520:511828](+)"
+            ],
+            [
+                "CDS",
+                "ecfS",
+                "Uncharacterized ECF transporter S component",
+                "[511969:512896](+)"
+            ],
+            [
+                "CDS",
+                "cysRS",
+                "Cysteine--tRNA ligase",
+                "[512904:514230](+)"
+            ],
+            [
+                "CDS",
+                "rlmB",
+                "23S rRNA (guanosine(2251)-2'-O)-methyltransferase",
+                "[514231:514966](+)"
+            ],
+            [
+                "CDS",
+                "rpmG",
+                "50S ribosomal protein L33",
+                "[515026:515188](+)"
+            ],
+            [
+                "CDS",
+                "secE",
+                "Preprotein translocase subunit",
+                "[515187:515511](+)"
+            ],
+            [
+                "CDS",
+                "nusG",
+                "Antitermination protein",
+                "[515527:516169](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized lipoprotein",
+                "[516674:516857](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized protein",
+                "[517022:517253](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized protein",
+                "[517242:517962](-)"
+            ],
+            [
+                "CDS",
+                "topA",
+                "DNA topoisomerase I",
+                "[518164:520126](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized C4-dicarboxylate ABC transporter",
+                "[520381:522148](-)"
+            ],
+            [
+                "CDS",
+                "ychF",
+                "Uncharacterized ATPase",
+                "[522216:523311](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized protein",
+                "[523346:523547](-)"
+            ],
+            [
+                "CDS",
+                "rsmG",
+                "16S rRNA (guanine(527)-N(7))-methyltransferase",
+                "[523548:524244](-)"
+            ],
+            [
+                "CDS",
+                "pgsA",
+                "CDP-diacylglycerol--glycerol-3-phosphate 3-phosphatidyltransferase",
+                "[524243:524840](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized amino acid permease",
+                "[524941:526522](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized protein",
+                "[526668:527349](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized amino acid permease",
+                "[527320:528859](-)"
+            ],
+            [
+                "CDS",
+                "corA",
+                "Magnesium transporter",
+                "[528916:531574](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized MFS transporter",
+                "[531972:533400](-)"
+            ],
+            [
+                "CDS",
+                "mnmG; gidA",
+                "tRNA uridine(34) 5-carboxymethylaminomethyl synthesis enzyme",
+                "[533863:535753](-)"
+            ],
+            [
+                "CDS",
+                "gltP",
+                "Proton-glutamate symporter",
+                "[535900:537478](-)"
+            ],
+            [
+                "CDS",
+                "cdr",
+                "Coenzyme A Disulfide Reductase",
+                "[537497:538841](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized protein",
+                "[539820:540537](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "Uncharacterized hydrolase",
+                "[540536:541331](-)"
+            ],
+            [
+                "CDS",
+                "yidC",
+                "Membrane protein insertase",
+                "[541407:542598](-)"
+            ],
+            [
+                "CDS",
+                "rnpA",
+                "Ribonuclease P protein component",
+                "[542615:542945](-)"
+            ],
+            [
+                "CDS",
+                "rpmH",
+                "50S ribosomal protein L34",
+                "[542951:543086](-)"
+            ]
+        ]
+    }
+]
