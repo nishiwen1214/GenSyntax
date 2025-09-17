@@ -26,6 +26,4 @@ pip install -r requirements.txt
 ## Inference Tasks
 Task 1: Plasmid Host Prediction
 
-Goal: Predict the bacterial host of a plasmid given the list of encoded protein products.
-
-Run: python inference_plasmid_host_predict_task1.py --model your_path/checkpoint --input-json-paths your_path/test_data/gene_task1_test_1000_format_alpaca.json
+python inference_plasmid_host_predict_task1.py --model your_path/checkpoint --input-json-paths your_path/test_data/gene_task1_test_1000_format_alpaca.json
