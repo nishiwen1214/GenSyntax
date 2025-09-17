@@ -1,0 +1,3010 @@
+[
+    {
+        "LOCUS": "CP069346.1",
+        "Assembly": "",
+        "Source": "synthetic bacterium JCVI-Syn3B",
+        "Type": "chromosome",
+        "Protein_products": [
+            [
+                "CDS",
+                "dnaA",
+                "chromosomal replication initiator protein DnaA",
+                "[0:1353](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "DNA polymerase III subunit beta",
+                "[1510:2638](+)"
+            ],
+            [
+                "CDS",
+                "rnmV",
+                "ribonuclease M5",
+                "[2674:3217](+)"
+            ],
+            [
+                "CDS",
+                "rsmA",
+                "16S rRNA (adenine(1518)-N(6)/adenine(1519)-N(6))- dimethyltransferase RsmA",
+                "[3206:4007](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "methyl-accepting chemotaxis protein",
+                "[4063:5155](+)"
+            ],
+            [
+                "CDS",
+                "gyrB",
+                "DNA topoisomerase (ATP-hydrolyzing) subunit B",
+                "[5514:7419](+)"
+            ],
+            [
+                "CDS",
+                "gyrA",
+                "DNA gyrase subunit A",
+                "[7434:9939](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "ABC transporter permease",
+                "[9990:10968](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "ABC transporter permease",
+                "[10967:13535](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "ABC transporter ATP-binding protein",
+                "[13524:15141](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "BMP family ABC transporter substrate-binding protein",
+                "[15152:16799](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "methionine--tRNA ligase",
+                "[16985:18515](-)"
+            ],
+            [
+                "CDS",
+                "hisB",
+                "imidazoleglycerol-phosphate dehydratase HisB",
+                "[18715:19378](-)"
+            ],
+            [
+                "CDS",
+                "pyrF",
+                "orotidine-5'-phosphate decarboxylase",
+                "[19901:20600](+)"
+            ],
+            [
+                "CDS",
+                "tet(M)",
+                "tetracycline resistance ribosomal protection protein Tet(M)",
+                "[21582:23502](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "30S ribosomal protein S18",
+                "[23935:24163](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "single-stranded DNA-binding protein",
+                "[24182:24623](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "30S ribosomal protein S6",
+                "[24634:25048](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "FMN-dependent NADH-azoreductase",
+                "[25439:26039](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "ABC transporter ATP-binding protein",
+                "[26075:27110](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "STREFT protein",
+                "[27370:30529](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "ABC transporter permease",
+                "[30675:36063](+)"
+            ],
+            [
+                "CDS",
+                "ftsH",
+                "ATP-dependent zinc metalloprotease FtsH",
+                "[36228:38175](-)"
+            ],
+            [
+                "CDS",
+                "tilS",
+                "tRNA lysidine(34) synthetase TilS",
+                "[38406:39612](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "MurR/RpiR family transcriptional regulator",
+                "[39614:40442](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "tRNA1(Val) (adenine(37)-N6)-methyltransferase",
+                "[40493:41216](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "DNA polymerase III subunit delta",
+                "[41215:41956](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "dTMP kinase",
+                "[41933:42575](-)"
+            ],
+            [
+                "CDS",
+                "recR",
+                "recombination protein RecR",
+                "[42577:43168](-)"
+            ],
+            [
+                "CDS",
+                "dnaX",
+                "DNA polymerase III subunit gamma/tau",
+                "[43169:45176](-)"
+            ],
+            [
+                "ncRNA",
+                "ffs",
+                "signal recognition particle sRNA small type",
+                "[45344:45440](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "hypothetical protein",
+                "[45563:46178](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "peroxiredoxin",
+                "[46459:46909](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "hypothetical protein",
+                "[47440:48265](+)"
+            ],
+            [
+                "CDS",
+                "serS",
+                "serine--tRNA ligase",
+                "[48347:49616](+)"
+            ],
+            [
+                "CDS",
+                "dusB",
+                "tRNA dihydrouridine synthase DusB",
+                "[49725:50700](+)"
+            ],
+            [
+                "CDS",
+                "lysS",
+                "lysine--tRNA ligase",
+                "[50702:52205](+)"
+            ],
+            [
+                "CDS",
+                "trxA",
+                "thioredoxin",
+                "[52294:52603](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "Cof-type HAD-IIB family hydrolase",
+                "[52613:53456](-)"
+            ],
+            [
+                "rRNA",
+                "rrf",
+                "5S ribosomal RNA",
+                "[53576:53685](-)"
+            ],
+            [
+                "rRNA",
+                "",
+                "23S ribosomal RNA",
+                "[53747:56659](-)"
+            ],
+            [
+                "rRNA",
+                "",
+                "16S ribosomal RNA",
+                "[56887:58410](-)"
+            ],
+            [
+                "tRNA",
+                "",
+                "tRNA-Leu",
+                "[58691:58775](-)"
+            ],
+            [
+                "tRNA",
+                "",
+                "tRNA-Lys",
+                "[58777:58853](-)"
+            ],
+            [
+                "CDS",
+                "asnS",
+                "asparagine--tRNA ligase",
+                "[59322:60687](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "Cof-type HAD-IIB family hydrolase",
+                "[60695:61535](-)"
+            ],
+            [
+                "CDS",
+                "tsaD",
+                "tRNA (adenosine(37)-N6)-threonylcarbamoyltransferase complex transferase subunit TsaD",
+                "[61570:62527](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "DUF2188 domain-containing protein",
+                "[62621:62843](-)"
+            ],
+            [
+                "CDS",
+                "mnmE",
+                "tRNA uridine-5-carboxymethylaminomethyl(34) synthesis GTPase MnmE",
+                "[63042:64401](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "30S ribosomal protein S20",
+                "[64451:64697](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "hypothetical protein",
+                "[64830:65547](-)"
+            ],
+            [
+                "CDS",
+                "secA",
+                "preprotein translocase subunit SecA",
+                "[65661:68496](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "5'-3' exonuclease",
+                "[68660:69572](+)"
+            ],
+            [
+                "CDS",
+                "xseB",
+                "exodeoxyribonuclease VII small subunit",
+                "[69975:70191](-)"
+            ],
+            [
+                "CDS",
+                "xseA",
+                "exodeoxyribonuclease VII large subunit",
+                "[70180:71590](-)"
+            ],
+            [
+                "CDS",
+                "nusB",
+                "transcription antitermination factor NusB",
+                "[71591:71990](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "lipoprotein",
+                "[72001:73114](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "deoxyribonuclease IV",
+                "[73139:74009](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "glycosyltransferase family 2 protein",
+                "[74254:75604](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "glycosyltransferase family 2 protein",
+                "[75677:76598](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "UTP--glucose-1-phosphate uridylyltransferase",
+                "[77045:77918](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "hypothetical protein",
+                "[78102:78543](-)"
+            ],
+            [
+                "CDS",
+                "plsY",
+                "glycerol-3-phosphate 1-O-acyltransferase PlsY",
+                "[78597:79374](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "glutamate--tRNA ligase",
+                "[79569:81021](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "HD domain-containing protein",
+                "[81023:82238](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "DNA-directed RNA polymerase subunit delta",
+                "[82263:82692](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "CTP synthase",
+                "[82783:84382](+)"
+            ],
+            [
+                "CDS",
+                "fba",
+                "class II fructose-1,6-bisphosphate aldolase",
+                "[84670:85564](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "AAA family ATPase",
+                "[85712:86774](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "S8 family peptidase",
+                "[86766:89040](+)"
+            ],
+            [
+                "CDS",
+                "rpmE",
+                "50S ribosomal protein L31",
+                "[89899:90178](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "hypothetical protein",
+                "[90250:92149](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "bifunctional oligoribonuclease/PAP phosphatase NrnA",
+                "[92158:93109](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "thymidine kinase",
+                "[93110:93740](+)"
+            ],
+            [
+                "CDS",
+                "prfA",
+                "peptide chain release factor 1",
+                "[93742:94837](+)"
+            ],
+            [
+                "CDS",
+                "prmC",
+                "peptide chain release factor N(5)-glutamine methyltransferase",
+                "[94829:95678](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "hypothetical protein",
+                "[95686:97159](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "Sua5/YciO/YrdC/YwlC family protein",
+                "[97167:97668](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "hypothetical protein",
+                "[97782:98697](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "hypothetical protein",
+                "[98925:99633](+)"
+            ],
+            [
+                "CDS",
+                "cls",
+                "cardiolipin synthase",
+                "[99632:101162](+)"
+            ],
+            [
+                "CDS",
+                "rpsL",
+                "30S ribosomal protein S12",
+                "[101285:101705](+)"
+            ],
+            [
+                "CDS",
+                "rpsG",
+                "30S ribosomal protein S7",
+                "[101791:102259](+)"
+            ],
+            [
+                "CDS",
+                "fusA",
+                "elongation factor G",
+                "[102283:104353](+)"
+            ],
+            [
+                "CDS",
+                "tuf",
+                "elongation factor Tu",
+                "[104484:105672](+)"
+            ],
+            [
+                "tmRNA",
+                "ssrA",
+                "transfer-messenger RNA",
+                "[105948:106359](+)"
+            ],
+            [
+                "CDS",
+                "alaS",
+                "alanine--tRNA ligase",
+                "[106597:109288](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "hypothetical protein",
+                "[109361:109856](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "ABC transporter permease",
+                "[110073:111318](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "ABC transporter permease",
+                "[111333:112344](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "ATP-binding cassette domain-containing protein",
+                "[112357:114058](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "ABC transporter ATP-binding protein",
+                "[114059:115928](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "ABC transporter substrate-binding protein",
+                "[115944:119046](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "type II toxin-antitoxin system RelB/DinJ family antitoxin",
+                "[119209:119416](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "extracellular solute-binding protein",
+                "[119904:123015](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "ABC transporter permease",
+                "[122999:123992](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "spermidine/putrescine ABC transporter ATP-binding protein",
+                "[123991:125047](-)"
+            ],
+            [
+                "CDS",
+                "rplT",
+                "50S ribosomal protein L20",
+                "[125420:125780](-)"
+            ],
+            [
+                "CDS",
+                "rpmI",
+                "50S ribosomal protein L35",
+                "[125798:125990](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "translation initiation factor IF-3",
+                "[126015:126561](-)"
+            ],
+            [
+                "CDS",
+                "def",
+                "peptide deformylase",
+                "[126749:127352](-)"
+            ],
+            [
+                "CDS",
+                "rsmD",
+                "16S rRNA (guanine(966)-N(2))-methyltransferase RsmD",
+                "[127410:127983](+)"
+            ],
+            [
+                "CDS",
+                "gmk",
+                "guanylate kinase",
+                "[127985:128879](+)"
+            ],
+            [
+                "CDS",
+                "eno",
+                "phosphopyruvate hydratase",
+                "[129086:130442](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "phosphatase PAP2 family protein",
+                "[130508:131330](+)"
+            ],
+            [
+                "CDS",
+                "ruvX",
+                "Holliday junction resolvase RuvX",
+                "[131331:131763](+)"
+            ],
+            [
+                "CDS",
+                "hpt",
+                "hypoxanthine phosphoribosyltransferase",
+                "[131768:132341](+)"
+            ],
+            [
+                "CDS",
+                "glpK",
+                "glycerol kinase GlpK",
+                "[132440:133958](-)"
+            ],
+            [
+                "CDS",
+                "pfkA",
+                "6-phosphofructokinase",
+                "[134308:135289](+)"
+            ],
+            [
+                "CDS",
+                "pyk",
+                "pyruvate kinase",
+                "[135359:136796](+)"
+            ],
+            [
+                "CDS",
+                "thrS",
+                "threonine--tRNA ligase",
+                "[137060:138980](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "2-oxo acid dehydrogenase subunit E2",
+                "[139490:140816](+)"
+            ],
+            [
+                "CDS",
+                "lpdA",
+                "dihydrolipoyl dehydrogenase",
+                "[140834:142724](+)"
+            ],
+            [
+                "CDS",
+                "pta",
+                "phosphate acetyltransferase",
+                "[142745:143714](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "acetate kinase",
+                "[143726:144908](+)"
+            ],
+            [
+                "CDS",
+                "ptsP",
+                "phosphoenolpyruvate--protein phosphotransferase",
+                "[145069:146791](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "PTS glucose transporter subunit IIA",
+                "[146872:147337](+)"
+            ],
+            [
+                "CDS",
+                "rpsD",
+                "30S ribosomal protein S4",
+                "[147744:148371](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "hypothetical protein",
+                "[148625:150413](+)"
+            ],
+            [
+                "CDS",
+                "thiI",
+                "tRNA 4-thiouridine(8) synthase ThiI",
+                "[150420:151608](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "YihA family ribosome biogenesis GTP-binding protein",
+                "[151780:152371](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "hypothetical protein",
+                "[152364:152925](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "hypothetical protein",
+                "[152926:153505](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "hypothetical protein",
+                "[153507:154197](-)"
+            ],
+            [
+                "CDS",
+                "greA",
+                "transcription elongation factor GreA",
+                "[154322:154796](-)"
+            ],
+            [
+                "CDS",
+                "uvrC",
+                "excinuclease ABC subunit C",
+                "[154918:156673](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "ribonuclease J",
+                "[156794:158546](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "NAD(+)/NADH kinase",
+                "[158682:159480](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "valine--tRNA ligase",
+                "[159590:162209](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "thiamine diphosphokinase",
+                "[162298:162391](-)"
+            ],
+            [
+                "CDS",
+                "rpe",
+                "ribulose-phosphate 3-epimerase",
+                "[162380:163058](-)"
+            ],
+            [
+                "CDS",
+                "rsgA",
+                "ribosome small subunit-dependent GTPase A",
+                "[163059:163962](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "serine/threonine protein kinase",
+                "[163971:165087](-)"
+            ],
+            [
+                "CDS",
+                "tsaE",
+                "tRNA (adenosine(37)-N6)-threonylcarbamoyltransferase complex ATPase subunit type 1 TsaE",
+                "[165221:165638](+)"
+            ],
+            [
+                "CDS",
+                "tsaB",
+                "tRNA (adenosine(37)-N6)-threonylcarbamoyltransferase complex dimerization subunit type 1 TsaB",
+                "[165639:166203](+)"
+            ],
+            [
+                "tRNA",
+                "",
+                "tRNA-Ser",
+                "[166744:166834](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "hypothetical protein",
+                "[166953:167634](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "proline--tRNA ligase",
+                "[167614:169039](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "ribonuclease H family protein",
+                "[169051:169669](+)"
+            ],
+            [
+                "CDS",
+                "lepA",
+                "elongation factor 4",
+                "[169693:171496](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "hypothetical protein",
+                "[171521:172328](+)"
+            ],
+            [
+                "CDS",
+                "aspS",
+                "aspartate--tRNA ligase",
+                "[172344:174069](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "histidine--tRNA ligase",
+                "[174077:175322](-)"
+            ],
+            [
+                "CDS",
+                "rbfA",
+                "30S ribosome-binding factor RbfA",
+                "[175506:175860](+)"
+            ],
+            [
+                "CDS",
+                "truB",
+                "tRNA pseudouridine(55) synthase TruB",
+                "[175909:176788](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "adenylyltransferase/cytidyltransferase family protein",
+                "[176774:177329](+)"
+            ],
+            [
+                "CDS",
+                "rpsO",
+                "30S ribosomal protein S15",
+                "[177563:177830](+)"
+            ],
+            [
+                "tRNA",
+                "",
+                "tRNA-Gly",
+                "[177889:177963](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "hypothetical protein",
+                "[178060:178705](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "translation initiation factor IF-2",
+                "[178723:180586](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "ribosomal L7Ae/L30e/S12e/Gadd45 family protein",
+                "[180607:180907](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "YlxR family protein",
+                "[180893:181181](-)"
+            ],
+            [
+                "CDS",
+                "nusA",
+                "transcription termination/antitermination protein NusA",
+                "[181155:182910](-)"
+            ],
+            [
+                "CDS",
+                "rimP",
+                "ribosome maturation factor RimP",
+                "[182918:183413](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "nitroreductase family protein",
+                "[183525:184176](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "PolC-type DNA polymerase III",
+                "[184188:188637](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "phosphatidate cytidylyltransferase",
+                "[188645:189674](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "aminopeptidase P family protein",
+                "[189872:190949](-)"
+            ],
+            [
+                "CDS",
+                "trpS",
+                "tryptophan--tRNA ligase",
+                "[191393:192404](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "folate family ECF transporter S component",
+                "[192539:193274](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "hypothetical protein",
+                "[193395:193548](+)"
+            ],
+            [
+                "CDS",
+                "tkt",
+                "transketolase",
+                "[193606:195577](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "YneF family protein",
+                "[195592:195838](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "hypothetical protein",
+                "[197257:198760](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "hypothetical protein",
+                "[198777:199539](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "segregation/condensation protein A",
+                "[199548:200385](+)"
+            ],
+            [
+                "CDS",
+                "scpB",
+                "SMC-Scp complex subunit ScpB",
+                "[200368:200998](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "rRNA pseudouridine synthase",
+                "[201065:201824](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "deoxynucleoside kinase",
+                "[201833:202451](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "hypothetical protein",
+                "[202561:203389](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "lipoprotein",
+                "[204063:204783](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "inorganic diphosphatase",
+                "[205240:205801](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "ECF transporter S component",
+                "[205939:206830](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "hypothetical protein",
+                "[206895:207591](+)"
+            ],
+            [
+                "CDS",
+                "cmk",
+                "(d)CMP kinase",
+                "[207599:208262](+)"
+            ],
+            [
+                "CDS",
+                "der",
+                "ribosome biogenesis GTPase Der",
+                "[208268:209576](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "HU family DNA-binding protein",
+                "[209630:209903](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "DnaD family protein",
+                "[209957:210506](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "DivIVA domain-containing protein",
+                "[210569:210947](+)"
+            ],
+            [
+                "ncRNA",
+                "rnpB",
+                "RNase P RNA component class B",
+                "[211364:211704](+)"
+            ],
+            [
+                "CDS",
+                "rny",
+                "ribonuclease Y",
+                "[211878:213408](+)"
+            ],
+            [
+                "CDS",
+                "ffh",
+                "signal recognition particle protein",
+                "[213441:214785](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "23S rRNA (pseudouridine(1915)-N(3))-methyltransferase RlmH",
+                "[214788:215256](+)"
+            ],
+            [
+                "CDS",
+                "rpsP",
+                "30S ribosomal protein S16",
+                "[215346:215625](+)"
+            ],
+            [
+                "CDS",
+                "rimM",
+                "16S rRNA processing protein RimM",
+                "[215656:216151](+)"
+            ],
+            [
+                "CDS",
+                "trmD",
+                "tRNA (guanosine(37)-N1)-methyltransferase TrmD",
+                "[216152:216875](+)"
+            ],
+            [
+                "CDS",
+                "rplS",
+                "50S ribosomal protein L19",
+                "[216876:217260](+)"
+            ],
+            [
+                "CDS",
+                "ylqF",
+                "ribosome biogenesis GTPase YlqF",
+                "[217358:218309](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "ABC transporter ATP-binding protein",
+                "[218689:220561](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "ATP-binding cassette domain-containing protein",
+                "[220576:222430](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "hypothetical protein",
+                "[222463:224071](+)"
+            ],
+            [
+                "tRNA",
+                "",
+                "tRNA-Arg",
+                "[224126:224203](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "hypothetical protein",
+                "[224256:224997](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "hypothetical protein",
+                "[224968:225313](+)"
+            ],
+            [
+                "CDS",
+                "obgE",
+                "GTPase ObgE",
+                "[225383:226685](+)"
+            ],
+            [
+                "CDS",
+                "nadE",
+                "NAD(+) synthase",
+                "[226686:227424](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "TIGR04561 family membrane protein",
+                "[227440:227719](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "nicotinate-nucleotide adenylyltransferase",
+                "[227736:228834](+)"
+            ],
+            [
+                "CDS",
+                "mtnN",
+                "5'-methylthioadenosine/S-adenosylhomocysteine nucleosidase",
+                "[228838:229498](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "deoxynucleoside kinase",
+                "[229507:230146](+)"
+            ],
+            [
+                "CDS",
+                "mnmA",
+                "tRNA 2-thiouridine(34) synthase MnmA",
+                "[230374:231502](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "hypothetical protein",
+                "[231548:232166](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "DUF2779 domain-containing protein",
+                "[232241:234386](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "methionyl-tRNA formyltransferase",
+                "[234375:235329](+)"
+            ],
+            [
+                "CDS",
+                "efp",
+                "elongation factor P",
+                "[235415:235970](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "hypothetical protein",
+                "[235987:236290](+)"
+            ],
+            [
+                "CDS",
+                "lon",
+                "endopeptidase La",
+                "[236428:238789](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "MOLPALP family lipoprotein",
+                "[238926:241389](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "ABC transporter permease",
+                "[241538:246800](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "DJ-1/PfpI family protein",
+                "[246847:247399](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "peptidase C39",
+                "[247451:249281](+)"
+            ],
+            [
+                "CDS",
+                "ybeY",
+                "rRNA maturation RNase YbeY",
+                "[249285:249780](+)"
+            ],
+            [
+                "CDS",
+                "era",
+                "GTPase Era",
+                "[249783:250689](+)"
+            ],
+            [
+                "CDS",
+                "recO",
+                "DNA repair protein RecO",
+                "[250688:251438](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "glycine--tRNA ligase",
+                "[251501:252872](+)"
+            ],
+            [
+                "CDS",
+                "dnaG",
+                "DNA primase",
+                "[252906:254745](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "sigma-70 family RNA polymerase sigma factor",
+                "[254747:256268](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "SAM-dependent methyltransferase",
+                "[256267:256945](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "Nif3-like dinuclear metal center hexameric protein",
+                "[256931:257708](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "DEAD/DEAH box helicase",
+                "[257716:259078](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "YitT family protein",
+                "[259117:260632](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "protein translocase",
+                "[260747:264902](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "adenine phosphoribosyltransferase",
+                "[264913:265426](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "bifunctional (p)ppGpp synthetase/guanosine-3',5'-bis(diphosphate) 3'-pyrophosphohydrolase",
+                "[265508:267773](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "chromosome segregation protein SMC",
+                "[267809:270776](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "hypothetical protein",
+                "[271081:271471](-)"
+            ],
+            [
+                "CDS",
+                "rnc",
+                "ribonuclease III",
+                "[271615:272314](-)"
+            ],
+            [
+                "CDS",
+                "plsX",
+                "phosphate acyltransferase PlsX",
+                "[272303:273308](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "DAK2 domain-containing protein",
+                "[273340:274984](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "Asp23/Gls24 family envelope stress response protein",
+                "[275008:275320](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "50S ribosomal protein L28",
+                "[275488:275686](+)"
+            ],
+            [
+                "tRNA",
+                "",
+                "tRNA-Leu",
+                "[275749:275834](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "hypothetical protein",
+                "[275916:276360](+)"
+            ],
+            [
+                "CDS",
+                "ptsS",
+                "phosphate ABC transporter substrate-binding protein",
+                "[276448:277579](+)"
+            ],
+            [
+                "CDS",
+                "pstA",
+                "phosphate ABC transporter permease PstA",
+                "[277630:279721](+)"
+            ],
+            [
+                "CDS",
+                "pstB",
+                "phosphate ABC transporter ATP-binding protein",
+                "[279713:280523](+)"
+            ],
+            [
+                "CDS",
+                "phoU",
+                "phosphate signaling complex protein PhoU",
+                "[280531:281206](+)"
+            ],
+            [
+                "CDS",
+                "ftsY",
+                "signal recognition particle-docking protein FtsY",
+                "[281272:282502](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "putative DNA-binding protein",
+                "[282485:282827](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "TIGR00282 family metallophosphoesterase",
+                "[282814:283588](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "methionine adenosyltransferase",
+                "[283797:284961](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "copper homeostasis protein CutC",
+                "[284951:285635](+)"
+            ],
+            [
+                "CDS",
+                "trmFO",
+                "methylenetetrahydrofolate--tRNA-(uracil(54)- C(5))-methyltransferase (FADH(2)-oxidizing) TrmFO",
+                "[285627:286944](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "mannose-6-phosphate isomerase",
+                "[286969:287899](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "HD domain-containing protein",
+                "[287971:288952](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "HIT family protein",
+                "[288982:289381](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "lipoprotein",
+                "[289383:291540](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "lipoprotein",
+                "[291539:294476](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "aminotransferase class V-fold PLP-dependent enzyme",
+                "[294678:295917](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "iron-sulfur cluster assembly scaffold protein",
+                "[295919:296357](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "5-formyltetrahydrofolate cyclo-ligase",
+                "[296349:296913](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "M13 family metallopeptidase",
+                "[296933:298829](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "glucose-6-phosphate isomerase",
+                "[299048:300332](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "dUTP diphosphatase",
+                "[300364:300868](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "RNA methyltransferase",
+                "[300884:301652](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "NADP-dependent glyceraldehyde-3-phosphate dehydrogenase",
+                "[301822:303238](+)"
+            ],
+            [
+                "CDS",
+                "parE",
+                "DNA topoisomerase IV subunit B",
+                "[303424:305356](+)"
+            ],
+            [
+                "CDS",
+                "parC",
+                "DNA topoisomerase IV subunit A",
+                "[305357:308054](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "L-lactate dehydrogenase",
+                "[308289:309246](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "hypothetical protein",
+                "[309348:309933](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "hypothetical protein",
+                "[309937:311584](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "lipoprotein",
+                "[311806:312244](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "30S ribosomal protein S21",
+                "[312557:312722](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "leucyl aminopeptidase family protein",
+                "[312982:314338](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "M20 family metallopeptidase",
+                "[314501:315851](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "N-acetylmannosamine-6-phosphate 2-epimerase",
+                "[316006:316687](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "ROK family protein",
+                "[316745:317621](-)"
+            ],
+            [
+                "CDS",
+                "rpmA",
+                "50S ribosomal protein L27",
+                "[317795:318077](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "ribosomal-processing cysteine protease Prp",
+                "[318078:318393](-)"
+            ],
+            [
+                "CDS",
+                "rplU",
+                "50S ribosomal protein L21",
+                "[318395:318698](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "hypothetical protein",
+                "[318843:319245](-)"
+            ],
+            [
+                "CDS",
+                "rsmI",
+                "16S rRNA (cytidine(1402)-2'-O)-methyltransferase",
+                "[319267:320155](-)"
+            ],
+            [
+                "CDS",
+                "rpmG",
+                "50S ribosomal protein L33",
+                "[320214:320358](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "lipoprotein",
+                "[320530:321604](+)"
+            ],
+            [
+                "tRNA",
+                "",
+                "tRNA-Leu",
+                "[321696:321785](-)"
+            ],
+            [
+                "tRNA",
+                "",
+                "tRNA-Lys",
+                "[321795:321871](-)"
+            ],
+            [
+                "tRNA",
+                "",
+                "tRNA-Gln",
+                "[321875:321950](-)"
+            ],
+            [
+                "tRNA",
+                "",
+                "tRNA-Tyr",
+                "[321956:322040](-)"
+            ],
+            [
+                "tRNA",
+                "",
+                "tRNA-Thr",
+                "[322046:322122](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "hypothetical protein",
+                "[322248:322872](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "1-acyl-sn-glycerol-3-phosphate acyltransferase",
+                "[322920:323859](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "4'-phosphopantetheinyl transferase superfamily protein",
+                "[324024:324357](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "dCMP deaminase family protein",
+                "[324416:324899](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "hypothetical protein",
+                "[324901:326203](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "RluA family pseudouridine synthase",
+                "[326195:327128](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "signal peptidase II",
+                "[327108:327717](-)"
+            ],
+            [
+                "CDS",
+                "ileS",
+                "isoleucine--tRNA ligase",
+                "[327707:330455](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "alpha/beta fold hydrolase",
+                "[331147:332137](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "cell division protein SepF",
+                "[332149:332566](-)"
+            ],
+            [
+                "CDS",
+                "ftsZ",
+                "cell division protein FtsZ",
+                "[332577:333735](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "cell division FtsA domain-containing protein",
+                "[333849:335010](-)"
+            ],
+            [
+                "CDS",
+                "rsmH",
+                "16S rRNA (cytosine(1402)-N(4))-methyltransferase RsmH",
+                "[335018:335945](-)"
+            ],
+            [
+                "CDS",
+                "mraZ",
+                "division/cell wall cluster transcriptional repressor MraZ",
+                "[335953:336355](-)"
+            ],
+            [
+                "CDS",
+                "rpmF",
+                "50S ribosomal protein L32",
+                "[336461:336641](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "DUF177 domain-containing protein",
+                "[336655:337174](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "phenylalanine--tRNA ligase subunit beta",
+                "[337173:339558](-)"
+            ],
+            [
+                "CDS",
+                "pheS",
+                "phenylalanine--tRNA ligase subunit alpha",
+                "[339566:340619](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "hypothetical protein",
+                "[340648:341257](-)"
+            ],
+            [
+                "rRNA",
+                "rrf",
+                "5S ribosomal RNA",
+                "[341380:341489](-)"
+            ],
+            [
+                "rRNA",
+                "",
+                "23S ribosomal RNA",
+                "[341551:344463](-)"
+            ],
+            [
+                "rRNA",
+                "",
+                "16S ribosomal RNA",
+                "[344691:346214](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "arginine--tRNA ligase",
+                "[346424:348089](-)"
+            ],
+            [
+                "CDS",
+                "frr",
+                "ribosome recycling factor",
+                "[348090:348639](-)"
+            ],
+            [
+                "CDS",
+                "pyrH",
+                "UMP kinase",
+                "[348649:349363](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "hypothetical protein",
+                "[349496:350102](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "elongation factor Ts",
+                "[350101:350989](-)"
+            ],
+            [
+                "CDS",
+                "rpsB",
+                "30S ribosomal protein S2",
+                "[351000:351879](-)"
+            ],
+            [
+                "CDS",
+                "dnaJ",
+                "molecular chaperone DnaJ",
+                "[352086:353205](-)"
+            ],
+            [
+                "CDS",
+                "dnaK",
+                "molecular chaperone DnaK",
+                "[353268:355044](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "nucleotide exchange factor GrpE",
+                "[355102:355705](-)"
+            ],
+            [
+                "CDS",
+                "hrcA",
+                "heat-inducible transcription repressor HrcA",
+                "[355706:356729](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "AAA family ATPase",
+                "[356733:358875](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "Cof-type HAD-IIB family hydrolase",
+                "[359037:359903](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "tRNA (cytidine(34)-2'-O)-methyltransferase",
+                "[359902:360448](-)"
+            ],
+            [
+                "CDS",
+                "rdgB",
+                "RdgB/HAM1 family non-canonical purine NTP pyrophosphatase",
+                "[360460:361063](-)"
+            ],
+            [
+                "CDS",
+                "cysC",
+                "adenylyl-sulfate kinase",
+                "[361569:362178](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "DUF2130 domain-containing protein",
+                "[362741:364214](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "hypothetical protein",
+                "[364437:364716](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "hypothetical protein",
+                "[364984:365125](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "ribonuclease J",
+                "[365938:367771](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "hypothetical protein",
+                "[367845:368790](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "hypothetical protein",
+                "[368921:370684](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "LemA family protein",
+                "[370686:371355](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "hypothetical protein",
+                "[371537:371846](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "phosphoglycerate kinase",
+                "[372112:373327](-)"
+            ],
+            [
+                "CDS",
+                "gap",
+                "type I glyceraldehyde-3-phosphate dehydrogenase",
+                "[373438:374455](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "ATP-binding protein",
+                "[374555:375494](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "DnaD domain protein",
+                "[375503:376688](-)"
+            ],
+            [
+                "CDS",
+                "mutM",
+                "DNA-formamidopyrimidine glycosylase",
+                "[376844:377669](-)"
+            ],
+            [
+                "CDS",
+                "polA",
+                "DNA polymerase I",
+                "[377679:380415](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "DNA polymerase III subunit alpha",
+                "[380423:383387](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "tyrosine--tRNA ligase",
+                "[383581:384826](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "nicotinate phosphoribosyltransferase",
+                "[384834:385896](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "hypothetical protein",
+                "[385873:386506](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "DegV family protein",
+                "[386556:387396](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "DegV family protein",
+                "[387406:388258](+)"
+            ],
+            [
+                "tRNA",
+                "",
+                "tRNA-Trp",
+                "[388293:388368](-)"
+            ],
+            [
+                "tRNA",
+                "",
+                "tRNA-Trp",
+                "[388405:388481](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "transcriptional repressor",
+                "[388556:389021](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "acyl carrier protein",
+                "[389021:389243](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "lipoprotein",
+                "[389266:389629](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "hypothetical protein",
+                "[389615:390686](-)"
+            ],
+            [
+                "tRNA",
+                "",
+                "tRNA-His",
+                "[390786:390862](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "leucine--tRNA ligase",
+                "[391048:393463](-)"
+            ],
+            [
+                "tRNA",
+                "",
+                "tRNA-Ile",
+                "[393600:393677](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "MOLPALP family lipoprotein",
+                "[393749:396539](-)"
+            ],
+            [
+                "CDS",
+                "rpsI",
+                "30S ribosomal protein S9",
+                "[396697:397096](-)"
+            ],
+            [
+                "CDS",
+                "rplM",
+                "50S ribosomal protein L13",
+                "[397095:397551](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "ABC transporter permease",
+                "[397680:401826](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "tRNA pseudouridine synthase A",
+                "[401920:402676](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "energy-coupling factor transporter transmembrane protein EcfT",
+                "[402678:403689](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "energy-coupling factor transporter ATPase",
+                "[403702:404614](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "energy-coupling factor transporter ATPase",
+                "[404601:405828](-)"
+            ],
+            [
+                "CDS",
+                "rplQ",
+                "50S ribosomal protein L17",
+                "[405935:406295](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "DNA-directed RNA polymerase subunit alpha",
+                "[406314:407268](-)"
+            ],
+            [
+                "CDS",
+                "rpsK",
+                "30S ribosomal protein S11",
+                "[407271:407661](-)"
+            ],
+            [
+                "CDS",
+                "rpsM",
+                "30S ribosomal protein S13",
+                "[407686:408052](-)"
+            ],
+            [
+                "CDS",
+                "rpmJ",
+                "50S ribosomal protein L36",
+                "[408088:408202](-)"
+            ],
+            [
+                "CDS",
+                "infA",
+                "translation initiation factor IF-1",
+                "[408270:408495](-)"
+            ],
+            [
+                "CDS",
+                "map",
+                "type I methionyl aminopeptidase",
+                "[408506:409262](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "adenylate kinase",
+                "[409261:409903](-)"
+            ],
+            [
+                "CDS",
+                "secY",
+                "preprotein translocase subunit SecY",
+                "[410030:411479](-)"
+            ],
+            [
+                "CDS",
+                "rplO",
+                "50S ribosomal protein L15",
+                "[411478:411916](-)"
+            ],
+            [
+                "CDS",
+                "rpsE",
+                "30S ribosomal protein S5",
+                "[411934:412699](-)"
+            ],
+            [
+                "CDS",
+                "rplR",
+                "50S ribosomal protein L18",
+                "[412717:413068](-)"
+            ],
+            [
+                "CDS",
+                "rplF",
+                "50S ribosomal protein L6",
+                "[413093:413636](-)"
+            ],
+            [
+                "CDS",
+                "rpsH",
+                "30S ribosomal protein S8",
+                "[413649:414039](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "type Z 30S ribosomal protein S14",
+                "[414058:414244](-)"
+            ],
+            [
+                "CDS",
+                "rplE",
+                "50S ribosomal protein L5",
+                "[414262:414805](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "50S ribosomal protein L24",
+                "[414823:415150](-)"
+            ],
+            [
+                "CDS",
+                "rplN",
+                "50S ribosomal protein L14",
+                "[415163:415532](-)"
+            ],
+            [
+                "CDS",
+                "rpsQ",
+                "30S ribosomal protein S17",
+                "[415547:415808](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "50S ribosomal protein L29",
+                "[415804:416221](-)"
+            ],
+            [
+                "CDS",
+                "rplP",
+                "50S ribosomal protein L16",
+                "[416220:416634](-)"
+            ],
+            [
+                "CDS",
+                "rpsC",
+                "30S ribosomal protein S3",
+                "[416636:417338](-)"
+            ],
+            [
+                "CDS",
+                "rplV",
+                "50S ribosomal protein L22",
+                "[417355:417691](-)"
+            ],
+            [
+                "CDS",
+                "rpsS",
+                "30S ribosomal protein S19",
+                "[417714:417981](-)"
+            ],
+            [
+                "CDS",
+                "rplB",
+                "50S ribosomal protein L2",
+                "[418002:418851](-)"
+            ],
+            [
+                "CDS",
+                "rplW",
+                "50S ribosomal protein L23",
+                "[418905:419190](-)"
+            ],
+            [
+                "CDS",
+                "rplD",
+                "50S ribosomal protein L4",
+                "[419189:419816](-)"
+            ],
+            [
+                "CDS",
+                "rplC",
+                "50S ribosomal protein L3",
+                "[419828:420500](-)"
+            ],
+            [
+                "CDS",
+                "rpsJ",
+                "30S ribosomal protein S10",
+                "[420575:420884](-)"
+            ],
+            [
+                "tRNA",
+                "",
+                "tRNA-Thr",
+                "[421726:421802](-)"
+            ],
+            [
+                "tRNA",
+                "",
+                "tRNA-Val",
+                "[421814:421890](-)"
+            ],
+            [
+                "tRNA",
+                "",
+                "tRNA-Glu",
+                "[421897:421973](-)"
+            ],
+            [
+                "tRNA",
+                "",
+                "tRNA-Asn",
+                "[421980:422056](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "bifunctional 5,10-methylenetetrahydrofolate dehydrogenase/5,10-methenyltetrahydrofolate cyclohydrolase",
+                "[422157:423024](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "TrkH family potassium uptake protein",
+                "[423032:424634](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "TrkA family potassium uptake protein",
+                "[424712:425441](+)"
+            ],
+            [
+                "CDS",
+                "gatB",
+                "Asp-tRNA(Asn)/Glu-tRNA(Gln) amidotransferase subunit GatB",
+                "[425467:426907](-)"
+            ],
+            [
+                "CDS",
+                "gatA",
+                "Asp-tRNA(Asn)/Glu-tRNA(Gln) amidotransferase subunit GatA",
+                "[426908:428366](-)"
+            ],
+            [
+                "CDS",
+                "gatC",
+                "Asp-tRNA(Asn)/Glu-tRNA(Gln) amidotransferase subunit GatC",
+                "[428365:428662](-)"
+            ],
+            [
+                "CDS",
+                "ligA",
+                "NAD-dependent DNA ligase LigA",
+                "[428663:430670](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "hypothetical protein",
+                "[430673:432695](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "RluA family pseudouridine synthase",
+                "[432697:433606](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "CPBP family intramembrane metalloprotease",
+                "[433608:434577](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "HPr family phosphocarrier protein",
+                "[434632:434902](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "UvrD-helicase domain-containing protein",
+                "[434966:437135](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "RDD family protein",
+                "[437151:437907](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "glycosyltransferase family 2 protein",
+                "[437906:438863](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "ABC transporter permease subunit",
+                "[439284:441033](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "ATP-binding cassette domain-containing protein",
+                "[440996:441746](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "ABC transporter substrate-binding protein",
+                "[441759:443223](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "Cof-type HAD-IIB family hydrolase",
+                "[443445:444309](-)"
+            ],
+            [
+                "tRNA",
+                "",
+                "tRNA-Arg",
+                "[444645:444722](+)"
+            ],
+            [
+                "tRNA",
+                "",
+                "tRNA-Pro",
+                "[444769:444846](+)"
+            ],
+            [
+                "tRNA",
+                "",
+                "tRNA-Ala",
+                "[444856:444932](+)"
+            ],
+            [
+                "tRNA",
+                "",
+                "tRNA-Met",
+                "[444936:445013](+)"
+            ],
+            [
+                "tRNA",
+                "",
+                "tRNA-Ile",
+                "[445024:445101](+)"
+            ],
+            [
+                "tRNA",
+                "",
+                "tRNA-Ser",
+                "[445143:445236](+)"
+            ],
+            [
+                "tRNA",
+                "",
+                "tRNA-Met",
+                "[445258:445334](+)"
+            ],
+            [
+                "tRNA",
+                "",
+                "tRNA-Asp",
+                "[445336:445413](+)"
+            ],
+            [
+                "tRNA",
+                "",
+                "tRNA-Phe",
+                "[445421:445497](+)"
+            ],
+            [
+                "CDS",
+                "nagB",
+                "glucosamine-6-phosphate deaminase",
+                "[445604:446339](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "triose-phosphate isomerase",
+                "[446436:447183](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "HAD-IIB family hydrolase",
+                "[447175:448012](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "2,3-bisphosphoglycerate-independent phosphoglycerate mutase",
+                "[448014:449610](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "hypothetical protein",
+                "[449709:450309](+)"
+            ],
+            [
+                "CDS",
+                "deoC",
+                "deoxyribose-phosphate aldolase",
+                "[450361:451030](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "phospho-sugar mutase",
+                "[451041:452718](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "purine-nucleoside phosphorylase",
+                "[453081:453735](+)"
+            ],
+            [
+                "CDS",
+                "nrdE",
+                "class 1b ribonucleoside-diphosphate reductase subunit alpha",
+                "[453887:456050](-)"
+            ],
+            [
+                "CDS",
+                "nrdI",
+                "class Ib ribonucleoside-diphosphate reductase assembly flavoprotein NrdI",
+                "[456036:456510](-)"
+            ],
+            [
+                "CDS",
+                "nrdF",
+                "class 1b ribonucleoside-diphosphate reductase subunit beta",
+                "[456518:457538](-)"
+            ],
+            [
+                "CDS",
+                "secG",
+                "preprotein translocase subunit SecG",
+                "[457836:458121](+)"
+            ],
+            [
+                "CDS",
+                "rnr",
+                "ribonuclease R",
+                "[458156:460271](+)"
+            ],
+            [
+                "CDS",
+                "smpB",
+                "SsrA-binding protein SmpB",
+                "[460280:460727](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "hypothetical protein",
+                "[460726:461212](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "hypothetical protein",
+                "[461331:461583](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "PTS transporter subunit EIIC",
+                "[461633:463871](+)"
+            ],
+            [
+                "CDS",
+                "mgtA",
+                "magnesium-translocating P-type ATPase",
+                "[464208:467037](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "F0F1 ATP synthase subunit epsilon",
+                "[467454:467754](-)"
+            ],
+            [
+                "CDS",
+                "atpD",
+                "F0F1 ATP synthase subunit beta",
+                "[467753:469181](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "F0F1 ATP synthase subunit gamma",
+                "[469189:470032](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "F0F1 ATP synthase subunit alpha",
+                "[470033:471611](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "F0F1 ATP synthase subunit delta",
+                "[471622:472168](-)"
+            ],
+            [
+                "CDS",
+                "atpF",
+                "F0F1 ATP synthase subunit B",
+                "[472169:472715](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "F0F1 ATP synthase subunit C",
+                "[472743:473049](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "F0F1 ATP synthase subunit A",
+                "[473078:473942](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "MG406 family protein",
+                "[473941:474340](-)"
+            ],
+            [
+                "CDS",
+                "upp",
+                "uracil phosphoribosyltransferase",
+                "[474479:475103](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "serine hydroxymethyltransferase",
+                "[475202:476444](-)"
+            ],
+            [
+                "CDS",
+                "rpiB",
+                "ribose 5-phosphate isomerase B",
+                "[476427:476871](-)"
+            ],
+            [
+                "CDS",
+                "rpoC",
+                "DNA-directed RNA polymerase subunit beta'",
+                "[477038:480806](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "DNA-directed RNA polymerase subunit beta",
+                "[480817:484693](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "hypothetical protein",
+                "[484682:485858](-)"
+            ],
+            [
+                "CDS",
+                "rplL",
+                "50S ribosomal protein L7/L12",
+                "[486028:486397](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "50S ribosomal protein L10",
+                "[486465:486963](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "50S ribosomal protein L1",
+                "[487189:487870](-)"
+            ],
+            [
+                "CDS",
+                "rplK",
+                "50S ribosomal protein L11",
+                "[487869:488298](-)"
+            ],
+            [
+                "CDS",
+                "galE",
+                "UDP-glucose 4-epimerase GalE",
+                "[488808:489807](+)"
+            ],
+            [
+                "CDS",
+                "glf",
+                "UDP-galactopyranose mutase",
+                "[489820:491008](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "hypothetical protein",
+                "[491093:491231](+)"
+            ],
+            [
+                "CDS",
+                "whiA",
+                "DNA-binding protein WhiA",
+                "[491637:492567](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "prolipoprotein diacylglyceryl transferase",
+                "[492579:494010](-)"
+            ],
+            [
+                "CDS",
+                "trxB",
+                "thioredoxin-disulfide reductase",
+                "[494018:494951](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "prolipoprotein diacylglyceryl transferase",
+                "[494934:496515](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "HPr kinase/phosphorylase",
+                "[496525:497467](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "folate family ECF transporter S component",
+                "[497550:498225](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "dihydrofolate synthase",
+                "[498241:499357](-)"
+            ],
+            [
+                "CDS",
+                "uvrA",
+                "excinuclease ABC subunit UvrA",
+                "[499349:502190](-)"
+            ],
+            [
+                "CDS",
+                "uvrB",
+                "excinuclease ABC subunit UvrB",
+                "[502198:504196](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "DNA polymerase III subunit delta",
+                "[504480:505431](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "hypothetical protein",
+                "[505433:506900](+)"
+            ],
+            [
+                "tRNA",
+                "",
+                "tRNA-Cys",
+                "[507065:507140](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "hypothetical protein",
+                "[507277:507538](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "ribose-phosphate diphosphokinase",
+                "[507717:508752](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "aminoacyl-tRNA hydrolase",
+                "[509177:509738](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "50S ribosomal protein L9",
+                "[509858:510302](+)"
+            ],
+            [
+                "CDS",
+                "dnaB",
+                "replicative DNA helicase",
+                "[510304:511621](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "lipoprotein",
+                "[511687:512995](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "ECF transporter S component",
+                "[513136:514063](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "cysteine--tRNA ligase",
+                "[514071:515397](+)"
+            ],
+            [
+                "CDS",
+                "rlmB",
+                "23S rRNA (guanosine(2251)-2'-O)-methyltransferase RlmB",
+                "[515398:516133](+)"
+            ],
+            [
+                "CDS",
+                "rpmG",
+                "50S ribosomal protein L33",
+                "[516193:516355](+)"
+            ],
+            [
+                "CDS",
+                "secE",
+                "preprotein translocase subunit SecE",
+                "[516354:516678](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "transcription termination/antitermination protein NusG",
+                "[516694:517336](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "lipoprotein",
+                "[517772:518024](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "hypothetical protein",
+                "[518189:518420](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "hypothetical protein",
+                "[518409:519129](-)"
+            ],
+            [
+                "CDS",
+                "topA",
+                "type I DNA topoisomerase",
+                "[519331:521293](+)"
+            ],
+            [
+                "CDS",
+                "",
+                "YfcC family protein",
+                "[521548:523315](-)"
+            ],
+            [
+                "CDS",
+                "ychF",
+                "redox-regulated ATPase YchF",
+                "[523383:524478](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "DUF951 domain-containing protein",
+                "[524513:524714](-)"
+            ],
+            [
+                "CDS",
+                "rsmG",
+                "16S rRNA (guanine(527)-N(7))-methyltransferase RsmG",
+                "[524715:525411](-)"
+            ],
+            [
+                "CDS",
+                "pgsA",
+                "CDP-diacylglycerol--glycerol-3-phosphate 3-phosphatidyltransferase",
+                "[525410:526007](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "APC family permease",
+                "[526108:527689](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "hypothetical protein",
+                "[527835:528516](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "APC family permease",
+                "[528487:530026](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "HAD-IC family P-type ATPase",
+                "[530083:532741](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "MFS transporter",
+                "[533139:534567](-)"
+            ],
+            [
+                "CDS",
+                "mnmG",
+                "tRNA uridine-5-carboxymethylaminomethyl(34) synthesis enzyme MnmG",
+                "[535030:536920](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "dicarboxylate/amino acid:cation symporter",
+                "[537067:538645](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "CoA-disulfide reductase",
+                "[538664:540008](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "hypothetical protein",
+                "[540565:540931](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "phosphotransferase",
+                "[540987:541704](-)"
+            ],
+            [
+                "CDS",
+                "",
+                "Cof-type HAD-IIB family hydrolase",
+                "[541703:542498](-)"
+            ],
+            [
+                "CDS",
+                "yidC",
+                "membrane protein insertase YidC",
+                "[542574:543765](-)"
+            ],
+            [
+                "CDS",
+                "rnpA",
+                "ribonuclease P protein component",
+                "[543782:544112](-)"
+            ],
+            [
+                "CDS",
+                "rpmH",
+                "50S ribosomal protein L34",
+                "[544118:544253](-)"
+            ]
+        ]
+    }
+]
