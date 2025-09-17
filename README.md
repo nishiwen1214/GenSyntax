@@ -36,10 +36,10 @@ python inference_unknown_gene_task2.py --model checkpoint--input-json-paths test
 
 python inference_genome_assembly_task3.py --model checkpoint --input-json-paths test_data/gene_task3_test_500_contig3_format.json 
 
-### Task 4: Gene Essentiality Prediction
+##### Task 4: Gene Essentiality Prediction
 
 python inference_essential_genes_task4.py --model checkpoint --input-json-paths test_data/gene_task4_test_1000_format.json 
 
-### Task 5: Minimal Genome Prediction
+##### Task 5: Minimal Genome Prediction
 
 python minimal_genome_inference.py --model checkpoint --input-json test_data/bacteria_chromosomes_9-mini.json
