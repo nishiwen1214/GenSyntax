@@ -29,8 +29,8 @@ pip install -r requirements.txt
 ```bash
 python inference_task1.py \
     --model checkpoint \
-    --input-json-paths test_data/gene_task1_test_1000_format.json```
-
+    --input-json-paths test_data/gene_task1_test_1000_format.json
+```
 ##### Task 2: Unknown Product Prediction
 
 ```bash
@@ -44,18 +44,19 @@ python inference_task2.py \
 ```bash
 python inference_task3.py \
     --model checkpoint \
-    --input-json-paths test_data/gene_task3_test_500_contig3_format.json```
-
+    --input-json-paths test_data/gene_task3_test_500_contig3_format.json
+```
 ##### Task 4: Gene Essentiality Prediction
 
 ```bash
 python inference_task4.py \
     --model checkpoint \
-    --input-json-paths test_data/gene_task4_test_1000_format.json```
-
+    --input-json-paths test_data/gene_task4_test_1000_format.json
+```
 ##### Task 5: Minimal Genome Prediction
 
 ```bash
 python minimal_genome_inference.py \
     --model checkpoint \
-    --input-json-paths test_data/bacteria_chromosomes_9-mini.json```
+    --input-json-paths test_data/bacteria_chromosomes_9-mini.json
+```
