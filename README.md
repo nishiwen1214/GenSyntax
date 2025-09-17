@@ -13,21 +13,16 @@ model_name = "shuaimin4588/GenoVerse"
 
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModelForCausalLM.from_pretrained(model_name, device_map="auto")
-
+```
 ## Installation
-
 Clone this repository and install the required dependencies:
 git clone https://github.com/your-repo/GenoVerse.git
 cd GenoVerse
 pip install -r requirements.txt
 
 ## Inference Tasks
-
-We provide five inference tasks that evaluate the genome reasoning abilities of LLMs.
-Each task has a dedicated Python script under the tasks/ folder.
-
 Task 1: Plasmid Host Prediction
 
 Goal: Predict the bacterial host of a plasmid given the list of encoded protein products.
 
-Input Example:
+Run: python inference_plasmid_host_predict_task1.py --model your_path/checkpoint --input-json-paths your_path/test_data/gene_task1_test_1000_format_alpaca.json
