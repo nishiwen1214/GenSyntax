@@ -1,4 +1,4 @@
-# GenoVerse
+# GenoVerse 🧬
 ## Model
 We release our fine-tuned genome inference model on Hugging Face:
 
