@@ -16,8 +16,11 @@ model = AutoModelForCausalLM.from_pretrained(model_name, device_map="auto")
 ```
 ## Installation
 Clone this repository and install the required dependencies:
+
 git clone https://github.com/your-repo/GenoVerse.git
+
 cd GenoVerse
+
 pip install -r requirements.txt
 
 ## Inference Tasks
