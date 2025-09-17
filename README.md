@@ -14,6 +14,12 @@ model_name = "shuaimin4588/GenoVerse"
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModelForCausalLM.from_pretrained(model_name, device_map="auto")
 ```
+## Data
+We release our data on HuggingFace:
+
+👉 [GenoVerse on HuggingFace](https://huggingface.co/datasets/ShiwenNi/GenoVerse-data)
+
+
 ## Installation
 Clone this repository and install the required dependencies:
 
