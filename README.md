@@ -24,6 +24,16 @@ cd GenoVerse
 pip install -r requirements.txt
 
 ## Inference Tasks
-Task 1: Plasmid Host Prediction
+### Task 1: Plasmid Host Prediction
 
-python inference_plasmid_host_predict_task1.py --model your_path/checkpoint --input-json-paths your_path/test_data/gene_task1_test_1000_format_alpaca.json
+python inference_plasmid_host_predict_task1.py --model checkpoint --input-json-paths test_data/gene_task1_test_1000_format_alpaca.json
+
+### Task 2: Unknown Product Prediction
+
+python inference_unknown_gene_task2.py --model checkpoint--input-json-paths test_data/gene_task2_test_500_opts_alpaca.json
+
+### Task 3: Genome Assembly
+
+### Task 4: Gene Essentiality Prediction
+
+### Task 5: Minimal Genome Prediction
