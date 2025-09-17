@@ -36,8 +36,8 @@ python inference_task1.py \
 ```bash
 python inference_task2.py \
     --model checkpoint \
-    --input-json-paths test_data/gene_task2_test_500_opts.json```
-
+    --input-json-paths test_data/gene_task2_test_500_opts.json
+```
 
 ##### Task 3: Genome Assembly
 
