@@ -41,3 +41,5 @@ python inference_genome_assembly_task3.py --model checkpoint --input-json-paths 
 python inference_essential_genes_task4.py --model checkpoint --input-json-paths test_data/gene_task4_test_1000_format.json 
 
 ### Task 5: Minimal Genome Prediction
+
+python minimal_genome_inference.py --model checkpoint --input-json test_data/bacteria_chromosomes_9-mini.json
