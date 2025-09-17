@@ -26,14 +26,18 @@ pip install -r requirements.txt
 ## Inference Tasks
 ### Task 1: Plasmid Host Prediction
 
-python inference_plasmid_host_predict_task1.py --model checkpoint --input-json-paths test_data/gene_task1_test_1000_format_alpaca.json
+python inference_plasmid_host_predict_task1.py --model checkpoint --input-json-paths test_data/gene_task1_test_1000_format.json
 
 ### Task 2: Unknown Product Prediction
 
-python inference_unknown_gene_task2.py --model checkpoint--input-json-paths test_data/gene_task2_test_500_opts_alpaca.json
+python inference_unknown_gene_task2.py --model checkpoint--input-json-paths test_data/gene_task2_test_500_opts.json
 
 ### Task 3: Genome Assembly
 
+python inference_genome_assembly_task3.py --model checkpoint --input-json-paths test_data/gene_task3_test_500_contig3_format.json 
+
 ### Task 4: Gene Essentiality Prediction
+
+python inference_essential_genes_task4.py --model checkpoint --input-json-paths test_data/gene_task4_test_1000_format.json 
 
 ### Task 5: Minimal Genome Prediction
