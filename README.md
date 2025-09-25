@@ -17,7 +17,7 @@ model = AutoModelForCausalLM.from_pretrained(model_name, device_map="auto")
 ## Data
 We release our data on HuggingFace:
 
-👉 [GenoVerse on HuggingFace](https://huggingface.co/datasets/ShiwenNi/GenoVerse-data)
+👉 [Datasets on HuggingFace](https://huggingface.co/datasets/ShiwenNi/GenoVerse-data)
 
 
 ## Installation
