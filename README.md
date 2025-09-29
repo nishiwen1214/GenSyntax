@@ -1,8 +1,8 @@
-# GenoVerse 🧬
+# GenSyntax 🧬
 ## Model
 We release our fine-tuned genome inference model on Hugging Face:
 
-👉 [GenSyntax on HuggingFace](https://huggingface.co/shuaimin4588/GenoVerse)
+👉 [GenSyntax on HuggingFace](https://huggingface.co/shuaimin4588/GenSyntax)
 
 You can load it in Python as follows:
 
@@ -17,7 +17,7 @@ model = AutoModelForCausalLM.from_pretrained(model_name, device_map="auto")
 ## Data
 We release our data on HuggingFace:
 
-👉 [Datasets on HuggingFace](https://huggingface.co/datasets/ShiwenNi/GenoVerse-data)
+👉 [Datasets on HuggingFace](https://huggingface.co/datasets/ShiwenNi/GenSyntax-data)
 
 
 ## Installation
