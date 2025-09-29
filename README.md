@@ -2,7 +2,7 @@
 ## Model
 We release our fine-tuned genome inference model on Hugging Face:
 
-👉 [GenoVerse on HuggingFace](https://huggingface.co/shuaimin4588/GenoVerse)
+👉 [GenSyntax on HuggingFace](https://huggingface.co/shuaimin4588/GenoVerse)
 
 You can load it in Python as follows:
 
@@ -23,7 +23,7 @@ We release our data on HuggingFace:
 ## Installation
 Clone this repository and install the required dependencies:
 
-git clone https://github.com/your-repo/GenoVerse.git
+git clone https://github.com/your-repo/GenSyntax.git
 
 cd GenoVerse
 
