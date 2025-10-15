@@ -37,14 +37,14 @@ pip install -r requirements.txt
 ##### Plasmid Host Prediction
 
 ```bash
-python inference_task1.py \
+python Plasmid_host_identification.py \
     --model checkpoint \
     --input-json-paths test_data/gene_task1_test_1000_format.json
 ```
-##### Unknown Product Prediction
+##### Gene Function Prediction
 
 ```bash
-python inference_task2.py \
+python Gene_function_prediction.py \
     --model checkpoint \
     --input-json-paths test_data/gene_task2_test_500_opts.json
 ```
@@ -52,14 +52,14 @@ python inference_task2.py \
 ##### Genome Assembly
 
 ```bash
-python inference_task3.py \
+python Genome_assembly.py \
     --model checkpoint \
     --input-json-paths test_data/gene_task3_test_500_contig3_format.json
 ```
 ##### Gene Essentiality Prediction
 
 ```bash
-python inference_task4.py \
+python Gene_essentiality_prediction.py \
     --model checkpoint \
     --input-json-paths test_data/gene_task4_test_1000_format.json
 ```
