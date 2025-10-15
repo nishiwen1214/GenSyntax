@@ -14,10 +14,14 @@ model_name = "shuaimin4588/GenoVerse"
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModelForCausalLM.from_pretrained(model_name, device_map="auto")
 ```
+## Hardware
+A single 4090 GPU is sufficient for model deployment and inference.
+
 ## Data
 We release our data on HuggingFace:
 
 👉 [Datasets on HuggingFace](https://huggingface.co/datasets/ShiwenNi/GenSyntax-data)
+(This includes the complete test sets for each task, as well as the training data and test data for cell phenotype prediction.)
 
 
 ## Installation
@@ -30,14 +34,14 @@ cd GenoVerse
 pip install -r requirements.txt
 
 ## Inference Tasks
-##### Task 1: Plasmid Host Prediction
+##### Plasmid Host Prediction
 
 ```bash
 python inference_task1.py \
     --model checkpoint \
     --input-json-paths test_data/gene_task1_test_1000_format.json
 ```
-##### Task 2: Unknown Product Prediction
+##### Unknown Product Prediction
 
 ```bash
 python inference_task2.py \
@@ -45,21 +49,21 @@ python inference_task2.py \
     --input-json-paths test_data/gene_task2_test_500_opts.json
 ```
 
-##### Task 3: Genome Assembly
+##### Genome Assembly
 
 ```bash
 python inference_task3.py \
     --model checkpoint \
     --input-json-paths test_data/gene_task3_test_500_contig3_format.json
 ```
-##### Task 4: Gene Essentiality Prediction
+##### Gene Essentiality Prediction
 
 ```bash
 python inference_task4.py \
     --model checkpoint \
     --input-json-paths test_data/gene_task4_test_1000_format.json
 ```
-##### Task 5: Minimal Genome Prediction
+##### Derivation of minimal genomes
 
 ```bash
 python minimal_genome_inference.py \
