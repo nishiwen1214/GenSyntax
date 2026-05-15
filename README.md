@@ -1,4 +1,5 @@
-<img width="687" height="262" alt="image" src="https://github.com/user-attachments/assets/417f961d-7640-47e5-974e-2cc96f3f5cd0" />
+<img width="1504" height="426" alt="image" src="https://github.com/user-attachments/assets/0655cd14-3abc-4463-935a-7adb489e05e9" />
+
 
 ## Model
 We release our fine-tuned genome inference model on Hugging Face:
