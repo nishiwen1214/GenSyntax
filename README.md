@@ -1,4 +1,3 @@
-# GenSyntax 🧬
 <img width="687" height="262" alt="image" src="https://github.com/user-attachments/assets/417f961d-7640-47e5-974e-2cc96f3f5cd0" />
 
 ## Model
