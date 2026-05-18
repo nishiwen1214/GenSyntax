@@ -4,14 +4,14 @@
 ## Model
 We release our fine-tuned genome inference model on Hugging Face:
 
-👉 [GenSyntax on HuggingFace](https://huggingface.co/shuaimin4588/GenSyntax)
+👉 [GenSyntax on HuggingFace](https://huggingface.co/MoonTideF/Llama-GenSyntax)
 
 You can load it in Python as follows:
 
 ```python
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
-model_name = "shuaimin4588/GenoVerse"
+model_name = "MoonTideF/Llama-GenSyntax"
 
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModelForCausalLM.from_pretrained(model_name, device_map="auto")

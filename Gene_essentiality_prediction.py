@@ -86,8 +86,7 @@ def run_inference(
     model_name = Path(model_path).name
     llm = LLM(
         model=model_path,
-        tensor_parallel_size=tensor_parallel_size,
-        rope_scaling={"rope_type": "yarn", "factor": 4.0, "original_max_position_embeddings": 40960}
+        tensor_parallel_size=tensor_parallel_size
     )
 
     for json_path in input_json_paths:

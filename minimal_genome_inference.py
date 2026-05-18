@@ -143,8 +143,7 @@ def main():
 
     llm = LLM(
         model=args.model_path,
-        tensor_parallel_size=args.tensor_parallel_size,
-        rope_scaling={"rope_type": "yarn", "factor": 4.0, "original_max_position_embeddings": 40960}
+        tensor_parallel_size=args.tensor_parallel_size
     )
 
     sampling_params = SamplingParams(
