@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GenSyntax - Genome Inference Platform</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-inner">
+            <div class="logo">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="2"/>
+                        <path d="M8 16C8 11.58 11.58 8 16 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M16 8C20.42 8 24 11.58 24 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M24 16C24 20.42 20.42 24 16 24" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M16 24C11.58 24 8 20.42 8 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <circle cx="16" cy="12" r="2" fill="currentColor"/>
+                        <circle cx="20" cy="18" r="2" fill="currentColor"/>
+                        <circle cx="12" cy="18" r="2" fill="currentColor"/>
+                    </svg>
+                </div>
+                <div class="logo-text">
+                    <h1>GenSyntax</h1>
+                    <span>Genome Inference Platform</span>
+                </div>
+            </div>
+            <div class="header-badge">Powered by LLM</div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Mode Tabs -->
+        <div class="mode-tabs">
+            <button class="mode-tab active" data-mode="single" onclick="switchMode('single')">
+                <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18">
+                    <path d="M10 2a8 8 0 100 16 8 8 0 000-16zm1 11H9v-2h2v2zm0-4H9V5h2v4z"/>
+                </svg>
+                Single Prediction
+            </button>
+            <button class="mode-tab" data-mode="batch" onclick="switchMode('batch')">
+                <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18">
+                    <path d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 0v12h8V4H6zm1 2h6v2H7V6zm0 4h6v2H7v-2zm0 4h4v2H7v-2z"/>
+                </svg>
+                Batch Prediction
+            </button>
+        </div>
+
+        <!-- Single Input Mode -->
+        <div id="single-mode" class="mode-panel active">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Single Prediction</h2>
+                    <p>Select a task and enter input data for instant prediction</p>
+                </div>
+                <div class="card-body">
+                    <!-- Task Selector -->
+                    <div class="form-group">
+                        <label for="task-select">Task</label>
+                        <div class="select-wrapper">
+                            <select id="task-select" onchange="onTaskChange()">
+                                <option value="">-- Select a task --</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Template Form (fill-in-the-blank, shown for structured tasks) -->
+                    <div id="template-form-group" class="form-group" style="display:none;">
+                        <label>Input Data</label>
+                        <div id="template-form" class="template-editor"></div>
+                    </div>
+
+                    <!-- Text Input Area (hidden for file-mode tasks and template tasks) -->
+                    <div id="single-text-group" class="form-group">
+                        <label for="input-text">Input Data</label>
+                        <textarea id="input-text" placeholder="Select a task first..." rows="6"></textarea>
+                    </div>
+
+                    <!-- File Upload Area (shown for file-mode tasks, e.g. Minimal Genome) -->
+                    <div id="single-file-group" class="form-group" style="display:none;">
+                        <label>Upload JSON File</label>
+                        <div id="single-drop-zone" class="drop-zone" onclick="document.getElementById('single-file-input').click()">
+                            <input type="file" id="single-file-input" accept=".json" style="display:none" onchange="onSingleFileSelect(event)">
+                            <svg viewBox="0 0 20 20" fill="currentColor" width="32" height="32" class="drop-icon">
+                                <path d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"/>
+                            </svg>
+                            <p class="drop-text">Click or drag JSON file here</p>
+                            <p class="drop-hint">Upload a genome JSON file (.json)</p>
+                        </div>
+                        <div id="single-file-info" class="file-info" style="display:none;"></div>
+                        <!-- Format hint shown only for minimal_genome task -->
+                        <div id="minimal-genome-hint" class="format-hint" style="display:none;">
+                            <strong>Expected JSON format</strong> (same as test set):
+                            <pre>[{
+  "LOCUS": "CP016816.2",
+  "Assembly": "",
+  "Source": "synthetic bacterium JCVI-Syn3A",
+  "Type": "chromosome",
+  "Protein_products": [
+    ["CDS", "dnaA", "Chromosomal replication initiator protein", "[0:1353](+)"],
+    ["CDS", "dnaN", "DNA polymerase III subunit beta", "[1510:2638](+)"],
+    ...
+  ]
+}]</pre>
+                        </div>
+                    </div>
+
+                    <!-- Submit -->
+                    <button id="predict-btn" class="btn-primary" onclick="predictSingle()" disabled>
+                        <span class="btn-text">Run Prediction</span>
+                        <span class="btn-loading" style="display:none;">
+                            <span class="spinner"></span> Processing...
+                        </span>
+                    </button>
+                    <div id="predict-hint" class="predict-hint" style="display:none;"></div>
+                </div>
+            </div>
+
+            <!-- Result -->
+            <div id="result-panel" class="card result-card" style="display:none;">
+                <div class="card-header">
+                    <h2>Prediction Result</h2>
+                    <button class="btn-copy" onclick="copyResult()" title="Copy result">
+                        <svg viewBox="0 0 20 20" fill="currentColor" width="16" height="16">
+                            <path d="M8 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z"/>
+                            <path d="M6 3a2 2 0 00-2 2v11a2 2 0 002 2h8a2 2 0 002-2V5a2 2 0 00-2-2 1 1 0 110-2 4 4 0 014 4v11a4 4 0 01-4 4H6a4 4 0 01-4-4V5a4 4 0 014-4 1 1 0 010 2z"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="card-body">
+                    <div id="result-text" class="result-text"></div>
+                </div>
+            </div>
+
+            <!-- Error -->
+            <div id="error-panel" class="card error-card" style="display:none;">
+                <div class="card-body">
+                    <div class="error-content">
+                        <svg viewBox="0 0 20 20" fill="currentColor" width="20" height="20">
+                            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"/>
+                        </svg>
+                        <span id="error-text"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Batch Mode -->
+        <div id="batch-mode" class="mode-panel">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Batch Prediction</h2>
+                    <p>Upload a JSON file with test data for batch prediction</p>
+                </div>
+                <div class="card-body">
+                    <!-- Task Selector -->
+                    <div class="form-group">
+                        <label for="batch-task-select">Task</label>
+                        <div class="select-wrapper">
+                            <select id="batch-task-select">
+                                <option value="">-- Select a task --</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- File Upload -->
+                    <div class="form-group">
+                        <label>Upload Test Data</label>
+                        <div id="drop-zone" class="drop-zone" onclick="document.getElementById('file-input').click()">
+                            <input type="file" id="file-input" accept=".json" style="display:none" onchange="onFileSelect(event)">
+                            <svg viewBox="0 0 20 20" fill="currentColor" width="32" height="32" class="drop-icon">
+                                <path d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"/>
+                            </svg>
+                            <p class="drop-text">Click or drag JSON file here</p>
+                            <p class="drop-hint">Format: <code>[{"Input": "...", "Output": "..."}, ...]</code></p>
+                        </div>
+                        <div id="file-info" class="file-info" style="display:none;"></div>
+                    </div>
+
+                    <!-- Submit -->
+                    <button id="batch-predict-btn" class="btn-primary" onclick="predictBatch()" disabled>
+                        <span class="btn-text">Run Batch Prediction</span>
+                        <span class="btn-loading" style="display:none;">
+                            <span class="spinner"></span> Processing...
+                        </span>
+                    </button>
+
+                    <!-- Progress -->
+                    <div id="progress-bar" class="progress-bar" style="display:none;">
+                        <div id="progress-fill" class="progress-fill"></div>
+                    </div>
+                    <div id="progress-text" class="progress-text" style="display:none;"></div>
+                </div>
+            </div>
+
+            <!-- Batch Results -->
+            <div id="batch-result-panel" class="card result-card" style="display:none;">
+                <div class="card-header">
+                    <h2>Batch Results</h2>
+                    <button class="btn-download" onclick="downloadResults()">
+                        <svg viewBox="0 0 20 20" fill="currentColor" width="16" height="16">
+                            <path d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"/>
+                        </svg>
+                        Download
+                    </button>
+                </div>
+                <div class="card-body">
+                    <div id="batch-summary" class="batch-summary"></div>
+                    <div id="batch-results-list" class="batch-results-list"></div>
+                </div>
+            </div>
+
+            <!-- Batch Error -->
+            <div id="batch-error-panel" class="card error-card" style="display:none;">
+                <div class="card-body">
+                    <div class="error-content">
+                        <svg viewBox="0 0 20 20" fill="currentColor" width="20" height="20">
+                            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"/>
+                        </svg>
+                        <span id="batch-error-text"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>GenSyntax &mdash; Human-Interpretable Genome Inference</p>
+    </footer>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
