@@ -29,7 +29,7 @@ We release our data on HuggingFace:
 ## Installation
 Clone this repository and install the required dependencies:
 
-git clone https://github.com/your-repo/GenSyntax.git
+git clone https://github.com/nishiwen1214/GenSyntax.git
 
 cd GenoVerse
 
