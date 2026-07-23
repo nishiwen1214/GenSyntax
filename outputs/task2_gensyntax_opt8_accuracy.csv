@@ -1,0 +1,2 @@
+option_count,sample_count,correct,total,unresolved,original_accuracy_percent,mean_percent,standard_deviation_percent,ci_lower_percent,ci_upper_percent,mean_unresolved,valid_replicates
+8,500,365,500,0,73.0,72.972,1.8126424708895938,69.99,75.81,0.0,100

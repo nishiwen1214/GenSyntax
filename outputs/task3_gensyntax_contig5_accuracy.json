@@ -1,0 +1,27 @@
+{
+  "task": "Task 3: circular contig-order prediction",
+  "settings": {
+    "contig_count": 5,
+    "allow_reverse": false,
+    "bootstrap_replicates": 100,
+    "confidence_level": 0.9,
+    "confidence_interval_method": "two-sided percentile bootstrap",
+    "random_seed": 42,
+    "references": "GenSyntax-data/Data/gene_task3_test_500_contig5_format.json",
+    "predictions": "predictions/gensyntax_predictions_task3-contig5.txt"
+  },
+  "results": {
+    "contig_count": 5,
+    "sample_count": 500,
+    "correct": 359,
+    "total": 500,
+    "unresolved": 0,
+    "original_accuracy_percent": 71.8,
+    "mean_percent": 71.624,
+    "standard_deviation_percent": 1.8129233048010924,
+    "ci_lower_percent": 68.59,
+    "ci_upper_percent": 74.4,
+    "mean_unresolved": 0.0,
+    "valid_replicates": 100
+  }
+}

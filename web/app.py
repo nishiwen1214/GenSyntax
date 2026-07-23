@@ -21,7 +21,7 @@ app.add_middleware(
 
 BASE_DIR = Path(__file__).resolve().parent
 VLLM_URL = os.environ.get("VLLM_API_URL", "http://localhost:8000").rstrip("/")
-MODEL_NAME = os.environ.get("MODEL_NAME", "shuaimin4588/GenSyntax")
+MODEL_NAME = os.environ.get("MODEL_NAME", "MoonTideF/Llama-GenSyntax")
 
 TASK_CONFIG = {
     "plasmid_host": {
@@ -39,11 +39,11 @@ TASK_CONFIG = {
         "placeholder": "Enter gene information for function prediction...",
     },
     "genome_assembly": {
-        "name": "Genome Assembly",
+        "name": "Contig Order Prediction",
         "prompt_template": '{input}',
         "has_system": True,
         "max_tokens": 1024,
-        "placeholder": "Enter contig sequences for genome assembly...",
+        "placeholder": "Enter the contig-order prediction prompt...",
     },
     "gene_essentiality": {
         "name": "Gene Essentiality Prediction",

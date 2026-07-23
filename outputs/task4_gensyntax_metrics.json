@@ -1,0 +1,126 @@
+{
+  "task": "Task 4: binary gene-essentiality prediction",
+  "settings": {
+    "positive_class_for_essential_metrics": "essential",
+    "unresolved_prediction_policy": "Counted as incorrect for accuracy and as a false negative for the corresponding reference class",
+    "bootstrap_replicates": 100,
+    "confidence_level": 0.9,
+    "confidence_interval_method": "two-sided percentile bootstrap",
+    "random_seed": 42,
+    "references": "GenSyntax-data/Data/gene_task4_test_1000_format.json",
+    "predictions": "predictions/gensyntax_predictions_task4.txt"
+  },
+  "counts": {
+    "sample_count": 1000,
+    "correct": 881,
+    "unresolved": 0,
+    "reference_essential": 196,
+    "reference_nonessential": 804,
+    "prediction_essential": 97,
+    "prediction_nonessential": 903,
+    "confusion_counts": {
+      "essential": {
+        "tp": 87,
+        "fp": 10,
+        "fn": 109
+      },
+      "non-essential": {
+        "tp": 794,
+        "fp": 109,
+        "fn": 10
+      }
+    }
+  },
+  "results": {
+    "accuracy": {
+      "metric": "accuracy",
+      "original_percent": 88.1,
+      "mean_percent": 88.31299999999999,
+      "standard_deviation_percent": 1.0509884717144948,
+      "ci_lower_percent": 86.4,
+      "ci_upper_percent": 90.0,
+      "valid_replicates": 100
+    },
+    "essential_precision": {
+      "metric": "essential_precision",
+      "original_percent": 89.69072164948454,
+      "mean_percent": 89.79016417151063,
+      "standard_deviation_percent": 3.192245428447174,
+      "ci_lower_percent": 85.52779022859704,
+      "ci_upper_percent": 94.39696390150608,
+      "valid_replicates": 100
+    },
+    "essential_recall": {
+      "metric": "essential_recall",
+      "original_percent": 44.38775510204081,
+      "mean_percent": 45.10171697147881,
+      "standard_deviation_percent": 3.3357122498217526,
+      "ci_lower_percent": 39.45687434405114,
+      "ci_upper_percent": 50.27978389106345,
+      "valid_replicates": 100
+    },
+    "essential_f1": {
+      "metric": "essential_f1",
+      "original_percent": 59.38566552901023,
+      "mean_percent": 59.9729097038331,
+      "standard_deviation_percent": 3.2472350927501363,
+      "ci_lower_percent": 54.545454545454554,
+      "ci_upper_percent": 64.86238532110092,
+      "valid_replicates": 100
+    },
+    "nonessential_precision": {
+      "metric": "nonessential_precision",
+      "original_percent": 87.92912513842747,
+      "mean_percent": 88.15267174520095,
+      "standard_deviation_percent": 1.1121956824943884,
+      "ci_lower_percent": 86.16708045096348,
+      "ci_upper_percent": 89.67178217821781,
+      "valid_replicates": 100
+    },
+    "nonessential_recall": {
+      "metric": "nonessential_recall",
+      "original_percent": 98.75621890547264,
+      "mean_percent": 98.76253876457338,
+      "standard_deviation_percent": 0.39705610724163093,
+      "ci_lower_percent": 98.2290700043003,
+      "ci_upper_percent": 99.3773737167215,
+      "valid_replicates": 100
+    },
+    "nonessential_f1": {
+      "metric": "nonessential_f1",
+      "original_percent": 93.02870533099004,
+      "mean_percent": 93.1525234403971,
+      "standard_deviation_percent": 0.6543219657925512,
+      "ci_lower_percent": 91.93755565846186,
+      "ci_upper_percent": 94.16062975920971,
+      "valid_replicates": 100
+    },
+    "macro_precision": {
+      "metric": "macro_precision",
+      "original_percent": 88.809923393956,
+      "mean_percent": 88.9714179583558,
+      "standard_deviation_percent": 1.6851364679675003,
+      "ci_lower_percent": 86.50166071289217,
+      "ci_upper_percent": 91.8378570709169,
+      "valid_replicates": 100
+    },
+    "macro_recall": {
+      "metric": "macro_recall",
+      "original_percent": 71.57198700375673,
+      "mean_percent": 71.93212786802609,
+      "standard_deviation_percent": 1.6995777053860583,
+      "ci_lower_percent": 69.229209303176,
+      "ci_upper_percent": 74.75590426237513,
+      "valid_replicates": 100
+    },
+    "macro_f1": {
+      "metric": "macro_f1",
+      "original_percent": 76.20718543000014,
+      "mean_percent": 76.5627165721151,
+      "standard_deviation_percent": 1.8614047691039892,
+      "ci_lower_percent": 73.5667602841822,
+      "ci_upper_percent": 79.41037057494074,
+      "valid_replicates": 100
+    }
+  }
+}

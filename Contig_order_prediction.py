@@ -1,8 +1,8 @@
 """
-LLM Batch Inference Script for Task3
-------------------------------------
-This script performs batch inference on JSON-formatted prompts using vLLM (LLaMA/Qwen models).
-All paths can be configured via command line. Outputs are saved in a specified directory.
+Batch inference for Task 3: circular contig-order prediction.
+------------------------------------------------------------
+This script predicts contig order from JSON-formatted prompts using vLLM.
+All paths are configurable from the command line.
 
 Author: SIAT_NLPer
 """
@@ -28,7 +28,13 @@ def load_questions(json_path: str) -> List[str]:
     """
     with open(json_path, 'r', encoding='utf-8') as f:
         questions = json.load(f)
-    return [q['instruction'] for q in questions]
+    prompts = []
+    for index, question in enumerate(questions):
+        prompt = question.get('instruction') or question.get('Input') or question.get('input')
+        if not isinstance(prompt, str) or not prompt.strip():
+            raise ValueError(f"Record {index} in {json_path} has no non-empty instruction/Input field")
+        prompts.append(prompt.strip())
+    return prompts
 
 
 def format_prompt(prompt: str) -> Dict:
@@ -113,7 +119,9 @@ def run_inference(
 
 
 def parse_args():
-    parser = argparse.ArgumentParser(description="Batch inference using vLLM for Task3.")
+    parser = argparse.ArgumentParser(
+        description="Batch inference for Task 3 circular contig-order prediction using vLLM."
+    )
 
     # Model and input/output paths
     parser.add_argument("--model-paths", type=str, nargs='+', required=True,

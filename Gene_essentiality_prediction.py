@@ -28,7 +28,13 @@ def load_questions(json_path: str) -> List[str]:
     """
     with open(json_path, 'r', encoding='utf-8') as f:
         questions = json.load(f)
-    return [q['instruction'] for q in questions]
+    prompts = []
+    for index, question in enumerate(questions):
+        prompt = question.get('instruction') or question.get('Input') or question.get('input')
+        if not isinstance(prompt, str) or not prompt.strip():
+            raise ValueError(f"Record {index} in {json_path} has no non-empty instruction/Input field")
+        prompts.append(prompt.strip())
+    return prompts
 
 
 def format_prompt(prompt: str) -> Dict:

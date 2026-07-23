@@ -1,3 +1,6 @@
-# Python version: 3.10
-torch==2.7.1+cu126
+# Python 3.10
+# Install torch==2.7.1 from the CUDA-specific PyTorch index before this file.
 vllm==0.10.1.1
+transformers>=4.51,<5
+accelerate>=1.6,<2
+numpy>=1.26,<3

@@ -1,0 +1,16 @@
+{
+  "gensyntax_cpt": {
+    "file_name": "gensyntax_cpt.jsonl",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "gensyntax_sft": {
+    "file_name": "gensyntax_sft.jsonl",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  }
+}

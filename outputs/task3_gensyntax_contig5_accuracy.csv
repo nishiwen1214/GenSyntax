@@ -1,0 +1,2 @@
+contig_count,sample_count,correct,total,unresolved,original_accuracy_percent,mean_percent,standard_deviation_percent,ci_lower_percent,ci_upper_percent,mean_unresolved,valid_replicates
+5,500,359,500,0,71.8,71.624,1.8129233048010924,68.59,74.4,0.0,100

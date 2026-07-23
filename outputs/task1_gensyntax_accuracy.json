@@ -1,0 +1,93 @@
+{
+  "task": "Task 1: plasmid host taxonomic classification",
+  "settings": {
+    "sample_count": 1000,
+    "bootstrap_replicates": 100,
+    "confidence_level": 0.9,
+    "confidence_interval_method": "two-sided percentile bootstrap",
+    "random_seed": 42,
+    "references": "Data/gene_task1_test_1000_format.json",
+    "predictions": "predictions/gensyntax_predictions_task1.txt",
+    "taxonomy": "Data/genus_taxonomy.csv"
+  },
+  "results": {
+    "class": {
+      "correct": 959,
+      "total": 1000,
+      "unresolved": 3,
+      "original_accuracy_percent": 95.89999999999999,
+      "mean_percent": 95.84199999999998,
+      "standard_deviation_percent": 0.5949586183725376,
+      "ci_lower_percent": 94.89999999999999,
+      "ci_upper_percent": 96.8,
+      "mean_total": 1000.0,
+      "mean_unresolved": 3.03,
+      "valid_replicates": 100
+    },
+    "order": {
+      "correct": 943,
+      "total": 1000,
+      "unresolved": 3,
+      "original_accuracy_percent": 94.3,
+      "mean_percent": 94.22999999999998,
+      "standard_deviation_percent": 0.682464340282751,
+      "ci_lower_percent": 93.2,
+      "ci_upper_percent": 95.41,
+      "mean_total": 1000.0,
+      "mean_unresolved": 3.03,
+      "valid_replicates": 100
+    },
+    "family": {
+      "correct": 909,
+      "total": 1000,
+      "unresolved": 3,
+      "original_accuracy_percent": 90.9,
+      "mean_percent": 90.867,
+      "standard_deviation_percent": 0.8829536062031074,
+      "ci_lower_percent": 89.69500000000001,
+      "ci_upper_percent": 92.305,
+      "mean_total": 1000.0,
+      "mean_unresolved": 3.03,
+      "valid_replicates": 100
+    },
+    "genus": {
+      "correct": 792,
+      "total": 1000,
+      "unresolved": 0,
+      "original_accuracy_percent": 79.2,
+      "mean_percent": 79.127,
+      "standard_deviation_percent": 1.1697237004325158,
+      "ci_lower_percent": 77.2,
+      "ci_upper_percent": 81.005,
+      "mean_total": 1000.0,
+      "mean_unresolved": 0.0,
+      "valid_replicates": 100
+    },
+    "species": {
+      "correct": 626,
+      "total": 1000,
+      "unresolved": 0,
+      "original_accuracy_percent": 62.6,
+      "mean_percent": 62.365,
+      "standard_deviation_percent": 1.6791276595213664,
+      "ci_lower_percent": 59.485,
+      "ci_upper_percent": 64.71000000000001,
+      "mean_total": 1000.0,
+      "mean_unresolved": 0.0,
+      "valid_replicates": 100
+    },
+    "strain": {
+      "correct": 63,
+      "total": 254,
+      "unresolved": 97,
+      "original_accuracy_percent": 24.803149606299215,
+      "mean_percent": 24.498202058540127,
+      "standard_deviation_percent": 2.8552885698953787,
+      "ci_lower_percent": 19.415736934820902,
+      "ci_upper_percent": 28.576965669988923,
+      "mean_total": 251.98,
+      "mean_unresolved": 96.96,
+      "valid_replicates": 100
+    }
+  }
+}

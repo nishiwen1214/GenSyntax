@@ -1,0 +1,32 @@
+{
+  "task": "Task 2: multiple-choice gene-product disambiguation",
+  "settings": {
+    "option_count": 4,
+    "bootstrap_replicates": 100,
+    "confidence_level": 0.9,
+    "confidence_interval_method": "two-sided percentile bootstrap",
+    "random_seed": 42,
+    "references": "GenSyntax-data/Data/gene_task2_test_500_opts.json",
+    "predictions": "predictions/gensyntax_predictions_task2-opt4.txt"
+  },
+  "prediction_distribution": {
+    "A": 131,
+    "B": 123,
+    "C": 123,
+    "D": 123
+  },
+  "results": {
+    "option_count": 4,
+    "sample_count": 500,
+    "correct": 474,
+    "total": 500,
+    "unresolved": 0,
+    "original_accuracy_percent": 94.8,
+    "mean_percent": 94.80199999999996,
+    "standard_deviation_percent": 0.9252878340049511,
+    "ci_lower_percent": 93.59,
+    "ci_upper_percent": 96.21000000000001,
+    "mean_unresolved": 0.0,
+    "valid_replicates": 100
+  }
+}

@@ -1,176 +1,350 @@
-"""
-Minimal Genome Predictor
-------------------------
-This script predicts essential protein products in bacterial genomes using a language model (LLM).
-The algorithm randomly selects protein products and uses the model to predict if they are essential.
-When a non-essential product is found, previous assumptions are re-evaluated to ensure consistency.
+"""Context-aware iterative minimal-genome inference with GenSyntax."""
 
-Author: SIAT_NLPer
-"""
+from __future__ import annotations
 
 import argparse
-import os
+import copy
 import json
+import math
+import os
 import random
+import re
 from pathlib import Path
-from vllm import LLM, SamplingParams
+from typing import Any, Iterable, Sequence
 
 
-def format_prompt(prompt: str):
-    """Format a prompt for LLM chat input."""
-    return {
-        "messages": [
-            {"role": "system", "content": "You are a helpful assistant."},
-            {"role": "user", "content": prompt},
-        ]
-    }
+DEFAULT_THRESHOLDS = (0.5, 0.4, 0.3, 0.2, 0.05)
 
 
-def setup_environment(gpu_ids: str, tensor_parallel_size: int):
-    """Set CUDA devices and check consistency with tensor parallelism."""
-    os.environ['CUDA_VISIBLE_DEVICES'] = gpu_ids
-    gpu_ids_list = gpu_ids.split(',')
-    if len(gpu_ids_list) != tensor_parallel_size:
+def setup_environment(gpu_ids: str, tensor_parallel_size: int) -> None:
+    """Set visible CUDA devices and validate tensor parallelism."""
+    devices = [item.strip() for item in gpu_ids.split(",") if item.strip()]
+    if not devices:
+        raise ValueError("--gpu-ids must contain at least one CUDA device.")
+    if len(devices) != tensor_parallel_size:
         raise ValueError(
-            f"Number of GPUs ({len(gpu_ids_list)}) does not match tensor_parallel_size ({tensor_parallel_size})")
+            f"Number of GPUs ({len(devices)}) does not match "
+            f"tensor_parallel_size ({tensor_parallel_size})."
+        )
+    os.environ["CUDA_VISIBLE_DEVICES"] = ",".join(devices)
 
 
-def load_json_file(file_path: str):
-    """Load JSON file."""
-    with open(file_path, 'r', encoding='utf-8') as f:
-        return json.load(f)
+def extract_product_names(
+    record: dict[str, Any], record_index: int | None = None
+) -> list[str]:
+    """Extract product names while preserving the original product records."""
+    products = record.get("Protein_products")
+    location = f"Record {record_index}" if record_index is not None else "Record"
+    if not isinstance(products, list) or not products:
+        raise ValueError(f"{location} must contain a non-empty Protein_products list.")
+
+    names: list[str] = []
+    for product_index, product in enumerate(products):
+        if isinstance(product, str):
+            name = product
+        elif isinstance(product, (list, tuple)) and len(product) >= 3:
+            name = product[2]
+        elif isinstance(product, dict):
+            name = product.get("product") or product.get("Product")
+        else:
+            name = None
+        if not isinstance(name, str) or not name.strip():
+            raise ValueError(
+                f"{location}, Protein_products[{product_index}] has no product name."
+            )
+        names.append(name.strip())
+    return names
 
 
-def run_prediction(llm, data_entry, sampling_params, thresholds):
-    """
-    Run essential protein product prediction on a single genome entry.
+def load_genomes(path: Path) -> list[dict[str, Any]]:
+    """Load and validate a JSON object or array of genome records."""
+    with path.open("r", encoding="utf-8") as handle:
+        data = json.load(handle)
+    records = data if isinstance(data, list) else [data]
+    if not records:
+        raise ValueError(f"{path} contains no genome records.")
+    for index, record in enumerate(records):
+        if not isinstance(record, dict):
+            raise ValueError(f"Record {index} is not a JSON object.")
+        extract_product_names(record, index)
+    return records
 
-    Args:
-        llm: vLLM instance
-        data_entry: Single JSON entry with protein products
-        sampling_params: SamplingParams for LLM
-        thresholds: List of thresholds for essential probability
-    Returns:
-        dict: Updated entry with predicted necessary products
-    """
-    all_products_list = ['[' + elem[2].strip() + ']' for elem in data_entry['Protein_products']]
-    total_indices = list(range(len(all_products_list)))
 
-    for threshold in thresholds:
-        candidate_indices = total_indices.copy()
-        non_probs_list = []
-        essential_probs_list = []
+def organism_name(record: dict[str, Any]) -> str:
+    """Return the organism label used in the model prompt."""
+    for key in ("Source", "source", "Organism", "organism", "species"):
+        value = record.get(key)
+        if isinstance(value, str) and value.strip():
+            return value.strip()
+    return "the supplied bacterial organism"
 
-        while True:
-            necessary_indices = set()
-            pending_indices = candidate_indices.copy()
-            all_essential = True
 
-            while pending_indices:
-                current_index = random.choice(pending_indices)
-                current_product = all_products_list[current_index]
+def build_instruction(
+    organism: str,
+    target_product: str,
+    retained_product_names: Sequence[str],
+    target_position: int,
+) -> str:
+    """Construct an essentiality prompt in the current genome context."""
+    context = "".join(
+        f"[{product}]"
+        for position, product in enumerate(retained_product_names)
+        if position != target_position
+    )
+    return (
+        f"The following list presents the protein products encoded by "
+        f"{organism} chromosome. Please predict whether the gene corresponding "
+        f"to the protein product $${target_product}$$ is essential for this "
+        f"organism? Answer strictly in the following format: non-essential or "
+        f"essential\n{context}"
+    )
 
-                # Build context excluding the current product
-                context_elements = [all_products_list[i] for i in candidate_indices if i != current_index]
 
-                instruction_text = (
-                    f"The following list presents the protein products encoded by Mycoplasma mycoides subsp. capri str. GM12 chromosome. "
-                    f"Please predict whether the gene corresponding to the protein product $$"
-                    f"{current_product.strip('[]')}$$ is essential for this organism? "
-                    f"Answer strictly in the following format: non-essential or essential\n"
-                    f"{''.join(context_elements)}"
+def format_messages(instruction: str) -> list[dict[str, str]]:
+    """Format one instruction for vLLM chat inference."""
+    return [
+        {"role": "system", "content": "You are a helpful assistant."},
+        {"role": "user", "content": instruction},
+    ]
+
+
+def normalize_label_token(token: str) -> str | None:
+    """Map a first generated token to one of the two constrained labels."""
+    normalized = re.sub(r"^[^a-z]+", "", token.lower())
+    if normalized.startswith("non"):
+        return "non-essential"
+    if normalized.startswith("essential"):
+        return "essential"
+    return None
+
+
+def essential_probability_from_logprobs(token_logprobs: dict[Any, Any]) -> float:
+    """Calculate P(essential) conditional on the two allowed first tokens."""
+    values: dict[str, list[float]] = {"essential": [], "non-essential": []}
+    for item in token_logprobs.values():
+        token = getattr(item, "decoded_token", None)
+        logprob = getattr(item, "logprob", None)
+        if not isinstance(token, str) or not isinstance(logprob, (int, float)):
+            continue
+        label = normalize_label_token(token)
+        if label is not None:
+            values[label].append(float(logprob))
+
+    missing = [label for label, candidates in values.items() if not candidates]
+    if missing:
+        raise RuntimeError(
+            "Could not recover both answer-label probabilities from vLLM "
+            f"logprobs; missing {', '.join(missing)}. Increase --top-logprobs "
+            "or verify the model chat template."
+        )
+
+    essential_logprob = max(values["essential"])
+    nonessential_logprob = max(values["non-essential"])
+    offset = max(essential_logprob, nonessential_logprob)
+    essential_mass = math.exp(essential_logprob - offset)
+    nonessential_mass = math.exp(nonessential_logprob - offset)
+    return essential_mass / (essential_mass + nonessential_mass)
+
+
+def predict_essential_probability(
+    llm: Any, instruction: str, sampling_params: Any
+) -> float:
+    """Run one model call and return normalized essentiality probability."""
+    outputs = llm.chat([format_messages(instruction)], sampling_params)
+    if len(outputs) != 1 or not outputs[0].outputs:
+        raise RuntimeError("vLLM returned no output for an essentiality prompt.")
+    positions = outputs[0].outputs[0].logprobs
+    if not positions:
+        raise RuntimeError("vLLM returned no generated-token log probabilities.")
+    return essential_probability_from_logprobs(positions[0])
+
+
+def iterative_reduction(
+    llm: Any,
+    record: dict[str, Any],
+    threshold: float,
+    rng: random.Random,
+    sampling_params: Any,
+) -> dict[str, Any]:
+    """Run one randomized IRA replicate for one genome and threshold."""
+    original_products = record["Protein_products"]
+    product_names = extract_product_names(record)
+    retained_indices = list(range(len(product_names)))
+    evaluations = 0
+    deletions: list[dict[str, Any]] = []
+
+    while retained_indices:
+        traversal = retained_indices.copy()
+        rng.shuffle(traversal)
+        deleted = False
+
+        for original_index in traversal:
+            current_position = retained_indices.index(original_index)
+            retained_names = [product_names[index] for index in retained_indices]
+            instruction = build_instruction(
+                organism_name(record),
+                product_names[original_index],
+                retained_names,
+                current_position,
+            )
+            probability = predict_essential_probability(
+                llm, instruction, sampling_params
+            )
+            evaluations += 1
+
+            # Revised definition: retain only when P(essential) > threshold.
+            if probability <= threshold:
+                retained_indices.remove(original_index)
+                deletions.append(
+                    {
+                        "original_index": original_index,
+                        "product": product_names[original_index],
+                        "essential_probability": probability,
+                        "retained_gene_count_after_deletion": len(retained_indices),
+                    }
                 )
+                deleted = True
+                break
 
-                # Generate prediction
-                formatted_instruction = [format_prompt(instruction_text)["messages"]]
-                outputs = llm.chat(formatted_instruction, sampling_params)
+        if not deleted:
+            break
 
-                non_prob = 0.0
-                essential_prob = 0.0
-
-                # Parse token logprobs for normalized probabilities
-                for output in outputs:
-                    if output.outputs[0].logprobs:
-                        for token_logprobs in output.outputs[0].logprobs:
-                            sorted_tokens = sorted(token_logprobs.items(),
-                                                   key=lambda x: x[1].logprob, reverse=True)
-                            for rank, (token_id, logprob_info) in enumerate(sorted_tokens[:10]):
-                                token_str = logprob_info.decoded_token
-                                prob = float(os.environ.get('DUMMY_PROB', 0)) if 'torch' not in dir() else float(
-                                    prob)  # Placeholder
-                                if token_str == 'non':
-                                    non_prob += prob
-                                elif token_str == 'essential':
-                                    essential_prob += prob
-
-                # Normalize
-                total_prob = non_prob + essential_prob
-                normalized_non_prob = non_prob / total_prob if total_prob > 0 else 0
-                normalized_essential_prob = essential_prob / total_prob if total_prob > 0 else 0
-
-                if normalized_essential_prob > threshold:
-                    necessary_indices.add(current_index)
-                    pending_indices.remove(current_index)
-                else:
-                    candidate_indices.remove(current_index)
-                    all_essential = False
-                    break  # Restart process
-
-            if all_essential:
-                break  # Finished threshold loop
-
-        # Save predicted essential products
-        necessary_products_with_org_elements = [data_entry['Protein_products'][i] for i in total_indices if
-                                                i in necessary_indices]
-        data_entry['predicted_necessary_products'] = necessary_products_with_org_elements
-
-    return data_entry
+    result = copy.deepcopy(record)
+    result["predicted_necessary_products"] = [
+        original_products[index] for index in retained_indices
+    ]
+    result["minimal_genome_metadata"] = {
+        "essentiality_confidence_threshold": threshold,
+        "initial_gene_count": len(product_names),
+        "retained_gene_count": len(retained_indices),
+        "deleted_gene_count": len(product_names) - len(retained_indices),
+        "model_evaluations": evaluations,
+        "retained_original_indices": retained_indices,
+        "deletion_trace": deletions,
+    }
+    return result
 
 
-def main():
-    parser = argparse.ArgumentParser(description="Minimal Genome Predictor using LLM")
-    parser.add_argument("--model-path", type=str, required=True, help="Path to LLM model checkpoint")
-    parser.add_argument("--input-json", type=str, required=True, help="Input JSON file with protein products")
-    parser.add_argument("--gpu-ids", type=str, default="0", help="Comma-separated GPU IDs")
-    parser.add_argument("--tensor-parallel-size", type=int, default=1, help="Tensor parallel size")
-    parser.add_argument("--temperature", type=float, default=0, help="Sampling temperature")
-    parser.add_argument("--max-tokens", type=int, default=1024, help="Maximum tokens to generate")
-    parser.add_argument("--top-logprobs", type=int, default=10, help="Top-N logprobs to return")
+def parse_thresholds(values: Iterable[float]) -> list[float]:
+    """Validate thresholds and remove duplicates while preserving order."""
+    thresholds: list[float] = []
+    for value in values:
+        threshold = float(value)
+        if not 0.0 <= threshold <= 1.0:
+            raise ValueError(f"Threshold must be between 0 and 1: {threshold}")
+        if threshold not in thresholds:
+            thresholds.append(threshold)
+    if not thresholds:
+        raise ValueError("At least one threshold is required.")
+    return thresholds
 
-    args = parser.parse_args()
 
+def threshold_slug(threshold: float) -> str:
+    return format(threshold, "g").replace(".", "_")
+
+
+def write_results(
+    output_dir: Path,
+    model_name: str,
+    threshold: float,
+    replicate: int,
+    seed: int,
+    records: list[dict[str, Any]],
+) -> Path:
+    """Write one independent threshold/replicate result atomically."""
+    destination = (
+        output_dir
+        / model_name
+        / f"threshold_{threshold_slug(threshold)}"
+        / f"replicate_{replicate:02d}_seed_{seed}.json"
+    )
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    temporary = destination.with_suffix(".json.tmp")
+    payload = {
+        "model": model_name,
+        "essentiality_confidence_threshold": threshold,
+        "replicate": replicate,
+        "seed": seed,
+        "records": records,
+    }
+    with temporary.open("w", encoding="utf-8") as handle:
+        json.dump(payload, handle, ensure_ascii=False, indent=2)
+        handle.write("\n")
+    temporary.replace(destination)
+    return destination
+
+
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(
+        description="Derive candidate minimal genomes with the GenSyntax IRA."
+    )
+    parser.add_argument("--model-path", required=True)
+    parser.add_argument("--input-json", type=Path, required=True)
+    parser.add_argument(
+        "--output-dir", type=Path, default=Path("outputs/minimal_genome")
+    )
+    parser.add_argument("--gpu-ids", default="0")
+    parser.add_argument("--tensor-parallel-size", type=int, default=1)
+    parser.add_argument(
+        "--thresholds",
+        type=float,
+        nargs="+",
+        default=list(DEFAULT_THRESHOLDS),
+        help="Default: 0.5 0.4 0.3 0.2 0.05.",
+    )
+    parser.add_argument("--replicates", type=int, default=10)
+    parser.add_argument("--seed", type=int, default=42)
+    parser.add_argument("--top-logprobs", type=int, default=20)
+    parser.add_argument("--trust-remote-code", action="store_true")
+    return parser.parse_args()
+
+
+def main() -> None:
+    args = parse_args()
+    if args.replicates < 1:
+        raise ValueError("--replicates must be at least 1.")
+    thresholds = parse_thresholds(args.thresholds)
+    records = load_genomes(args.input_json)
     setup_environment(args.gpu_ids, args.tensor_parallel_size)
+
+    # Lazy import keeps schema/probability helpers testable without a GPU stack.
+    from vllm import LLM, SamplingParams
 
     llm = LLM(
         model=args.model_path,
-        tensor_parallel_size=args.tensor_parallel_size
+        tensor_parallel_size=args.tensor_parallel_size,
+        trust_remote_code=args.trust_remote_code,
     )
-
     sampling_params = SamplingParams(
-        temperature=args.temperature,
-        max_tokens=args.max_tokens,
+        temperature=0.0,
+        max_tokens=1,
         logprobs=args.top_logprobs,
-        min_p=0
     )
+    model_name = Path(args.model_path.rstrip("/")).name
 
-    data = load_json_file(args.input_json)
-    thresholds = [0.5, 0.4, 0.3, 0.2, 0.1]
-
-    for data_index, entry in enumerate(data):
-        # Example: Only process a subset if needed
-        if data_index in [5]:
-            updated_entry = run_prediction(llm, entry, sampling_params, thresholds)
-
-            # Save outputs
-            model_name = Path(args.model_path).name
-            for threshold in thresholds:
-                threshold_str = str(threshold).replace('.', '_')
-                output_dir = Path(f'./results/minimal_genome_{model_name}')
-                output_dir.mkdir(parents=True, exist_ok=True)
-
-                with open(output_dir / f'entry_{data_index}_threshold_{threshold_str}.json', 'w',
-                          encoding='utf-8') as f:
-                    json.dump([updated_entry], f, ensure_ascii=False, indent=2)
+    for threshold in thresholds:
+        for replicate_offset in range(args.replicates):
+            replicate = replicate_offset + 1
+            replicate_seed = args.seed + replicate_offset
+            rng = random.Random(replicate_seed)
+            reduced_records = [
+                iterative_reduction(
+                    llm, record, threshold, rng, sampling_params
+                )
+                for record in records
+            ]
+            path = write_results(
+                args.output_dir,
+                model_name,
+                threshold,
+                replicate,
+                replicate_seed,
+                reduced_records,
+            )
+            print(
+                f"[INFO] threshold={threshold:g} replicate={replicate}/"
+                f"{args.replicates} seed={replicate_seed} saved={path}"
+            )
 
 
 if __name__ == "__main__":
