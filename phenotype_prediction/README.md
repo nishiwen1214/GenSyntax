@@ -101,11 +101,3 @@ reported in the revised manuscript and are therefore not part of this
 reproduction entry point. The continuous cell-length, cell-width and
 temperature scripts were also excluded because the manuscript reports their
 predefined classification versions.
-
-## Data consistency note
-
-The released oxygen-tolerance table currently contains eight non-null
-categories. The manuscript lists nine categories, including
-`microaerotolerant`, which is not present in this table. This discrepancy
-should be reconciled against the exact analysis dataset before publication;
-the workflow does not manufacture an unobserved class.

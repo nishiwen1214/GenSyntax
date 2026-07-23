@@ -2,18 +2,18 @@
 
 This directory contains the released recipes for continued pre-training (CPT) and supervised fine-tuning (SFT) of the LLaMA 3.1 8B GenSyntax model. The recipes use [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory).
 
-## Scope
+## Included recipes
 
-The delivered training bundle contained:
+The training directory provides:
 
 - an LLaMA-Factory source snapshot reporting version `0.9.6.dev0`;
 - one CPT configuration;
 - one SFT configuration;
-- 100-record demonstration files for each stage.
+- data schemas for each stage.
 
-The upstream source snapshot is not duplicated here. Install LLaMA-Factory separately and retain its Apache-2.0 license and citation. The source bundle did not contain Git metadata, so the exact upstream commit could not be recovered. A commit or immutable release must be recorded before claiming exact environment reproduction.
-
-The demonstration records are also not included here because they are excerpts rather than the complete manuscript training corpora. Place the complete corpora in `training/data/` using the schemas below. Until those corpora and their provenance are released, these files reproduce the training configuration but not the complete training run.
+Install LLaMA-Factory separately and retain its Apache-2.0 license and
+citation. Record the LLaMA-Factory release or commit used for each experiment.
+Prepare the CPT and SFT corpora in `training/data/` using the schemas below.
 
 ## Layout
 

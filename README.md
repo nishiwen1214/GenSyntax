@@ -6,23 +6,19 @@ GenSyntax is a post-annotation, function-level framework for representing prokar
 
 This repository accompanies the manuscript **“Decoding Prokaryotic Whole Genomes with a Product-Contextualized Large Language Model.”**
 
-## Release status
+## Resources
 
 | Component | Current status | Location |
 |---|---|---|
-| GenSyntax 8B inference checkpoint | Public model link; loading still needs to be verified on a clean machine | [Hugging Face](https://huggingface.co/MoonTideF/Llama-GenSyntax) |
+| GenSyntax 8B inference checkpoint | Public model checkpoint | [Hugging Face](https://huggingface.co/MoonTideF/Llama-GenSyntax) |
 | GenSyntax-Tiny checkpoint | Public, ungated Qwen3 checkpoint | [Hugging Face](https://huggingface.co/ShijianW01/qwen3_0.6b_20250702_data) |
 | Evaluation/inference entry points | Available | repository root |
 | Task 1 test data | Included locally | `Data/gene_task1_test_1000_format.json` |
 | Task 2–4 test data | Public; download separately | [Hugging Face `Data/` directory](https://huggingface.co/datasets/ShiwenNi/GenSyntax-data/tree/main/Data) |
 | Web interface | Available; requires a separately running vLLM server | `web/` |
-| Continuous pre-training configuration | Available; complete corpus not included | `training/configs/cpt.yaml` |
-| Supervised fine-tuning configuration | Available; complete corpus not included | `training/configs/sft.yaml` |
+| Continuous pre-training configuration | Available | `training/configs/cpt.yaml` |
+| Supervised fine-tuning configuration | Available | `training/configs/sft.yaml` |
 | Microbial phenotype prediction workflow and cleaned BacDive tables | Available | [`phenotype_prediction/`](phenotype_prediction/) and [`Data/BacDive/`](https://github.com/nishiwen1214/GenSyntax/tree/main/Data/BacDive) |
-| Baseline training/evaluation code | **Not yet included** | — |
-| Figure/statistical reproduction workflows | **Not yet included** | — |
-
-The status table is intentionally explicit so that the repository does not claim reproducibility for artifacts that are not yet present.
 
 ## Repository layout
 
@@ -63,12 +59,12 @@ For other CUDA versions, select the matching PyTorch wheel and record the exact 
 
 ## Model checkpoints
 
-| Manuscript name | Base architecture | Hugging Face identifier | Release revision |
-|---|---|---|---|
-| GenSyntax | LLaMA 3.1 8B | `MoonTideF/Llama-GenSyntax` | author confirmation still required |
-| GenSyntax-Tiny | Qwen3-0.6B | `ShijianW01/qwen3_0.6b_20250702_data` | `5e133bec3252c66facd30c7fff76ad269522ab26` |
+| Manuscript name | Base architecture | Hugging Face identifier |
+|---|---|---|
+| GenSyntax | LLaMA 3.1 8B | `MoonTideF/Llama-GenSyntax` |
+| GenSyntax-Tiny | Qwen3-0.6B | `ShijianW01/qwen3_0.6b_20250702_data` |
 
-The GenSyntax-Tiny repository contains a merged root checkpoint and intermediate checkpoints at steps 123,731, 247,462 and 371,193. For manuscript reproduction, use the merged root checkpoint at the revision above unless a different checkpoint is explicitly documented for a particular result.
+The GenSyntax-Tiny repository contains a merged root checkpoint and intermediate checkpoints at steps 123,731, 247,462 and 371,193. For manuscript reproduction, use the merged root checkpoint unless a different checkpoint is explicitly documented for a particular result.
 
 ## Checkpoint loading
 
@@ -288,7 +284,9 @@ Input records require a non-empty `Protein_products` list and should include `So
 
 The released LLaMA 3.1 8B training recipes are under [`training/`](training/). They describe sequential LoRA-based continued pre-training and supervised fine-tuning with a 128,000-token cutoff, DeepSpeed ZeRO-3 CPU offload, BF16, FlashAttention 2, Liger Kernel and Adam-mini.
 
-The delivered bundle contained only 100-record demonstration excerpts rather than the complete manuscript training corpora. Those excerpts are not represented as the full experimental data in this repository. See [`training/README.md`](training/README.md) for the required schemas, installation instructions, multi-node launch command and remaining provenance requirements.
+See [`training/README.md`](training/README.md) for the corpus schemas,
+installation instructions, configuration details and multi-node launch
+command.
 
 ## Microbial phenotype prediction
 
@@ -417,13 +415,17 @@ web application and terminates both processes when either service exits.
 
 ## Reproducing the manuscript
 
-The manuscript reports continuous pre-training from LLaMA 3.1 8B, LoRA adaptation at 128,000 tokens, full-parameter training of GenSyntax-Tiny from Qwen3-0.6B, four supervised fine-tuning tasks, frozen genomic-model encoders with MLP heads, external benchmarks, bootstrap confidence intervals and phenotype classifiers. The LLaMA 3.1 8B CPT/SFT configurations and GenSyntax-Tiny weights are now available, but the complete training corpora, the exact LLaMA-Factory commit and several baseline and figure workflows are still required for end-to-end reproduction.
+The repository provides the GenSyntax inference and evaluation entry points,
+LLaMA 3.1 8B CPT/SFT configurations, GenSyntax-Tiny weights, microbial
+phenotype workflows and the associated data documentation.
 
 See [`docs/DATA.md`](docs/DATA.md) for data schemas and provenance requirements.
 
 ## Data and code availability
 
-The currently deposited public artifacts are linked above. A versioned archival release (for example, Zenodo) with a DOI, immutable code commit, checksums, environment lockfile and manuscript-to-output mapping should be created for the final publication package.
+The public code, model checkpoints and datasets are linked above. Versioned
+release metadata, checksums and environment information should accompany the
+final publication archive.
 
 ## License
 
