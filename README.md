@@ -1,5 +1,7 @@
 # GenSyntax
 
+<img width="1888" height="542" alt="image" src="https://github.com/user-attachments/assets/4737952d-dbcc-4941-961b-53619db945bd" />
+
 GenSyntax is a post-annotation, function-level framework for representing prokaryotic replicons as ordered sequences of gene-product descriptors. It is designed for annotated chromosomes, plasmids, draft genomes, metagenome-assembled genomes and annotated contigs. It does **not** operate directly on raw sequencing reads or unannotated nucleotide sequences.
 
 This repository accompanies the manuscript **“Decoding Prokaryotic Whole Genomes with a Product-Contextualized Large Language Model.”**
