@@ -1,0 +1,62 @@
+{
+  "cell_shape": {
+    "display_name": "Cell shape",
+    "csv_file": "Cell_Shape_cleaned.csv",
+    "label_column": "Cell shape",
+    "transform": "cell_shape"
+  },
+  "gram_stain": {
+    "display_name": "Gram stain",
+    "csv_file": "Gram_Stain_cleaned.csv",
+    "label_column": "Gram stain",
+    "transform": "categorical"
+  },
+  "indole_test": {
+    "display_name": "Indole test",
+    "csv_file": "Indole_Test_cleaned.csv",
+    "label_column": "Indole test (Indole)",
+    "transform": "sign"
+  },
+  "motility": {
+    "display_name": "Cell motility",
+    "csv_file": "Mobility_cleaned.csv",
+    "label_column": "Motility",
+    "transform": "motility"
+  },
+  "multicellular_complex": {
+    "display_name": "Multicellular complex formation",
+    "csv_file": "Multicellular_Complex_Forming_Ability_cleaned.csv",
+    "label_column": "Multicellular complex forming ability",
+    "transform": "presence"
+  },
+  "oxygen_tolerance": {
+    "display_name": "Oxygen tolerance",
+    "csv_file": "Oxygen_Tolerance_cleaned.csv",
+    "label_column": "Oxygen tolerance",
+    "transform": "categorical"
+  },
+  "voges_proskauer": {
+    "display_name": "Voges-Proskauer test",
+    "csv_file": "Voges_Proskauer_Test_Acetoin_cleaned.csv",
+    "label_column": "Voges-Proskauer-test (Acetoin)",
+    "transform": "sign"
+  },
+  "optimal_temperature": {
+    "display_name": "Optimal temperature",
+    "csv_file": "Optimal_Temperature_cleaned.csv",
+    "label_column": "Temperature",
+    "transform": "temperature"
+  },
+  "cell_length": {
+    "display_name": "Cell length",
+    "csv_file": "Cell_Length_cleaned.csv",
+    "label_column": "Cell length",
+    "transform": "cell_length"
+  },
+  "cell_width": {
+    "display_name": "Cell width",
+    "csv_file": "Cell_Width_cleaned.csv",
+    "label_column": "Cell width",
+    "transform": "cell_width"
+  }
+}

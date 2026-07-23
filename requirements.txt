@@ -4,3 +4,6 @@ vllm==0.10.1.1
 transformers>=4.51,<5
 accelerate>=1.6,<2
 numpy>=1.26,<3
+pandas>=2,<3
+scikit-learn>=1.5,<2
+matplotlib>=3.8,<4

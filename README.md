@@ -16,6 +16,7 @@ This repository accompanies the manuscript **“Decoding Prokaryotic Whole Genom
 | Web interface | Available; requires a separately running vLLM server | `web/` |
 | Continuous pre-training configuration | Available; complete corpus not included | `training/configs/cpt.yaml` |
 | Supervised fine-tuning configuration | Available; complete corpus not included | `training/configs/sft.yaml` |
+| Microbial phenotype prediction workflow and cleaned BacDive tables | Available | [`phenotype_prediction/`](phenotype_prediction/) and [`Data/BacDive/`](https://github.com/nishiwen1214/GenSyntax/tree/main/Data/BacDive) |
 | Baseline training/evaluation code | **Not yet included** | — |
 | Figure/statistical reproduction workflows | **Not yet included** | — |
 
@@ -27,6 +28,7 @@ The status table is intentionally explicit so that the repository does not claim
 GenSyntax/
 ├── Data/                              # example inputs and selected phenotype tables
 ├── training/                          # CPT and SFT recipes and data schemas
+├── phenotype_prediction/              # unified ten-phenotype evaluation
 ├── web/                               # FastAPI interface for an OpenAI-compatible vLLM server
 ├── Plasmid_host_identification.py     # task 1 batch inference
 ├── Gene_function_prediction.py        # task 2 batch inference
@@ -285,6 +287,33 @@ Input records require a non-empty `Protein_products` list and should include `So
 The released LLaMA 3.1 8B training recipes are under [`training/`](training/). They describe sequential LoRA-based continued pre-training and supervised fine-tuning with a 128,000-token cutoff, DeepSpeed ZeRO-3 CPU offload, BF16, FlashAttention 2, Liger Kernel and Adam-mini.
 
 The delivered bundle contained only 100-record demonstration excerpts rather than the complete manuscript training corpora. Those excerpts are not represented as the full experimental data in this repository. See [`training/README.md`](training/README.md) for the required schemas, installation instructions, multi-node launch command and remaining provenance requirements.
+
+## Microbial phenotype prediction
+
+The ten microbial phenotype experiments reported in the manuscript are
+implemented by a single configurable workflow under
+[`phenotype_prediction/`](phenotype_prediction/). It evaluates five
+classifiers on genome embeddings using identical stratified 80:20 splits and
+three random seeds, and reports accuracy and weighted F1 as mean ± s.d. The
+workflow also records class filtering, species matching, split assignments and
+sample-level predictions. The ten cleaned phenotype tables are distributed in
+the repository's [`Data/BacDive/`](https://github.com/nishiwen1214/GenSyntax/tree/main/Data/BacDive)
+directory.
+
+```bash
+python phenotype_prediction/run_phenotype_prediction.py \
+  --embeddings /path/to/merged_embeddings.json \
+  --embedding-name GenSyntax \
+  --data-dir Data/BacDive \
+  --phenotypes all \
+  --seeds 42 43 44 \
+  --output-dir outputs/phenotype_prediction/gensyntax \
+  --plot
+```
+
+See [`phenotype_prediction/README.md`](phenotype_prediction/README.md) for the
+ten task definitions, exact discretization thresholds, input schema, model
+settings and output inventory.
 
 ## Web interface
 

@@ -2,7 +2,8 @@
 
 ## Public data locations
 
-- repository examples and selected phenotype tables: `Data/`;
+- repository examples and the ten cleaned BacDive phenotype tables:
+  [`Data/BacDive/`](https://github.com/nishiwen1214/GenSyntax/tree/main/Data/BacDive);
 - released Hugging Face dataset: <https://huggingface.co/datasets/ShiwenNi/GenSyntax-data>;
 - released evaluation files: <https://huggingface.co/datasets/ShiwenNi/GenSyntax-data/tree/main/Data>.
 
@@ -81,6 +82,18 @@ Provide organism and assembly accession, DEG identifier/version, feature identif
 ### Phenotype prediction
 
 For each BacDive-derived table, document the BacDive download/query date, permitted redistribution status, raw-to-cleaned transformations, species-to-RefSeq mapping, excluded records, class conversion thresholds and split seeds. Access-controlled or redistribution-restricted source fields should be represented by a retrieval script and stable identifiers rather than copied without permission.
+
+The cleaned tables used by the consolidated workflow are publicly available at
+<https://github.com/nishiwen1214/GenSyntax/tree/main/Data/BacDive>. The workflow
+uses the local copy under `Data/BacDive`; no network access is required during
+evaluation.
+
+The executable phenotype definitions are stored in
+`phenotype_prediction/phenotypes.json`. The revised manuscript reports ten
+classification tasks. Optimal temperature is discretized as `<20`, `20–40`
+and `>40 °C`; cell length as `≤2` and `>2 µm`; and cell width as `≤0.5` and
+`>0.5 µm`. The consolidated workflow writes the exact matched species,
+exclusions and seed-specific splits for every run.
 
 ## Data integrity
 
