@@ -180,6 +180,17 @@ class InferenceOutputFileTests(unittest.TestCase):
         self.assertIn('if [ -n "$MAX_MODEL_LEN" ]', launcher)
         self.assertIn('if [ -n "$ROPE_SCALING" ]', launcher)
 
+    def test_reported_hardware_is_documented(self) -> None:
+        readme = (ROOT / "README.md").read_text(encoding="utf-8")
+        training = (ROOT / "training" / "README.md").read_text(encoding="utf-8")
+        for gpu_name in ("RTX 4090", "RTX A6000", "A100", "A800"):
+            self.assertIn(gpu_name, readme)
+        self.assertIn("single NVIDIA GPU", readme)
+        self.assertIn("five compute nodes", training)
+        self.assertIn("eight NVIDIA H100", training)
+        self.assertIn("40 GPUs in total", training)
+        self.assertIn("NVLink", training)
+
 
 if __name__ == "__main__":
     unittest.main()

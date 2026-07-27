@@ -45,6 +45,23 @@ Tasks 1–4. For long Tiny inputs, enable the documented 128K YaRN configuration
 The released scripts were developed with Python 3.10, CUDA 12.6, PyTorch 2.7.1
 and vLLM 0.10.1.1. A Linux host with an NVIDIA GPU is recommended.
 
+### Recommended inference hardware
+
+GenSyntax 8B and GenSyntax-Tiny can be run on a single NVIDIA GPU. Recommended
+devices are:
+
+| GPU | Typical memory configuration | Recommended use |
+|---|---:|---|
+| NVIDIA GeForce RTX 4090 | 24 GB | Single-record and standard-context inference |
+| NVIDIA RTX A6000 | 48 GB | Larger inputs and additional KV-cache capacity |
+| NVIDIA A100 | 40 or 80 GB | Long-context and throughput-oriented inference |
+| NVIDIA A800 | 40 or 80 GB | Long-context and throughput-oriented inference |
+
+Actual memory use depends on the selected model, input length, batch size and
+vLLM KV-cache allocation. The 128K YaRN configuration has substantially higher
+memory demand than the default context; use a higher-memory device or reduce
+the active context and batch size when necessary.
+
 ```bash
 git clone https://github.com/nishiwen1214/GenSyntax.git
 cd GenSyntax

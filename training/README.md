@@ -2,6 +2,23 @@
 
 This directory contains the released recipes for continued pre-training (CPT) and supervised fine-tuning (SFT) of the LLaMA 3.1 8B GenSyntax model. The recipes use [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory).
 
+## Reported training hardware
+
+The manuscript training runs used five compute nodes with eight NVIDIA H100
+80 GB GPUs per node, for 40 GPUs in total. GPUs within each node were connected
+through NVLink. The released configurations use BF16 and DeepSpeed ZeRO-3 with
+CPU parameter and optimizer offload.
+
+| Item | Reported configuration |
+|---|---|
+| Compute nodes | 5 |
+| GPUs per node | 8 |
+| Total GPUs | 40 |
+| GPU model | NVIDIA H100 80 GB |
+| Intra-node GPU interconnect | NVLink |
+| Numerical precision | BF16 |
+| Distributed memory strategy | DeepSpeed ZeRO-3 with CPU offload |
+
 ## Included recipes
 
 The training directory provides:
