@@ -1,7 +1,5 @@
 # GenSyntax
 
-<img width="1888" height="542" alt="image" src="https://github.com/user-attachments/assets/4737952d-dbcc-4941-961b-53619db945bd" />
-
 GenSyntax is a post-annotation, function-level framework for representing prokaryotic replicons as ordered sequences of gene-product descriptors. It is designed for annotated chromosomes, plasmids, draft genomes, metagenome-assembled genomes and annotated contigs. It does **not** operate directly on raw sequencing reads or unannotated nucleotide sequences.
 
 This repository accompanies the manuscript **“Decoding Prokaryotic Whole Genomes with a Product-Contextualized Large Language Model.”**
@@ -64,7 +62,8 @@ For other CUDA versions, select the matching PyTorch wheel and record the exact 
 | GenSyntax | LLaMA 3.1 8B | `MoonTideF/Llama-GenSyntax` |
 | GenSyntax-Tiny | Qwen3-0.6B | `ShijianW01/qwen3_0.6b_20250702_data` |
 
-The GenSyntax-Tiny repository contains a merged root checkpoint and intermediate checkpoints at steps 123,731, 247,462 and 371,193. For manuscript reproduction, use the merged root checkpoint unless a different checkpoint is explicitly documented for a particular result.
+The GenSyntax-Tiny repository contains a merged root checkpoint and
+intermediate checkpoints at steps 123,731, 247,462 and 371,193.
 
 ## Checkpoint loading
 
@@ -83,27 +82,25 @@ model = AutoModelForCausalLM.from_pretrained(
 print(model.config.model_type)
 ```
 
-If this check fails, report the full exception, operating system, Python, CUDA, PyTorch and Transformers versions. The 8B checkpoint revision still needs to be confirmed by the authors before the archival release.
+If this check fails, report the full exception, operating system, Python,
+CUDA, PyTorch and Transformers versions.
 
-GenSyntax-Tiny can be checked independently:
+### GenSyntax-Tiny tokenizer compatibility
 
-```python
-from transformers import AutoModelForCausalLM, AutoTokenizer
+GenSyntax-Tiny requires a checkpoint revision whose tokenizer artifacts were
+exported with `tokenizer.save_pretrained(...)`. In particular,
+`extra_special_tokens` in `tokenizer_config.json` must be a JSON object rather
+than a list, and runtime-only metadata such as `backend` and `is_local` should
+not be present. Earlier malformed tokenizer metadata can cause Transformers or
+vLLM to stop during tokenizer initialization with
+`AttributeError: 'list' object has no attribute 'keys'`.
 
-model_id = "ShijianW01/qwen3_0.6b_20250702_data"
-revision = "5e133bec3252c66facd30c7fff76ad269522ab26"
-
-tokenizer = AutoTokenizer.from_pretrained(model_id, revision=revision)
-model = AutoModelForCausalLM.from_pretrained(
-    model_id,
-    revision=revision,
-    torch_dtype="auto",
-    device_map="auto",
-)
-print(model.config.model_type)
-```
-
-The deposited GenSyntax-Tiny metadata identify `Qwen3ForCausalLM` and 751,632,384 stored BF16 parameters. The upstream architecture is conventionally named Qwen3-0.6B; the difference reflects parameter-counting conventions and should not be presented as a change in the manuscript model name.
+The corrected revision should be verified from an empty Hugging Face cache with
+both `AutoTokenizer.from_pretrained(...)` and vLLM before use. Editing a cached
+JSON file is not a supported reproduction procedure. The model repository
+maintainer should publish and identify the corrected revision in the model
+card; until then, use the validated GenSyntax 8B checkpoint in the commands
+below.
 
 ## Input format
 
@@ -133,13 +130,17 @@ gene_task3_test_500_contig5_format.json
 gene_task4_test_1000_format.json
 ```
 
-Download the dataset before running Tasks 2–4:
+Download the dataset and copy the released evaluation files into this
+repository's `Data/` directory:
 
 ```bash
 git clone https://huggingface.co/datasets/ShiwenNi/GenSyntax-data
+cp GenSyntax-data/Data/gene_task{1,2,3,4}_*.json Data/
 ```
 
-In the commands below, `DATASET_DIR` denotes the cloned `GenSyntax-data/Data` directory. Pin the dataset revision used for final manuscript results and report that revision with the code commit.
+All commands below therefore use repository-relative `Data/...` paths. Pin the
+dataset revision used for final manuscript results and report that revision
+with the code commit.
 
 ## Batch inference
 
@@ -147,118 +148,165 @@ All four scripts share the same core arguments:
 
 - `--model-paths`: one or more local checkpoint directories or Hugging Face model identifiers;
 - `--input-json-paths`: one or more JSON input files;
-- `--output-dir`: output directory;
+- `--output-file`: exact output path when one model and one input are supplied;
+- `--output-dir`: automatic-output directory when `--output-file` is omitted;
 - `--gpu-ids`: comma-separated visible CUDA device indices;
 - `--tensor-parallel-size`: must equal the number of values in `--gpu-ids`.
 
-Example using one GPU:
+`--output-file` is restricted to one model and one input so that a prediction
+file cannot be overwritten by multiple runs. Generated files contain exactly
+one prediction line per input record.
+
+### Task 1: plasmid host identification
+
+Run inference and then evaluate the exact file produced:
 
 ```bash
 python Plasmid_host_identification.py \
   --model-paths MoonTideF/Llama-GenSyntax \
   --input-json-paths Data/gene_task1_test_1000_format.json \
-  --output-dir outputs/plasmid_host \
+  --output-file outputs/task1/predictions.txt \
   --gpu-ids 0 \
   --tensor-parallel-size 1
-```
 
-To run the same entry point with GenSyntax-Tiny, replace the model identifier:
-
-```bash
-python Plasmid_host_identification.py \
-  --model-paths ShijianW01/qwen3_0.6b_20250702_data \
-  --input-json-paths Data/gene_task1_test_1000_format.json \
-  --output-dir outputs/plasmid_host_tiny \
-  --gpu-ids 0 \
-  --tensor-parallel-size 1
-```
-
-Equivalent entry points are:
-
-```bash
-python Gene_function_prediction.py --model-paths MODEL --input-json-paths INPUT.json --gpu-ids 0 --tensor-parallel-size 1
-python Contig_order_prediction.py --model-paths MODEL --input-json-paths INPUT.json --gpu-ids 0 --tensor-parallel-size 1
-python Gene_essentiality_prediction.py --model-paths MODEL --input-json-paths INPUT.json --gpu-ids 0 --tensor-parallel-size 1
-```
-
-Generated predictions are written as one line per input record under `--output-dir`. Deterministic evaluation scripts for Tasks 1–4 are available under `evaluation/`.
-
-### Task 1 accuracy evaluation
-
-The English-language Task 1 evaluator calculates class-, order-, family-, genus-, species- and strain-level accuracy, together with 100 sample-level bootstrap replicates and two-sided 90% percentile confidence intervals:
-
-```bash
 python evaluation/task1_plasmid_host_accuracy.py \
   --references Data/gene_task1_test_1000_format.json \
-  --predictions outputs/plasmid_host/gensyntax_predictions.txt \
+  --predictions outputs/task1/predictions.txt \
   --taxonomy Data/genus_taxonomy.csv \
-  --output-csv outputs/task1_accuracy.csv \
-  --output-json outputs/task1_accuracy.json
+  --output-csv outputs/task1/accuracy.csv \
+  --output-json outputs/task1/accuracy.json
 ```
 
-The taxonomy CSV must contain `genus,class,order,family` columns. Class through species use all test records as the denominator. Strain accuracy includes only references with a strain label. Missing or unparseable predictions remain in the relevant denominator and count as incorrect.
+The evaluator reports class-, order-, family-, genus-, species- and
+strain-level accuracy with bootstrap confidence intervals. The taxonomy CSV
+must contain `genus,class,order,family` columns.
 
-### Task 2 accuracy evaluation
+### Task 2: gene-product disambiguation
 
-The Task 2 evaluator supports separate four-option and eight-option gene-product disambiguation files. It can detect the option count from `options`/`num_options` fields or A–D/A–H markers in each prompt:
+Run the four-option experiment:
 
 ```bash
+python Gene_function_prediction.py \
+  --model-paths MoonTideF/Llama-GenSyntax \
+  --input-json-paths Data/gene_task2_test_500_opts.json \
+  --output-file outputs/task2/opt4_predictions.txt \
+  --gpu-ids 0 \
+  --tensor-parallel-size 1
+
 python evaluation/task2_gene_product_accuracy.py \
-  --references DATASET_DIR/gene_task2_test_500_opts.json \
-  --predictions /path/to/gensyntax_predictions_task2-opt4.txt \
-  --num-options auto \
-  --output-csv outputs/task2_opt4_accuracy.csv \
-  --output-json outputs/task2_opt4_accuracy.json
+  --references Data/gene_task2_test_500_opts.json \
+  --predictions outputs/task2/opt4_predictions.txt \
+  --num-options 4 \
+  --output-csv outputs/task2/opt4_accuracy.csv \
+  --output-json outputs/task2/opt4_accuracy.json
 ```
 
-If the input JSON does not expose detectable option markers, pass the setting explicitly:
+Run the eight-option experiment:
 
 ```bash
-# Four-option evaluation (valid labels: A-D)
-python evaluation/task2_gene_product_accuracy.py \
-  --references /path/to/task2_opt4.json \
-  --predictions /path/to/task2_opt4_predictions.txt \
-  --num-options 4
+python Gene_function_prediction.py \
+  --model-paths MoonTideF/Llama-GenSyntax \
+  --input-json-paths Data/gene_task2_test_500_opts_8.json \
+  --output-file outputs/task2/opt8_predictions.txt \
+  --gpu-ids 0 \
+  --tensor-parallel-size 1
 
-# Eight-option evaluation (valid labels: A-H)
 python evaluation/task2_gene_product_accuracy.py \
-  --references /path/to/task2_opt8.json \
-  --predictions /path/to/task2_opt8_predictions.txt \
-  --num-options 8
+  --references Data/gene_task2_test_500_opts_8.json \
+  --predictions outputs/task2/opt8_predictions.txt \
+  --num-options 8 \
+  --output-csv outputs/task2/opt8_accuracy.csv \
+  --output-json outputs/task2/opt8_accuracy.json
 ```
 
-Four-option and eight-option records should be evaluated separately. Every reference must contain exactly one valid answer. Missing, unparseable or out-of-range predictions remain in the denominator and count as incorrect. The default statistical settings are 100 sample-level bootstrap replicates, a two-sided 90% percentile confidence interval and random seed 42.
+Four-option and eight-option records are evaluated separately. The default
+statistical settings are 100 sample-level bootstrap replicates, a two-sided
+90% percentile confidence interval and random seed 42.
 
-### Task 3 accuracy evaluation
+### Task 3: circular contig ordering
 
-The Task 3 evaluator supports separate three-, four- and five-contig test files. Cyclic rotations of the reference order are accepted; reversed orders are not accepted for manuscript evaluation.
+Run the three-contig experiment:
 
 ```bash
+python Contig_order_prediction.py \
+  --model-paths MoonTideF/Llama-GenSyntax \
+  --input-json-paths Data/gene_task3_test_500_contig3_format.json \
+  --output-file outputs/task3/contig3_predictions.txt \
+  --gpu-ids 0 \
+  --tensor-parallel-size 1
+
 python evaluation/task3_contig_order_accuracy.py \
-  --references DATASET_DIR/gene_task3_test_500_contig3_format.json \
-  --predictions /path/to/gensyntax_predictions_task3-contig3.txt \
-  --num-contigs auto \
-  --output-csv outputs/task3_contig3_accuracy.csv \
-  --output-json outputs/task3_contig3_accuracy.json \
-  --errors-csv outputs/task3_contig3_errors.csv
+  --references Data/gene_task3_test_500_contig3_format.json \
+  --predictions outputs/task3/contig3_predictions.txt \
+  --num-contigs 3 \
+  --output-csv outputs/task3/contig3_accuracy.csv \
+  --output-json outputs/task3/contig3_accuracy.json \
+  --errors-csv outputs/task3/contig3_errors.csv
 ```
 
-The same command accepts four- and five-contig files. A resolved prediction must contain every identifier from `Contig 1` through `Contig N` exactly once. Missing, duplicated, unexpected or additional identifiers remain in the denominator and count as incorrect. Do not use `--allow-reverse` when reproducing the manuscript results.
-
-### Task 4 metric evaluation
-
-The Task 4 evaluator reports accuracy, essential-class precision/recall/F1, non-essential-class precision/recall/F1 and macro precision/recall/F1:
+Run the four-contig experiment:
 
 ```bash
-python evaluation/task4_gene_essentiality_metrics.py \
-  --references DATASET_DIR/gene_task4_test_1000_format.json \
-  --predictions /path/to/gensyntax_predictions_task4.txt \
-  --output-csv outputs/task4_metrics.csv \
-  --output-json outputs/task4_metrics.json \
-  --errors-csv outputs/task4_errors.csv
+python Contig_order_prediction.py \
+  --model-paths MoonTideF/Llama-GenSyntax \
+  --input-json-paths Data/gene_task3_test_500_contig4_format.json \
+  --output-file outputs/task3/contig4_predictions.txt \
+  --gpu-ids 0 \
+  --tensor-parallel-size 1
+
+python evaluation/task3_contig_order_accuracy.py \
+  --references Data/gene_task3_test_500_contig4_format.json \
+  --predictions outputs/task3/contig4_predictions.txt \
+  --num-contigs 4 \
+  --output-csv outputs/task3/contig4_accuracy.csv \
+  --output-json outputs/task3/contig4_accuracy.json \
+  --errors-csv outputs/task3/contig4_errors.csv
 ```
 
-The parser matches `non-essential` before `essential` to avoid substring misclassification. Empty or invalid predictions remain in the accuracy denominator and are treated as false negatives for the corresponding reference class. Because the released test set is class-imbalanced, reports should identify whether precision, recall and F1 refer to the essential class, non-essential class or macro average; these quantities are not interchangeable.
+Run the five-contig experiment:
+
+```bash
+python Contig_order_prediction.py \
+  --model-paths MoonTideF/Llama-GenSyntax \
+  --input-json-paths Data/gene_task3_test_500_contig5_format.json \
+  --output-file outputs/task3/contig5_predictions.txt \
+  --gpu-ids 0 \
+  --tensor-parallel-size 1
+
+python evaluation/task3_contig_order_accuracy.py \
+  --references Data/gene_task3_test_500_contig5_format.json \
+  --predictions outputs/task3/contig5_predictions.txt \
+  --num-contigs 5 \
+  --output-csv outputs/task3/contig5_accuracy.csv \
+  --output-json outputs/task3/contig5_accuracy.json \
+  --errors-csv outputs/task3/contig5_errors.csv
+```
+
+Cyclic rotations of the reference order are accepted; reversed orders are not
+accepted for manuscript evaluation.
+
+### Task 4: gene essentiality
+
+Run inference and then evaluate the exact file produced:
+
+```bash
+python Gene_essentiality_prediction.py \
+  --model-paths MoonTideF/Llama-GenSyntax \
+  --input-json-paths Data/gene_task4_test_1000_format.json \
+  --output-file outputs/task4/predictions.txt \
+  --gpu-ids 0 \
+  --tensor-parallel-size 1
+
+python evaluation/task4_gene_essentiality_metrics.py \
+  --references Data/gene_task4_test_1000_format.json \
+  --predictions outputs/task4/predictions.txt \
+  --output-csv outputs/task4/metrics.csv \
+  --output-json outputs/task4/metrics.json \
+  --errors-csv outputs/task4/errors.csv
+```
+
+The evaluator reports accuracy, per-class precision/recall/F1 and macro
+precision/recall/F1.
 
 ## Minimal-genome workflow
 
@@ -300,9 +348,15 @@ sample-level predictions. The ten cleaned phenotype tables are distributed in
 the repository's [`Data/BacDive/`](https://github.com/nishiwen1214/GenSyntax/tree/main/Data/BacDive)
 directory.
 
+The phenotype workflow requires a model-specific, precomputed genome-embedding
+JSON supplied through `--embeddings`. The BacDive phenotype tables do not
+contain these vectors and cannot be used as a substitute. Reviewers reproducing
+the reported phenotype results should obtain the exact embedding file and its
+checksum from the authors or the associated review data package.
+
 ```bash
 python phenotype_prediction/run_phenotype_prediction.py \
-  --embeddings /path/to/merged_embeddings.json \
+  --embeddings review_data/gensyntax_genome_embeddings.json \
   --embedding-name GenSyntax \
   --data-dir Data/BacDive \
   --phenotypes all \

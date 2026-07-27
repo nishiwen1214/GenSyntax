@@ -34,6 +34,12 @@ rows disagree; and a species is matched when its name occurs in the embedding
 
 ## Input embeddings
 
+`--embeddings` is a required, model-specific input. It is not generated from
+the BacDive tables by this evaluation script. To reproduce a reported result,
+use the exact genome-embedding JSON and checksum supplied by the authors or the
+associated review data package; embeddings from different checkpoints or
+species sets are not interchangeable.
+
 The embedding file must be a UTF-8 JSON array. Each record requires an
 organism name and one finite, fixed-dimensional genome embedding:
 
@@ -60,7 +66,7 @@ with more than one candidate embedding match.
 
 ```bash
 python phenotype_prediction/run_phenotype_prediction.py \
-  --embeddings /path/to/merged_embeddings.json \
+  --embeddings review_data/gensyntax_genome_embeddings.json \
   --embedding-name GenSyntax \
   --data-dir Data/BacDive \
   --phenotypes all \

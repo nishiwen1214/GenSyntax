@@ -77,7 +77,8 @@ def run_inference(
     input_json_paths: List[str],
     output_dir: str,
     tensor_parallel_size: int,
-    sampling_params: SamplingParams
+    sampling_params: SamplingParams,
+    output_file: str | None = None,
 ):
     """
     Run batch inference for a model on multiple JSON input files.
@@ -109,13 +110,17 @@ def run_inference(
             text_clean = " ".join([line.strip() for line in text.split('\n')])
             all_predictions.append(text_clean)
 
-        output_file = Path(output_dir) / f"{Path(json_path).stem}_{model_name}.txt"
-        output_file.parent.mkdir(parents=True, exist_ok=True)
+        destination = (
+            Path(output_file)
+            if output_file
+            else Path(output_dir) / f"{Path(json_path).stem}_{model_name}.txt"
+        )
+        destination.parent.mkdir(parents=True, exist_ok=True)
 
-        with open(output_file, 'w', encoding='utf-8') as f:
+        with open(destination, 'w', encoding='utf-8') as f:
             f.write('\n'.join(all_predictions))
 
-        print(f"[INFO] Saved {len(all_predictions)} predictions to {output_file}")
+        print(f"[INFO] Saved {len(all_predictions)} predictions to {destination}")
 
 
 def parse_args():
@@ -128,6 +133,14 @@ def parse_args():
                         help="Paths to JSON input files. Example: 'your_path/gene_task4_test_1000_format_alpaca.json'")
     parser.add_argument("--output-dir", type=str, default="./outputs",
                         help="Directory to save generated outputs. Default: ./outputs")
+    parser.add_argument(
+        "--output-file",
+        type=str,
+        help=(
+            "Exact prediction file path. Valid only with one model and one "
+            "input file. When omitted, the filename is generated under --output-dir."
+        ),
+    )
 
     # Sampling parameters
     parser.add_argument("--temperature", type=float, default=0, help="Sampling temperature for LLM.")
@@ -139,7 +152,15 @@ def parse_args():
     parser.add_argument("--gpu-ids", type=str, default="6,7",
                         help="Comma-separated GPU IDs to use. Example: '0,1,2,3'")
 
-    return parser.parse_args()
+    args = parser.parse_args()
+    if args.output_file and (
+        len(args.model_paths) != 1 or len(args.input_json_paths) != 1
+    ):
+        parser.error(
+            "--output-file requires exactly one --model-paths value and one "
+            "--input-json-paths value."
+        )
+    return args
 
 
 if __name__ == "__main__":
@@ -158,6 +179,7 @@ if __name__ == "__main__":
             model_path=model_path,
             input_json_paths=args.input_json_paths,
             output_dir=args.output_dir,
+            output_file=args.output_file,
             tensor_parallel_size=args.tensor_parallel_size,
             sampling_params=sampling_params
         )
