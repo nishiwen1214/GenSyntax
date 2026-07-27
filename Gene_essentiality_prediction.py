@@ -79,6 +79,8 @@ def run_inference(
     tensor_parallel_size: int,
     sampling_params: SamplingParams,
     output_file: str | None = None,
+    max_model_len: int | None = None,
+    rope_scaling: Dict | None = None,
 ):
     """
     Run batch inference for a model on multiple JSON input files.
@@ -91,10 +93,15 @@ def run_inference(
         sampling_params (SamplingParams): Sampling parameters for generation.
     """
     model_name = Path(model_path).name
-    llm = LLM(
-        model=model_path,
-        tensor_parallel_size=tensor_parallel_size
-    )
+    llm_options = {
+        "model": model_path,
+        "tensor_parallel_size": tensor_parallel_size,
+    }
+    if max_model_len is not None:
+        llm_options["max_model_len"] = max_model_len
+    if rope_scaling is not None:
+        llm_options["rope_scaling"] = rope_scaling
+    llm = LLM(**llm_options)
 
     for json_path in input_json_paths:
         prompts = load_questions(json_path)
@@ -141,6 +148,16 @@ def parse_args():
             "input file. When omitted, the filename is generated under --output-dir."
         ),
     )
+    parser.add_argument(
+        "--max-model-len",
+        type=int,
+        help="Optional maximum context length passed to vLLM.",
+    )
+    parser.add_argument(
+        "--rope-scaling",
+        type=json.loads,
+        help="Optional vLLM RoPE-scaling configuration as a JSON object.",
+    )
 
     # Sampling parameters
     parser.add_argument("--temperature", type=float, default=0, help="Sampling temperature for LLM.")
@@ -160,6 +177,10 @@ def parse_args():
             "--output-file requires exactly one --model-paths value and one "
             "--input-json-paths value."
         )
+    if args.max_model_len is not None and args.max_model_len <= 0:
+        parser.error("--max-model-len must be greater than zero.")
+    if args.rope_scaling is not None and not isinstance(args.rope_scaling, dict):
+        parser.error("--rope-scaling must decode to a JSON object.")
     return args
 
 
@@ -180,6 +201,8 @@ if __name__ == "__main__":
             input_json_paths=args.input_json_paths,
             output_dir=args.output_dir,
             output_file=args.output_file,
+            max_model_len=args.max_model_len,
+            rope_scaling=args.rope_scaling,
             tensor_parallel_size=args.tensor_parallel_size,
             sampling_params=sampling_params
         )

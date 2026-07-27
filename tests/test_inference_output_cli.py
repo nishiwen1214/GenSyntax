@@ -35,8 +35,10 @@ class _RequestOutput:
 
 
 class _FakeLLM:
-    def __init__(self, **_: object) -> None:
-        pass
+    last_options: dict[str, object] = {}
+
+    def __init__(self, **options: object) -> None:
+        type(self).last_options = options
 
     def chat(self, prompts: list[object], _: object) -> list[_RequestOutput]:
         return [_RequestOutput(f"prediction {index}") for index, _ in enumerate(prompts)]
@@ -77,6 +79,12 @@ class InferenceOutputFileTests(unittest.TestCase):
                         tensor_parallel_size=1,
                         sampling_params=object(),
                         output_file=str(output_path),
+                        max_model_len=131072,
+                        rope_scaling={
+                            "rope_type": "yarn",
+                            "factor": 4.0,
+                            "original_max_position_embeddings": 32768,
+                        },
                     )
 
                 self.assertEqual(
@@ -84,6 +92,10 @@ class InferenceOutputFileTests(unittest.TestCase):
                     "prediction 0\nprediction 1",
                 )
                 self.assertFalse((root / "automatic").exists())
+                self.assertEqual(_FakeLLM.last_options["max_model_len"], 131072)
+                self.assertEqual(
+                    _FakeLLM.last_options["rope_scaling"]["rope_type"], "yarn"
+                )
 
     def test_output_file_rejects_multiple_inputs(self) -> None:
         for script_name in SCRIPT_NAMES:
@@ -106,10 +118,37 @@ class InferenceOutputFileTests(unittest.TestCase):
                 ):
                     module.parse_args()
 
+    def test_cli_accepts_128k_yarn_configuration(self) -> None:
+        rope_scaling = (
+            '{"rope_type":"yarn","factor":4.0,'
+            '"original_max_position_embeddings":32768}'
+        )
+        for script_name in SCRIPT_NAMES:
+            with self.subTest(script=script_name):
+                module = _load_script(script_name)
+                argv = [
+                    script_name,
+                    "--model-paths",
+                    "model",
+                    "--input-json-paths",
+                    "input.json",
+                    "--output-file",
+                    "predictions.txt",
+                    "--max-model-len",
+                    "131072",
+                    "--rope-scaling",
+                    rope_scaling,
+                ]
+                with patch.object(sys, "argv", argv):
+                    args = module.parse_args()
+                self.assertEqual(args.max_model_len, 131072)
+                self.assertEqual(args.rope_scaling["rope_type"], "yarn")
+
     def test_readme_evaluates_the_files_created_by_inference(self) -> None:
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
-        generated = re.findall(r"--output-file\s+(\S+)", readme)
-        evaluated = re.findall(r"--predictions\s+(\S+)", readme)
+        task_workflows = readme.split("## Model compatibility", maxsplit=1)[0]
+        generated = re.findall(r"--output-file\s+(\S+)", task_workflows)
+        evaluated = re.findall(r"--predictions\s+(\S+)", task_workflows)
         self.assertEqual(generated, evaluated)
         self.assertNotIn("DATASET_DIR/", readme)
         self.assertNotRegex(readme, r"--predictions\s+/path/to/")
@@ -126,7 +165,11 @@ class InferenceOutputFileTests(unittest.TestCase):
         positions = [readme.index(heading) for heading in headings]
         self.assertEqual(positions, sorted(positions))
         self.assertIn("four primary tasks are **independent**", readme)
-        self.assertIn("GenSyntax-Tiny is intended for **Task 1 only**", readme)
+        normalized = re.sub(r"\s+", " ", readme)
+        self.assertIn(
+            "Both GenSyntax 8B and GenSyntax-Tiny support Tasks 1–4", normalized
+        )
+        self.assertNotIn("Task 1 only", readme)
         self.assertIn("[`docs/EVALUATION.md`](docs/EVALUATION.md)", readme)
         self.assertTrue((ROOT / "docs" / "EVALUATION.md").is_file())
 
@@ -135,6 +178,7 @@ class InferenceOutputFileTests(unittest.TestCase):
         self.assertIn('MAX_MODEL_LEN="${MAX_MODEL_LEN:-}"', launcher)
         self.assertNotIn('MAX_MODEL_LEN="${MAX_MODEL_LEN:-131072}"', launcher)
         self.assertIn('if [ -n "$MAX_MODEL_LEN" ]', launcher)
+        self.assertIn('if [ -n "$ROPE_SCALING" ]', launcher)
 
 
 if __name__ == "__main__":

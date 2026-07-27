@@ -7,6 +7,7 @@ VLLM_PORT="${VLLM_PORT:-8000}"
 WEB_PORT="${WEB_PORT:-8101}"
 TENSOR_PARALLEL_SIZE="${TENSOR_PARALLEL_SIZE:-2}"
 MAX_MODEL_LEN="${MAX_MODEL_LEN:-}"
+ROPE_SCALING="${ROPE_SCALING:-}"
 
 if [ "$MODEL_PATH" = "/path/to/your/merged_checkpoint" ]; then
     echo "ERROR: set MODEL_PATH to a local checkpoint or Hugging Face model identifier."
@@ -21,6 +22,9 @@ VLLM_ARGS=(
 )
 if [ -n "$MAX_MODEL_LEN" ]; then
     VLLM_ARGS+=(--max-model-len "$MAX_MODEL_LEN")
+fi
+if [ -n "$ROPE_SCALING" ]; then
+    VLLM_ARGS+=(--rope-scaling "$ROPE_SCALING")
 fi
 
 CUDA_VISIBLE_DEVICES=${CUDA_VISIBLE_DEVICES:-0,1} \

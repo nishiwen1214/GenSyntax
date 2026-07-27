@@ -37,9 +37,8 @@ recommended five-minute introduction to the model.
 | Training | Continued pre-training or supervised fine-tuning | [`training/README.md`](training/README.md) |
 
 The four primary tasks are **independent**. Run only the task you need; no task
-is a prerequisite for another. GenSyntax 8B supports all four tasks.
-GenSyntax-Tiny is intended for **Task 1 only** because the released Task 2–4
-inputs can exceed its 40,960-token context window.
+is a prerequisite for another. Both GenSyntax 8B and GenSyntax-Tiny support
+Tasks 1–4. For long Tiny inputs, enable the documented 128K YaRN configuration.
 
 ## Local CLI quick start
 
@@ -246,7 +245,27 @@ precision/recall/F1.
 | Model | Supported released tasks | Context configuration |
 |---|---|---|
 | GenSyntax 8B: `MoonTideF/Llama-GenSyntax` | Tasks 1–4 | Use the checkpoint configuration |
-| GenSyntax-Tiny: `ShijianW01/qwen3_0.6b_20250702_data` | Task 1 only | Maximum context length: 40,960 tokens |
+| GenSyntax-Tiny: `ShijianW01/qwen3_0.6b_20250702_data` | Tasks 1–4 | 40,960 tokens by default; extendable to 131,072 with YaRN |
+
+The Tiny checkpoint can run the same four tasks as the 8B checkpoint. Its
+default Qwen3 configuration uses 40,960 tokens; this is a default runtime
+setting, not a hard capability limit. For inputs requiring up to 128K tokens,
+pass YaRN explicitly:
+
+```bash
+python Gene_essentiality_prediction.py \
+  --model-paths ShijianW01/qwen3_0.6b_20250702_data \
+  --input-json-paths Data/gene_task4_test_1000_format.json \
+  --output-file outputs/task4/tiny_predictions.txt \
+  --max-model-len 131072 \
+  --rope-scaling '{"rope_type":"yarn","factor":4.0,"original_max_position_embeddings":32768}' \
+  --gpu-ids 0 \
+  --tensor-parallel-size 1
+```
+
+The same two context arguments can be used with any Task 1–4 inference script.
+Static YaRN is intended for long inputs; omit it when the default context is
+sufficient.
 
 GenSyntax-Tiny requires a revision whose tokenizer artifacts were exported
 with `tokenizer.save_pretrained(...)`. `extra_special_tokens` in
@@ -275,8 +294,16 @@ bash start.sh
 
 By default, `start.sh` lets vLLM read the model's context length from the
 checkpoint. Set `MAX_MODEL_LEN` only when an explicit lower limit is needed.
-The Tiny checkpoint is limited to Task 1; if used after its tokenizer revision
-is corrected, do not set `MAX_MODEL_LEN` above `40960`.
+To run Tiny with a 128K context after its tokenizer revision is corrected:
+
+```bash
+MODEL_PATH=ShijianW01/qwen3_0.6b_20250702_data \
+CUDA_VISIBLE_DEVICES=0 \
+TENSOR_PARALLEL_SIZE=1 \
+MAX_MODEL_LEN=131072 \
+ROPE_SCALING='{"rope_type":"yarn","factor":4.0,"original_max_position_embeddings":32768}' \
+bash start.sh
+```
 
 ## Additional workflows
 
