@@ -6,7 +6,7 @@ MODEL_PATH="${MODEL_PATH:-/path/to/your/merged_checkpoint}"
 VLLM_PORT="${VLLM_PORT:-8000}"
 WEB_PORT="${WEB_PORT:-8101}"
 TENSOR_PARALLEL_SIZE="${TENSOR_PARALLEL_SIZE:-2}"
-MAX_MODEL_LEN="${MAX_MODEL_LEN:-131072}"
+MAX_MODEL_LEN="${MAX_MODEL_LEN:-}"
 
 if [ "$MODEL_PATH" = "/path/to/your/merged_checkpoint" ]; then
     echo "ERROR: set MODEL_PATH to a local checkpoint or Hugging Face model identifier."
@@ -14,11 +14,17 @@ if [ "$MODEL_PATH" = "/path/to/your/merged_checkpoint" ]; then
 fi
 
 echo "Starting vLLM server on port ${VLLM_PORT}..."
+VLLM_ARGS=(
+    serve "$MODEL_PATH"
+    --port "$VLLM_PORT"
+    --tensor-parallel-size "$TENSOR_PARALLEL_SIZE"
+)
+if [ -n "$MAX_MODEL_LEN" ]; then
+    VLLM_ARGS+=(--max-model-len "$MAX_MODEL_LEN")
+fi
+
 CUDA_VISIBLE_DEVICES=${CUDA_VISIBLE_DEVICES:-0,1} \
-vllm serve "$MODEL_PATH" \
-    --port "$VLLM_PORT" \
-    --tensor-parallel-size "$TENSOR_PARALLEL_SIZE" \
-    --max-model-len "$MAX_MODEL_LEN" &
+vllm "${VLLM_ARGS[@]}" &
 
 VLLM_PID=$!
 echo "vLLM PID: $VLLM_PID (waiting for server ready...)"

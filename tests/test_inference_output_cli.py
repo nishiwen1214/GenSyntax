@@ -114,6 +114,28 @@ class InferenceOutputFileTests(unittest.TestCase):
         self.assertNotIn("DATASET_DIR/", readme)
         self.assertNotRegex(readme, r"--predictions\s+/path/to/")
 
+    def test_readme_preserves_reviewer_first_workflow(self) -> None:
+        readme = (ROOT / "README.md").read_text(encoding="utf-8")
+        headings = (
+            "## Web quick start",
+            "## Choose how to run GenSyntax",
+            "## Local CLI quick start",
+            "## Task map",
+            "## Complete task workflows",
+        )
+        positions = [readme.index(heading) for heading in headings]
+        self.assertEqual(positions, sorted(positions))
+        self.assertIn("four primary tasks are **independent**", readme)
+        self.assertIn("GenSyntax-Tiny is intended for **Task 1 only**", readme)
+        self.assertIn("[`docs/EVALUATION.md`](docs/EVALUATION.md)", readme)
+        self.assertTrue((ROOT / "docs" / "EVALUATION.md").is_file())
+
+    def test_web_launcher_uses_checkpoint_context_by_default(self) -> None:
+        launcher = (ROOT / "web" / "start.sh").read_text(encoding="utf-8")
+        self.assertIn('MAX_MODEL_LEN="${MAX_MODEL_LEN:-}"', launcher)
+        self.assertNotIn('MAX_MODEL_LEN="${MAX_MODEL_LEN:-131072}"', launcher)
+        self.assertIn('if [ -n "$MAX_MODEL_LEN" ]', launcher)
+
 
 if __name__ == "__main__":
     unittest.main()
